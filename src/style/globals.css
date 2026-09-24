@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 170 30% 99%;
+    --foreground: 185 45% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 185 45% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 185 45% 15%;
+    --primary: 182 70% 18%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 174 40% 94%;
+    --secondary-foreground: 182 70% 18%;
+    --muted: 174 20% 96%;
+    --muted-foreground: 185 20% 45%;
+    --accent: 174 55% 88%;
+    --accent-foreground: 182 70% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 174 25% 90%;
+    --input: 174 25% 90%;
+    --ring: 182 70% 25%;
+    --radius: 0.75rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  color: #1e293b;
+  background-color: #fafcfb;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Glassmorphism & Soft Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(14, 78, 80, 0.08);
+}
+
+.subtle-card {
+  background: #ffffff;
+  border: 1px solid #e8f0ee;
+  box-shadow: 0 4px 20px -2px rgba(15, 74, 76, 0.04);
+}
+
+.subtle-card:hover {
+  box-shadow: 0 12px 30px -4px rgba(15, 74, 76, 0.08);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e4e50;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0a3a3c;
+}
