@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone, Calendar } from 'lucide-react';
-import Image from 'next/image';
 
 interface CtaBannerProps {
   onBookClick?: () => void;
@@ -12,16 +11,9 @@ interface CtaBannerProps {
 const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
   return (
     <section className="relative overflow-hidden bg-[#0d3638] py-20 sm:py-24 border-t border-[#0a2e30]">
-      {/* Background image — subtle overlay */}
-      <div className="absolute inset-0 opacity-[0.06]">
-        <Image
-          src="/images/dr-aditi-hero.jpg"
-          alt=""
-          fill
-          className="object-cover object-top"
-          aria-hidden="true"
-        />
-      </div>
+      {/* Subtle clean medical ambient pattern */}
+      <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(#2dd4bf_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+      <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-2xl">

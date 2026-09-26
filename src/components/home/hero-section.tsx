@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   Calendar,
@@ -132,15 +131,25 @@ const HeroSection: React.FC = () => {
               {/* Subtle architectural arched backdrop */}
               <div className="absolute bottom-0 left-4 right-4 h-[92%] bg-[#e6f0ef] -z-10 rounded-t-[140px] border border-[#d2ebe9] transition-transform duration-500 group-hover:scale-[1.01]"></div>
 
-              <Image
-                src="/images/dr-aditi-hero.jpg"
-                alt="Dr. Aditi Garg — ENT Specialist & Surgeon, Sir Ganga Ram Hospital, New Delhi"
-                width={500}
-                height={660}
-                priority
-                className="w-full h-auto object-cover object-top rounded-t-[140px] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                style={{ maxHeight: '600px', objectPosition: 'top center' }}
-              />
+              {/* Doctor Photo Placeholder */}
+              <div
+                className="w-full rounded-t-[140px] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.02] flex flex-col items-center justify-center bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] border-2 border-dashed border-[#a8cbc8]"
+                style={{ height: '560px' }}
+              >
+                {/* Person silhouette */}
+                <svg viewBox="0 0 120 120" className="w-28 h-28 mb-5 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="60" cy="42" r="22" fill="#0e4e50" />
+                  <path d="M20 110c0-22.09 17.91-40 40-40s40 17.91 40 40" fill="#0e4e50" />
+                </svg>
+                {/* Label */}
+                <div className="flex flex-col items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 bg-[#0e4e50]/10 text-[#0e4e50] text-[11px] font-bold tracking-[0.18em] uppercase px-4 py-1.5 rounded-full border border-[#0e4e50]/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50] animate-pulse inline-block" />
+                    Photo Coming Soon
+                  </span>
+                  <p className="text-[11px] text-[#0e4e50]/60 font-medium mt-1">Dr. Aditi Garg</p>
+                </div>
+              </div>
 
               {/* Sir Ganga Ram Hospital affiliation badge — bottom left */}
               <div className="absolute bottom-6 -left-3 sm:-left-6 bg-white/95 backdrop-blur-sm border border-slate-200 px-4 py-3 shadow-md rounded-sm animate-subtle-float hover:scale-105 transition-transform duration-300">

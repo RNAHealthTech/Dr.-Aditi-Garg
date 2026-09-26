@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import {
   GraduationCap,
   FileText,
@@ -31,14 +30,20 @@ const AboutSection: React.FC = () => {
           <div className="lg:col-span-4 space-y-6">
             {/* Doctor desk photo */}
             <div className="relative">
-              <div className="overflow-hidden rounded-sm bg-[#e6f0ef] aspect-[3/4]">
-                <Image
-                  src="/images/dr-aditi-desk.jpg"
-                  alt="Dr. Aditi Garg at clinic desk — ENT Specialist New Delhi"
-                  fill
-                  className="object-cover object-center hover:scale-[1.03] transition-transform duration-700"
-                />
-              </div>
+              <div className="overflow-hidden rounded-sm bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] aspect-[3/4] flex flex-col items-center justify-center border-2 border-dashed border-[#a8cbc8]">
+                  {/* Person silhouette */}
+                  <svg viewBox="0 0 120 120" className="w-24 h-24 mb-4 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="42" r="22" fill="#0e4e50" />
+                    <path d="M20 110c0-22.09 17.91-40 40-40s40 17.91 40 40" fill="#0e4e50" />
+                  </svg>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <span className="inline-flex items-center gap-1.5 bg-[#0e4e50]/10 text-[#0e4e50] text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full border border-[#0e4e50]/20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50] animate-pulse inline-block" />
+                      Photo Coming Soon
+                    </span>
+                    <p className="text-[10px] text-[#0e4e50]/60 font-medium">Dr. Aditi Garg</p>
+                  </div>
+                </div>
               {/* Offset quote card */}
               <div className="mt-4 bg-white border border-slate-200 p-5 rounded-sm shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <p className="text-[13px] text-slate-700 italic leading-relaxed">
