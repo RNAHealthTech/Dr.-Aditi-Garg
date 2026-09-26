@@ -1,7 +1,8 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import HeroSection from '@/components/home/hero-section';
+import AboutSection from '@/components/home/about-section';
 import ExpertiseDetails from '@/components/home/expertise-details';
 import WhyChooseUs from '@/components/home/why-choose-us';
 import Affiliations from '@/components/home/affiliations';
@@ -15,22 +16,25 @@ const HomePage = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Expertise & Services Section */}
+      {/* About Doctor Section */}
+      <AboutSection />
+
+      {/* Clinical Expertise & Procedures */}
       <ExpertiseDetails />
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Dr. Aditi */}
       <WhyChooseUs />
 
-      {/* Clinic Locations & Affiliations */}
+      {/* Clinic Locations */}
       <Affiliations />
 
-      {/* Patient Reviews & FAQs */}
+      {/* Patient Stories & FAQs */}
       <TestimonialsFaq />
 
-      {/* Instagram Feed / Gallery */}
+      {/* From the Clinic */}
       <InstagramFeed />
 
-      {/* Bottom CTA Banner */}
+      {/* Final CTA */}
       <CtaBanner />
     </>
   );

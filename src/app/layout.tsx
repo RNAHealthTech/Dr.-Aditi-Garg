@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     "Dr. Aditi Garg (MBBS, DNB - ENT) is an Associate Consultant at Sir Ganga Ram Hospital and Director at Shivasha ENT Clinic, New Delhi. Expert in ear, nose, sinus, throat, voice, and endoscopic surgeries.",
   keywords:
     "Dr Aditi Garg, ENT Specialist New Delhi, Sir Ganga Ram Hospital ENT, Shivasha ENT Clinic Mayur Vihar, Ear Nose Throat Surgeon, Sinus Surgery Delhi, DNB ENT",
+  icons: {
+    icon: '/icon.jpg',
+    apple: '/icon.jpg',
+  },
   openGraph: {
     title: "Dr. Aditi Garg | ENT Specialist & Surgeon",
     description:

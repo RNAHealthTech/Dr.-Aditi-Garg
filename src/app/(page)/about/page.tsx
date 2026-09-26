@@ -36,10 +36,10 @@ export default function AboutPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10 mb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { icon: Users, stat: '10,000+', label: 'Happy Patients', color: 'text-blue-600', bg: 'bg-blue-50' },
-            { icon: HeartPulse, stat: '5,000+', label: 'Surgeries', color: 'text-red-600', bg: 'bg-red-50' },
-            { icon: Award, stat: '10+ Years', label: 'Experience', color: 'text-amber-600', bg: 'bg-amber-50' },
-            { icon: Building2, stat: '2', label: 'Premium Clinics', color: 'text-teal-600', bg: 'bg-teal-50' },
+            { icon: Award, stat: '11+ Years', label: 'Clinical Experience', color: 'text-amber-600', bg: 'bg-amber-50' },
+            { icon: Users, stat: '100%', label: 'Practo Recommendation', color: 'text-blue-600', bg: 'bg-blue-50' },
+            { icon: HeartPulse, stat: 'DNB – ENT', label: 'National Board Certified', color: 'text-red-600', bg: 'bg-red-50' },
+            { icon: Building2, stat: '2 Centers', label: 'SGRH & Shivasha Clinic', color: 'text-teal-600', bg: 'bg-teal-50' },
           ].map((item, idx) => (
             <div key={idx} className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/40 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
               <div className={`w-12 h-12 ${item.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
@@ -90,10 +90,10 @@ export default function AboutPage() {
               </div>
               <div>
                 <span className="text-sm font-bold text-amber-600 tracking-wider uppercase">Education</span>
-                <h3 className="text-xl font-bold text-slate-900 mt-1">Advanced Medical Training</h3>
-                <p className="text-slate-600 font-medium mt-1">MBBS, MS (ENT) / DNB</p>
+                <h3 className="text-xl font-bold text-slate-900 mt-1">Medical Education &amp; DNB</h3>
+                <p className="text-slate-600 font-medium mt-1">MBBS (Coimbatore GMC), DNB – ENT (Dr. R.N. Cooper Hospital &amp; HBT Medical College)</p>
                 <p className="text-slate-500 mt-3 leading-relaxed">
-                  Rigorous academic and clinical training with a focus on Otorhinolaryngology, acquiring deep expertise in head & neck anatomy and pathologies.
+                  Rigorous academic and surgical training in Otorhinolaryngology, acquiring deep surgical expertise in microscopic ear, endoscopic sinus, and laryngeal procedures.
                 </p>
               </div>
             </div>

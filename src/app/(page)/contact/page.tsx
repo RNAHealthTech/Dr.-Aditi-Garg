@@ -178,17 +178,28 @@ export default function ContactPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
               <div>
                 <h3 className="text-white font-bold font-serif text-xl">Ready for a consultation?</h3>
-                <p className="text-teal-100 text-sm mt-1">Book directly via the official hospital portal.</p>
+                <p className="text-teal-100 text-sm mt-1">Book directly via official hospital portal or Practo.</p>
               </div>
-              <a 
-                href="https://appointment.sgrh.com" 
-                target="_blank" 
-                rel="noreferrer"
-                className="shrink-0 bg-white hover:bg-teal-50 text-[#0e4e50] px-6 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
-              >
-                Go to Booking Portal
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <a 
+                  href="https://appointment.sgrh.com" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="bg-white hover:bg-teal-50 text-[#0e4e50] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
+                >
+                  SGRH Portal
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+                <a 
+                  href="https://www.practo.com/delhi/doctor/aditi-garg-ear-nose-throat-ent-specialist-general-physician" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="bg-teal-800/80 hover:bg-teal-700 border border-teal-400/30 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
+                >
+                  Practo
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
           </div>

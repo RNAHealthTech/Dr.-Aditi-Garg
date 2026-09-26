@@ -225,7 +225,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService }) =>
                 Close
               </button>
               <a
-                href="#appointment-form"
+                href="/contact"
                 onClick={() => {
                   setActiveModalService(null);
                   if (onSelectService) onSelectService(activeModalService.title);

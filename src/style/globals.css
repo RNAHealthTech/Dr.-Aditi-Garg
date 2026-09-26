@@ -4,75 +4,171 @@
 
 @layer base {
   :root {
-    --background: 170 30% 99%;
-    --foreground: 185 45% 15%;
+    --background: 40 25% 98%;
+    --foreground: 210 40% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 185 45% 15%;
+    --card-foreground: 210 40% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 185 45% 15%;
+    --popover-foreground: 210 40% 15%;
     --primary: 182 70% 18%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 174 40% 94%;
+    --secondary: 174 30% 95%;
     --secondary-foreground: 182 70% 18%;
-    --muted: 174 20% 96%;
-    --muted-foreground: 185 20% 45%;
+    --muted: 40 20% 97%;
+    --muted-foreground: 215 16% 47%;
     --accent: 174 55% 88%;
     --accent-foreground: 182 70% 18%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 174 25% 90%;
-    --input: 174 25% 90%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
     --ring: 182 70% 25%;
-    --radius: 0.75rem;
+    --radius: 0.375rem;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 80px;
 }
 
 body {
   font-family: var(--font-sans), sans-serif;
   color: #1e293b;
-  background-color: #fafcfb;
+  background-color: #faf9f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, .font-display {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.015em;
 }
 
-/* Glassmorphism & Soft Cards */
-.glass-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 10px 30px -10px rgba(14, 78, 80, 0.08);
+/* Subtle entrance animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.subtle-card {
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.03);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-reveal-left {
+  animation: revealLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 4.5s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+
+.delay-75  { animation-delay: 75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Section scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Premium card */
+.premium-card {
   background: #ffffff;
-  border: 1px solid #e8f0ee;
-  box-shadow: 0 4px 20px -2px rgba(15, 74, 76, 0.04);
+  border: 1px solid #e2e8ec;
+  transition: border-color 0.2s ease, box-shadow 0.25s ease;
 }
 
-.subtle-card:hover {
-  box-shadow: 0 12px 30px -4px rgba(15, 74, 76, 0.08);
+.premium-card:hover {
+  border-color: #a8cbcc;
+  box-shadow: 0 4px 24px rgba(14, 78, 80, 0.07);
 }
 
-/* Custom scrollbar */
+/* Thin elegant divider */
+.rule-line {
+  height: 1px;
+  background: #e2e8e4;
+}
+
+/* Custom scrollbar — minimal */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f4;
+  background: #f4f4f2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0e4e50;
+  background: #9bbcbd;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0a3a3c;
+  background: #0e4e50;
 }
+
+/* Text selection */
+::selection {
+  background-color: #c8e8e4;
+  color: #0a3a3c;
+}
+

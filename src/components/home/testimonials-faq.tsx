@@ -1,32 +1,26 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
-import { Star, ChevronDown, MessageSquare, HelpCircle, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
     name: 'Rajesh Malhotra',
-    location: 'New Delhi (Sir Ganga Ram Hospital Patient)',
+    location: 'Sir Ganga Ram Hospital',
     treatment: 'Endoscopic Sinus Surgery (FESS)',
-    rating: 5,
-    quote:
-      'Dr. Aditi Garg is extremely patient, kind, and thorough. After suffering from chronic sinus headaches for 3 years, her diagnosis and surgery gave me complete relief. Highly recommended for any ENT issues!',
+    quote: 'Dr. Aditi Garg is extremely patient, kind, and thorough. After suffering from chronic sinus headaches for 3 years, her diagnosis and surgery gave me complete relief. Highly recommended for any ENT issues.',
   },
   {
     name: 'Pooja Verma',
-    location: 'Mayur Vihar (Shivasha ENT Clinic)',
+    location: 'Shivasha ENT Clinic, Mayur Vihar',
     treatment: 'Vertigo & Tinnitus Treatment',
-    rating: 5,
-    quote:
-      'I visited Dr. Aditi at Shivasha Clinic for severe dizziness and ear fullness. She explained the condition with utmost clarity and performed the balance maneuver right away. Felt better within 24 hours.',
+    quote: 'I visited Dr. Aditi at Shivasha Clinic for severe dizziness and ear fullness. She explained the condition with utmost clarity and performed the balance maneuver right away. Felt better within 24 hours.',
   },
   {
     name: 'Sunil Aggarwal',
-    location: 'East Delhi Patient',
-    treatment: 'Tympanoplasty (Eardrum Surgery)',
-    rating: 5,
-    quote:
-      'Outstanding doctor with great surgical skills. She operated on my perforated eardrum at Sir Ganga Ram Hospital. Post-operative care and follow-up was flawless. Hearing is completely restored.',
+    location: 'Sir Ganga Ram Hospital',
+    treatment: 'Tympanoplasty — Eardrum Surgery',
+    quote: 'Outstanding doctor with great surgical skills. She operated on my perforated eardrum. Post-operative care and follow-up was flawless. My hearing is completely restored.',
   },
 ];
 
@@ -37,11 +31,11 @@ const faqs = [
   },
   {
     q: 'What are the consultation timings for Shivasha ENT Clinic in Mayur Vihar?',
-    a: 'At Shivasha ENT Clinic (148-B Pocket-4, Opp. Arya Samaj Mandir, Mayur Vihar Phase-1, New Delhi), Dr. Aditi Garg is available Monday through Saturday in the evening from 6:30 PM to 8:30 PM.',
+    a: 'At Shivasha ENT Clinic (148-B Pocket-4, Opp. Arya Samaj Mandir, Mayur Vihar Phase-1, New Delhi), Dr. Aditi Garg is available Monday through Saturday from 6:30 PM to 8:30 PM.',
   },
   {
     q: 'Does Dr. Aditi Garg treat paediatric (children) ENT conditions?',
-    a: 'Yes, Dr. Garg has extensive experience treating paediatric ENT disorders including chronic tonsillitis, adenoid hypertrophy, mouth breathing, glue ear/otitis media, and pediatric foreign body removal with gentle child-friendly care.',
+    a: 'Yes, Dr. Garg has extensive experience treating paediatric ENT disorders including chronic tonsillitis, adenoid hypertrophy, mouth breathing, glue ear/otitis media, and paediatric foreign body removal with gentle, child-friendly care.',
   },
   {
     q: 'Are ENT surgeries covered under health insurance at Sir Ganga Ram Hospital?',
@@ -50,99 +44,148 @@ const faqs = [
 ];
 
 const TestimonialsFaq: React.FC = () => {
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Testimonials */}
-        <div className="mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#0e4e50] uppercase mb-2">
-              <span className="w-4 h-[2px] bg-[#0e4e50]"></span>
-              <span>Patient Stories</span>
-              <span className="w-4 h-[2px] bg-[#0e4e50]"></span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#113a3d] font-serif tracking-tight">
-              Trusted by Hundreds of Patients
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-2">
-              Verified reviews from patients treated at Sir Ganga Ram Hospital and Shivasha ENT Clinic
-            </p>
-          </div>
+  const prev = () => setActiveTestimonial((p) => (p === 0 ? testimonials.length - 1 : p - 1));
+  const next = () => setActiveTestimonial((p) => (p === testimonials.length - 1 ? 0 : p + 1));
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className="bg-[#fbfdfc] rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-teal-200 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-1 mb-4 text-amber-400">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed mb-6">
-                    “{t.quote}”
+  return (
+    <section className="bg-[#faf9f7] border-t border-[#e4e8e5]">
+
+      {/* Testimonials */}
+      <div className="py-20 sm:py-24 border-b border-[#e4e8e5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+            {/* Left label */}
+            <div className="lg:col-span-4">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">05</span>
+                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Patient Stories</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight">
+                Heard from<br />our patients.
+              </h2>
+              <p className="mt-4 text-[13.5px] text-slate-500 leading-relaxed">
+                Real experiences from patients treated at Sir Ganga Ram Hospital and Shivasha ENT Clinic.
+              </p>
+
+              {/* Navigation */}
+              <div className="flex items-center gap-3 mt-8">
+                <button
+                  onClick={prev}
+                  aria-label="Previous testimonial"
+                  className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={next}
+                  aria-label="Next testimonial"
+                  className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <span className="text-[12px] text-slate-400 ml-1">
+                  {activeTestimonial + 1} / {testimonials.length}
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Single testimonial */}
+            <div className="lg:col-span-8">
+              <div className="bg-white border border-slate-200 p-8 sm:p-10 rounded-sm shadow-sm min-h-[240px] relative animate-fade-in">
+                <div className="text-[80px] leading-none font-serif text-[#d4e8e7] select-none absolute top-4 left-8">"</div>
+                <div className="relative z-10 pt-4">
+                  <p className="text-[15px] sm:text-[16px] text-slate-700 leading-[1.75] font-medium">
+                    {testimonials[activeTestimonial].quote}
                   </p>
                 </div>
-
-                <div className="pt-4 border-t border-slate-200/60">
-                  <div className="text-sm font-bold text-slate-900">{t.name}</div>
-                  <div className="text-[11px] font-medium text-[#0e4e50] mt-0.5">{t.treatment}</div>
-                  <div className="text-[11px] text-slate-400">{t.location}</div>
+                <div className="mt-8 pt-6 border-t border-slate-100 flex items-end justify-between">
+                  <div>
+                    <div className="text-[14px] font-bold text-slate-900">{testimonials[activeTestimonial].name}</div>
+                    <div className="text-[12px] font-semibold text-[#0e4e50] mt-0.5">{testimonials[activeTestimonial].treatment}</div>
+                    <div className="text-[11.5px] text-slate-400 mt-0.5">{testimonials[activeTestimonial].location}</div>
+                  </div>
+                  {/* Dots */}
+                  <div className="flex gap-1.5">
+                    {testimonials.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveTestimonial(i)}
+                        className={`w-1.5 h-1.5 rounded-full transition-colors ${i === activeTestimonial ? 'bg-[#0e4e50]' : 'bg-slate-300'}`}
+                        aria-label={`Go to testimonial ${i + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#0e4e50] uppercase mb-2">
-              <span className="w-4 h-[2px] bg-[#0e4e50]"></span>
-              <span>Got Questions?</span>
-              <span className="w-4 h-[2px] bg-[#0e4e50]"></span>
             </div>
-            <h2 className="text-3xl font-bold text-[#113a3d] font-serif tracking-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaq === idx;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-xl border border-slate-200/90 overflow-hidden transition-colors"
-                >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-slate-900 hover:text-[#0e4e50]"
-                  >
-                    <span>{faq.q}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 text-slate-400 transition-transform duration-200 shrink-0 ${
-                        isOpen ? 'rotate-180 text-[#0e4e50]' : ''
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-teal-50/20">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
-
       </div>
+
+      {/* FAQ Section */}
+      <div className="py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+            {/* Left label */}
+            <div className="lg:col-span-4">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">06</span>
+                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">FAQs</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight">
+                Frequently Asked<br />Questions
+              </h2>
+              <p className="mt-4 text-[13.5px] text-slate-500 leading-relaxed">
+                Common questions about appointments, timings, and procedures.
+              </p>
+            </div>
+
+            {/* Right: Accordion */}
+            <div className="lg:col-span-8">
+              <div className="divide-y divide-[#eaeaea]">
+                {faqs.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div key={idx}>
+                      <button
+                        onClick={() => setOpenFaq(isOpen ? null : idx)}
+                        className="w-full text-left py-5 flex items-start justify-between gap-6 group"
+                        aria-expanded={isOpen}
+                      >
+                        <span className={`text-[14px] font-semibold leading-snug transition-colors ${isOpen ? 'text-[#0e4e50]' : 'text-slate-800 group-hover:text-[#0e4e50]'}`}>
+                          {faq.q}
+                        </span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-slate-400 shrink-0 mt-0.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#0e4e50]' : ''}`}
+                        />
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          isOpen ? 'max-h-72 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <p className="text-[13.5px] text-slate-500 leading-relaxed">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 };
