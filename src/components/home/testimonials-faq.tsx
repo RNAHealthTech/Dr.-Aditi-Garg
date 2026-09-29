@@ -1,6 +1,6 @@
-﻿'use client';
+'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
@@ -49,6 +49,14 @@ const TestimonialsFaq: React.FC = () => {
 
   const prev = () => setActiveTestimonial((p) => (p === 0 ? testimonials.length - 1 : p - 1));
   const next = () => setActiveTestimonial((p) => (p === testimonials.length - 1 ? 0 : p + 1));
+
+  // Auto-play slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="bg-[#faf9f7] border-t border-[#e4e8e5]">

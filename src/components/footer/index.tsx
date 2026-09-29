@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
                 <Phone className="w-3.5 h-3.5 text-teal-600" />
-                <a href="tel:+911142254000" className="hover:text-white transition-colors">+91 11-4225 4000</a>
+                <a href="tel:+918076268531" className="hover:text-white transition-colors">+91-8076268531</a>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-[12.5px]">
               <div className="flex items-start gap-2.5 text-slate-500">
                 <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">148-B, Pocket-4, Opp. Arya Samaj Mandir, Mayur Vihar Phase-1, New Delhi 110091</span>
+                <span className="leading-relaxed">Pocket 4, Main Road, Mayur Vihar Phase-1, New Delhi 110091</span>
               </div>
               <div className="flex items-center gap-2.5 text-teal-400 font-semibold">
                 <Clock className="w-3.5 h-3.5" />
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
                 <Mail className="w-3.5 h-3.5 text-teal-600" />
-                <a href="mailto:draditi.garg90@gmail.com" className="hover:text-white transition-colors">draditi.garg90@gmail.com</a>
+                <a href="mailto:draditigarg90@gmail.com" className="hover:text-white transition-colors">draditigarg90@gmail.com</a>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const clinics = [
     num: '02',
     name: 'Shivasha ENT Clinic',
     type: 'Private Evening Clinic',
-    address: '148-B, Pocket-4\nOpposite Arya Samaj Mandir, Mayur Vihar Phase-1\nNew Delhi — 110091',
+    address: 'Pocket 4, Main Road\nMayur Vihar Phase-1\nNew Delhi — 110091',
     days: 'Monday – Saturday',
     timing: '6:30 PM – 8:30 PM',
     phone: '',

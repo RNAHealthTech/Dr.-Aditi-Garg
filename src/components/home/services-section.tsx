@@ -42,6 +42,13 @@ export const HearingBalanceServiceIcon = ({ className = "w-7 h-7 text-[#0e4e50]"
   </svg>
 );
 
+export const ClinicServiceIcon = ({ className = "w-7 h-7 text-[#0e4e50]" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <polyline points="9 22 9 12 15 12 15 22" />
+  </svg>
+);
+
 interface ServiceDetail {
   id: string;
   title: string;
@@ -54,61 +61,88 @@ const servicesData: ServiceDetail[] = [
   {
     id: 'ear-care',
     title: 'Ear Care & Surgery',
-    description: 'Treatment for ear infections, hearing problems and advanced ear surgeries.',
+    description: 'Treatment for ear infections, hearing problems and advanced microscopic & endoscopic ear surgeries.',
     icon: <EarServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
     highlights: [
       'Tympanoplasty & Eardrum Repair',
-      'Mastoidectomy & Cholesteatoma Treatment',
-      'Microscopic & Endoscopic Ear Surgery',
-      'Ear Discharge & Chronic Otitis Media',
+      'Modified Radical Mastoidectomy',
+      'Ossiculoplasty',
+      'Endoscopic Tympanoplasty',
+      'Grommet Insertion',
+      'Meatoplasty',
+      'Intratympanic Steroid Injection',
     ],
   },
   {
     id: 'nose-sinus',
     title: 'Nose & Sinus Care',
-    description: 'Management of sinusitis, allergies, nasal obstruction and endoscopic nasal surgeries.',
+    description: 'Management of sinusitis, allergies, nasal obstruction and advanced endoscopic sinus surgeries.',
     icon: <NoseServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
     highlights: [
       'Functional Endoscopic Sinus Surgery (FESS)',
-      'Deviated Nasal Septum (Septoplasty)',
-      'Nasal Polyps & Allergy Management',
-      'Turbinate Reduction & Snoring Relief',
+      'Septoplasty (Deviated Nasal Septum)',
+      'Endoscopic Endonasal DCR',
+      'Caldwell-Luc & Denkers Surgery',
+      'Medial Maxillectomy',
+      'Orbital Decompression',
+      'Nasal Bleed Cauterization',
     ],
   },
   {
     id: 'throat-voice',
     title: 'Throat & Voice Care',
-    description: 'Treatment for voice disorders, throat infections and laryngeal conditions.',
+    description: 'Precision care for voice disorders, throat infections, airway management and laryngeal conditions.',
     icon: <ThroatServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
     highlights: [
-      'Micro-Laryngeal Surgery (MLS)',
-      'Vocal Cord Polyps & Nodules Care',
-      'Chronic Tonsillitis & Adenoidectomy',
-      'Flexible Video Laryngoscopy',
+      'Microlaryngeal Surgeries (MLS)',
+      'Tonsillectomy & Coblation Adenoidectomy',
+      'Tracheostomy',
+      'Diagnostic & Therapeutic Oesophagoscopy',
+      'Drug Induced Sleep Endoscopy (DISE)',
+      'Laser Assisted Leukoplakic Patch Excision',
     ],
   },
   {
     id: 'head-neck',
-    title: 'Head & Neck Care',
-    description: 'Evaluation and management of head, neck and thyroid related ENT conditions.',
+    title: 'Head & Neck Surgery',
+    description: 'Surgical management of thyroid, salivary gland, neck and oncological ENT conditions.',
     icon: <HeadNeckServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
     highlights: [
-      'Thyroid Nodule & Swelling Diagnosis',
-      'Salivary Gland Disorders (Parotid/Submandibular)',
-      'Neck Lump & Lymph Node Evaluation',
-      'Oral Cavity Lesions & Biopsies',
+      'Thyroidectomy',
+      'Submandibular Gland Excision',
+      'Oral CA Wide Local Excision with Reconstruction',
+      'Thyroglossal Duct Cyst Excision',
+      'Neck Lymph Nodes Excision Biopsy',
+      'Preauricular Sinus Excision',
+      'Dentigerous Cyst Excision',
     ],
   },
   {
     id: 'hearing-balance',
     title: 'Hearing & Balance',
-    description: 'Assessment and treatment for hearing loss, tinnitus and balance disorders.',
+    description: 'Assessment and treatment for hearing loss, tinnitus, vertigo and balance disorders.',
     icon: <HearingBalanceServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
     highlights: [
-      'Vertigo & Dizziness Diagnostics (BPPV)',
+      'BPPV & Epley Maneuver for Vertigo',
+      'Vertigo Testing & Maneuvers',
       'Audiological Assessment & Audiometry',
       'Tinnitus (Ringing in Ears) Management',
-      'Hearing Aid Counseling & Rehabilitation',
+      'Hearing Aid Counselling & Rehabilitation',
+    ],
+  },
+  {
+    id: 'clinic-procedures',
+    title: 'Clinic Procedures',
+    description: 'In-clinic procedures at Shivasha ENT Clinic, Mayur Vihar Phase 1.',
+    icon: <ClinicServiceIcon className="w-7 h-7 text-[#0e4e50]" />,
+    highlights: [
+      'Ear / Nose / Throat Endoscopy',
+      'Nasal Bleed — Endoscopy & Cauterization',
+      'Small Cyst Removal & Biopsies',
+      'Ear Lobe Repair',
+      'Tongue Tie Release',
+      'Allergy Testing & Immunotherapy',
+      'Foreign Body Removal (Ear / Nose / Throat)',
     ],
   },
 ];
@@ -145,8 +179,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService }) =>
           </a>
         </div>
 
-        {/* 5 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {/* 6 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {servicesData.map((service) => (
             <div
               key={service.id}

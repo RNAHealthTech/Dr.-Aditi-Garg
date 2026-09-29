@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare } from 'lucide-react';
+import TestimonialsFaq from '@/components/home/testimonials-faq';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -20,10 +21,11 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-slate-50/50 pb-24">
-      {/* Dynamic Header Banner */}
+      {/* Realistic Header Banner */}
       <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1600&q=80" alt="Contact Us" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 drop-shadow-lg">
@@ -206,6 +208,8 @@ export default function ContactPage() {
 
         </div>
       </div>
+
+      <TestimonialsFaq />
     </div>
   );
 }

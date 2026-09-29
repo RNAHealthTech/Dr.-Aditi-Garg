@@ -35,6 +35,14 @@ const VertigoIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   </svg>
 );
 
+const HeadNeckIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="7" r="4" />
+    <path d="M6 21v-2a6 6 0 0 1 12 0v2" />
+    <path d="M12 11v4" />
+  </svg>
+);
+
 const ChildIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <circle cx="12" cy="8" r="4" />
@@ -48,55 +56,87 @@ const categories = [
     num: '01',
     title: 'Ear & Hearing',
     icon: <EarIcon />,
-    description: 'Expert care for chronic ear infections, hearing loss, and microsurgical ear procedures.',
+    description: 'Expert care for chronic ear infections, hearing loss, and microsurgical ear procedures using advanced microscopic & endoscopic techniques.',
     procedures: [
       'Tympanoplasty (Eardrum Repair)',
-      'Mastoidectomy & Cholesteatoma Treatment',
-      'Microscopic & Endoscopic Ear Surgery',
-      'Ear Discharge & Chronic Otitis Media',
+      'Modified Radical Mastoidectomy',
+      'Ossiculoplasty',
+      'Endoscopic Tympanoplasty',
+      'Meatoplasty',
+      'Grommet Insertion',
       'Ear Canal Foreign Body & Wax Removal',
+      'Intratympanic Steroid Injection',
+      'Ear Lobe Repair',
     ],
   },
   {
     num: '02',
     title: 'Nose & Sinus',
     icon: <NoseIcon />,
-    description: 'Management of sinusitis, allergies, nasal obstruction and endoscopic nasal surgeries.',
+    description: 'Comprehensive management of sinusitis, allergies, nasal obstruction and endoscopic sinus surgeries including advanced skull base approaches.',
     procedures: [
-      'FESS (Functional Endoscopic Sinus Surgery)',
+      'Functional Endoscopic Sinus Surgery (FESS)',
       'Septoplasty — Deviated Nasal Septum',
-      'Nasal Polyps & Allergy Management',
-      'Turbinate Reduction & Snoring Relief',
-      'Epistaxis (Nosebleed) Management',
+      'Caldwell-Luc Surgery',
+      'Medial Maxillectomy',
+      'Orbital Decompression',
+      'Transnasal Endoscopic PPF & ITF Approach',
+      'Endoscopic Endonasal DCR (Tear Duct Surgery)',
+      'Nasal Bleed — Endoscopy & Cauterization',
+      'Balloon Sinuplasty (Assisted)',
+      'Allergy Testing & Immunotherapy',
     ],
   },
   {
     num: '03',
     title: 'Throat & Voice',
     icon: <ThroatIcon />,
-    description: 'Precision care for voice disorders, throat infections, and laryngeal conditions.',
+    description: 'Precision care for voice disorders, throat infections, airway management and laryngeal conditions.',
     procedures: [
-      'Micro-Laryngeal Surgery (MLS)',
-      'Vocal Cord Polyps & Nodules Treatment',
-      'Coblation Tonsillectomy & Adenoidectomy',
-      'Flexible Video Laryngoscopy (FVL)',
-      'Snoring & Sleep Apnea Evaluation',
+      'Microlaryngeal Surgeries (MLS)',
+      'Tonsillectomy',
+      'Coblation Adenoidectomy',
+      'Tracheostomy',
+      'Diagnostic & Therapeutic Oesophagoscopy',
+      'Drug Induced Sleep Endoscopy (DISE)',
+      'Peritonsillar Abscess Drainage',
+      'Parapharyngeal Abscess Drainage',
+      'Ludwig\'s Angina Drainage',
+      'Laser Assisted Leukoplakic Patch Excision',
     ],
   },
   {
     num: '04',
+    title: 'Head & Neck',
+    icon: <HeadNeckIcon />,
+    description: 'Surgical management of thyroid, salivary gland, oral and neck pathologies including oncological procedures.',
+    procedures: [
+      'Thyroidectomy',
+      'Submandibular Gland Excision',
+      'Limited Oral CA Wide Local Excision with Reconstruction',
+      'Thyroglossal Duct Cyst Excision',
+      'Preauricular Sinus Excision',
+      'Dentigerous Cyst Excision',
+      'Neck Lymph Nodes Excision Biopsy',
+      'AC Polypectomy',
+      'Balloon Eustachian Tuboplasty',
+    ],
+  },
+  {
+    num: '05',
     title: 'Vertigo & Balance',
     icon: <VertigoIcon />,
-    description: 'Accurate diagnosis and treatment of dizziness, tinnitus and balance disorders.',
+    description: 'Accurate diagnosis and treatment of dizziness, tinnitus and balance disorders with clinical evaluation & maneuvers.',
     procedures: [
       'BPPV & Epley Maneuver for Vertigo',
+      'Vertigo Testing & Maneuvers',
       'Tinnitus Evaluation & Management',
       'Audiological Assessment & Audiometry',
       'Hearing Aid Counselling & Rehabilitation',
     ],
   },
   {
-    num: '05',
+    num: '06',
     title: 'Paediatric ENT',
     icon: <ChildIcon />,
     description: 'Gentle, child-friendly ENT care for common paediatric ear, nose and throat conditions.',
@@ -105,6 +145,7 @@ const categories = [
       'Chronic Tonsillitis & Adenoid Hypertrophy',
       'Mouth Breathing Assessment',
       'Paediatric Foreign Body Removal',
+      'Tongue Tie Release',
     ],
   },
 ];
@@ -129,7 +170,7 @@ const ExpertiseDetails: React.FC = () => {
             </h2>
           </div>
           <p className="text-[14px] text-slate-500 leading-relaxed lg:pl-8">
-            Dr. Aditi Garg offers comprehensive ENT care across five specialized disciplines — using state-of-the-art endoscopic technology and evidence-based clinical protocols.
+            Dr. Aditi Garg offers comprehensive ENT care across six specialized disciplines — using state-of-the-art endoscopic & microscopic technology and evidence-based clinical protocols. Over 35 types of surgeries performed independently.
           </p>
         </div>
 
@@ -197,7 +238,7 @@ const ExpertiseDetails: React.FC = () => {
         {/* Link to full services */}
         <div className="mt-12 pt-8 border-t border-[#e4e8e5] flex items-center justify-between flex-wrap gap-4">
           <p className="text-[13px] text-slate-500">
-            Conditions treated across ear, nose, throat, head &amp; neck specialties.
+            35+ types of surgeries performed independently across ear, nose, throat, head &amp; neck specialties.
           </p>
           <a
             href="/services"

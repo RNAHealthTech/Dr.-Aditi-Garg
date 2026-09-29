@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
                   MBBS, DNB – ENT
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#0e4e50] bg-[#eef7f6] border border-[#d2ebe9] px-3 py-1.5 rounded-sm">
-                  Associate Consultant, Sir Ganga Ram Hospital
+                  Associate Consultant — ENT, Sir Ganga Ram Hospital
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-700 bg-white border border-slate-200 px-3 py-1.5 rounded-sm">
                   Director, Shivasha ENT Clinic
@@ -94,11 +94,11 @@ const HeroSection: React.FC = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:+911142254000"
+                href="tel:+918076268531"
                 className="inline-flex items-center gap-2 text-slate-700 bg-white border border-slate-200 hover:border-[#0e4e50] hover:text-[#0e4e50] hover:-translate-y-0.5 active:translate-y-0 px-5 py-3.5 text-[14px] font-semibold transition-all duration-200 rounded-sm"
               >
                 <Phone className="w-4 h-4 text-[#0e4e50]" />
-                <span>+91 11-4225 4000</span>
+                <span>+91-8076268531</span>
               </a>
               <Link
                 href="/timings"
@@ -133,21 +133,16 @@ const HeroSection: React.FC = () => {
 
               {/* Doctor Photo Placeholder */}
               <div
-                className="w-full rounded-t-[140px] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.02] flex flex-col items-center justify-center bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] border-2 border-dashed border-[#a8cbc8]"
+                className="w-full rounded-t-[140px] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.02] flex flex-col items-center justify-center relative shadow-sm"
                 style={{ height: '560px' }}
               >
-                {/* Person silhouette */}
-                <svg viewBox="0 0 120 120" className="w-28 h-28 mb-5 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="60" cy="42" r="22" fill="#0e4e50" />
-                  <path d="M20 110c0-22.09 17.91-40 40-40s40 17.91 40 40" fill="#0e4e50" />
-                </svg>
-                {/* Label */}
-                <div className="flex flex-col items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 bg-[#0e4e50]/10 text-[#0e4e50] text-[11px] font-bold tracking-[0.18em] uppercase px-4 py-1.5 rounded-full border border-[#0e4e50]/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50] animate-pulse inline-block" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d3033]/20 to-transparent"></div>
+                {/* Temporary Label until real photo is added */}
+                <div className="absolute bottom-8 flex flex-col items-center gap-2 z-10">
+                  <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-[#0e4e50] text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm shadow-md">
                     Photo Coming Soon
                   </span>
-                  <p className="text-[11px] text-[#0e4e50]/60 font-medium mt-1">Dr. Aditi Garg</p>
                 </div>
               </div>
 
@@ -157,7 +152,7 @@ const HeroSection: React.FC = () => {
                   <span className="w-2 h-2 rounded-full bg-[#0e4e50] animate-pulse-soft"></span>
                   <span className="text-[12px] font-bold text-slate-800 leading-none">Sir Ganga Ram Hospital</span>
                 </div>
-                <div className="text-[11px] text-[#0e4e50] font-medium">Associate Consultant — ENT</div>
+                <div className="text-[11px] text-[#0e4e50] font-medium">Associate Consultant — Dept. of ENT</div>
               </div>
 
               {/* Shivasha ENT Clinic badge — bottom right */}

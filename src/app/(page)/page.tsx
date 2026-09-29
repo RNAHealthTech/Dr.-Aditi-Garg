@@ -1,10 +1,12 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import HeroSection from '@/components/home/hero-section';
+import InfiniteMarquee from '@/components/home/infinite-marquee';
 import AboutSection from '@/components/home/about-section';
 import ExpertiseDetails from '@/components/home/expertise-details';
 import WhyChooseUs from '@/components/home/why-choose-us';
+import AutoImageSlider from '@/components/home/auto-image-slider';
 import Affiliations from '@/components/home/affiliations';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
 import InstagramFeed from '@/components/home/instagram-feed';
@@ -16,6 +18,8 @@ const HomePage = () => {
       {/* Hero Section */}
       <HeroSection />
 
+      <InfiniteMarquee />
+
       {/* About Doctor Section */}
       <AboutSection />
 
@@ -24,6 +28,8 @@ const HomePage = () => {
 
       {/* Why Choose Dr. Aditi */}
       <WhyChooseUs />
+
+      <AutoImageSlider />
 
       {/* Clinic Locations */}
       <Affiliations />

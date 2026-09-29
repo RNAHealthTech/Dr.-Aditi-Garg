@@ -1,16 +1,19 @@
 'use client';
 import React from 'react';
 import ServicesSection from '@/components/home/services-section';
+import AutoImageSlider from '@/components/home/auto-image-slider';
+import TestimonialsFaq from '@/components/home/testimonials-faq';
 import { ClipboardList, Stethoscope, HeartHandshake, CheckCircle } from 'lucide-react';
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[#fbfdfc] pb-20">
-      {/* Dynamic Header Banner */}
-      <div className="relative bg-gradient-to-br from-[#0e4e50] to-[#093537] overflow-hidden pt-24 pb-32">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10 mix-blend-overlay"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-400/10 rounded-full blur-[100px] -mr-40 -mt-40"></div>
-        
+      {/* Realistic Header Banner */}
+      <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80" alt="Hospital Services" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
             Our Comprehensive Services
@@ -57,6 +60,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+
+      <div className="mt-16">
+        <AutoImageSlider />
+      </div>
+      
+      <TestimonialsFaq />
     </div>
   );
 }

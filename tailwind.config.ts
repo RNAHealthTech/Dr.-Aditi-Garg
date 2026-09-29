@@ -71,6 +71,16 @@ const config = {
       letterSpacing: {
         widest: '0.25em',
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' }, // Since we render the items 3 times
+        },
+      },
+      animation: {
+        marquee: 'marquee 30s linear infinite',
+        'marquee-fast': 'marquee 40s linear infinite', // Kept name but made it 40s for smooth image scrolling
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

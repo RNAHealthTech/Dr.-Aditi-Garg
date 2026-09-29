@@ -10,6 +10,8 @@ import {
   Clock,
   CheckCircle2,
   ArrowRight,
+  Award,
+  BookOpen,
 } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
@@ -30,20 +32,14 @@ const AboutSection: React.FC = () => {
           <div className="lg:col-span-4 space-y-6">
             {/* Doctor desk photo */}
             <div className="relative">
-              <div className="overflow-hidden rounded-sm bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] aspect-[3/4] flex flex-col items-center justify-center border-2 border-dashed border-[#a8cbc8]">
-                  {/* Person silhouette */}
-                  <svg viewBox="0 0 120 120" className="w-24 h-24 mb-4 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="42" r="22" fill="#0e4e50" />
-                    <path d="M20 110c0-22.09 17.91-40 40-40s40 17.91 40 40" fill="#0e4e50" />
-                  </svg>
-                  <div className="flex flex-col items-center gap-1.5">
-                    <span className="inline-flex items-center gap-1.5 bg-[#0e4e50]/10 text-[#0e4e50] text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full border border-[#0e4e50]/20">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50] animate-pulse inline-block" />
-                      Photo Coming Soon
-                    </span>
-                    <p className="text-[10px] text-[#0e4e50]/60 font-medium">Dr. Aditi Garg</p>
-                  </div>
+              <div className="overflow-hidden rounded-sm bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] aspect-[3/4] flex flex-col items-center justify-center relative shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d3033]/20 to-transparent"></div>
+                <div className="absolute bottom-6 flex flex-col items-center gap-1.5 z-10">
+                  <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-[#0e4e50] text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-sm shadow-md">
+                    Photo Coming Soon
+                  </span>
                 </div>
+              </div>
               {/* Offset quote card */}
               <div className="mt-4 bg-white border border-slate-200 p-5 rounded-sm shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <p className="text-[13px] text-slate-700 italic leading-relaxed">
@@ -55,18 +51,35 @@ const AboutSection: React.FC = () => {
 
             {/* Clinical interests */}
             <div className="bg-[#0e4e50] text-white px-6 py-5 rounded-sm">
-              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-70">Clinical Interests</h3>
+              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-70">Special Interests</h3>
               <ul className="space-y-2.5">
                 {[
-                  'Endoscopic & microscopic ear surgery',
-                  'Endoscopic nasal & sinus surgery',
+                  'Microscopic ear surgery',
+                  'Endoscopic sinus & nasal surgery',
+                  'Endoscopic ENT surgeries',
                   'Laryngeal & voice surgery',
+                  'Minimally invasive surgical techniques',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-[13px]">
                     <CheckCircle2 className="w-4 h-4 text-teal-300 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            {/* Awards highlight */}
+            <div className="bg-white border border-slate-200 px-6 py-5 rounded-sm shadow-sm">
+              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-4">Awards</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2.5 text-[13px] text-slate-700">
+                  <Award className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <span>Best Dissector — Dr. Morwani&apos;s Temporal Bone Dissection Workshop (2018)</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-[13px] text-slate-700">
+                  <Award className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <span>Best Dissector — 3D Simulated Temporal Bone Dissection by Dr. Prashant Naik (2024)</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -86,12 +99,32 @@ const AboutSection: React.FC = () => {
 
             <div className="space-y-4 text-[14.5px] text-slate-600 leading-[1.8]">
               <p>
-                Dr. Aditi Garg is an Associate Consultant in ENT at Sir Ganga Ram Hospital, New Delhi.
-                She completed her MBBS from Coimbatore Government Medical College (Dr. MGR University, Chennai) in 2015, followed by DNB — ENT from Dr. R.N. Cooper Municipal General Hospital and HBT Medical College in 2020.
+                Dr. Aditi Garg is an ENT Surgeon and Associate Consultant in the Department of ENT at Sir Ganga Ram Hospital, New Delhi. She is dedicated to providing comprehensive and patient-centred care across a wide range of ear, nose and throat disorders.
               </p>
               <p>
-                Having served as Senior Resident at Sir Ganga Ram Hospital (2020–2023) and Consultant at Max Hospital, Noida, Dr. Garg has extensive experience treating complex ear, nose, throat, vertigo, and airway conditions. She has been recognised with the <strong className="text-slate-800">Best Dissector Award</strong> across multiple temporal bone dissection workshops and is an active member of the Association of Otorhinolaryngologists of India (AOI).
+                She completed her MBBS from Coimbatore Government Medical College (2009–2015) and DNB in Otorhinolaryngology (ENT) from HBT Medical College and Dr. R. N. Cooper Municipal Hospital, Mumbai (2017–2020). She subsequently underwent Senior Residency at Sir Ganga Ram Hospital (2020–2023), gaining extensive clinical and surgical experience in the field of ENT.
               </p>
+              <p>
+                Her special interests include microscopic ear surgery and endoscopic ENT surgeries, with a particular focus on advanced surgical management of ear and sinonasal disorders. She has experience in the evaluation and management of various ENT conditions and is committed to adopting evidence-based, minimally invasive surgical techniques whenever appropriate.
+              </p>
+              <p>
+                Dr. Garg has also been actively involved in academic activities, including presentations at national and state-level conferences, temporal bone dissection training, and publications in peer-reviewed medical journals. She has received recognition as <strong className="text-slate-800">&quot;Best Dissector&quot;</strong> in multiple temporal bone dissection courses.
+              </p>
+              <p>
+                Her professional approach combines clinical expertise, meticulous surgical technique and compassionate patient care, with an emphasis on accurate diagnosis, appropriate treatment and good long-term outcomes.
+              </p>
+            </div>
+
+            {/* Memberships */}
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#0e4e50] bg-[#f0f8f7] border border-teal-200 px-3 py-1.5 rounded-sm">
+                <BookOpen className="w-3.5 h-3.5" />
+                Life Member — AOI (LM: 5972)
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-700 bg-white border border-slate-200 px-3 py-1.5 rounded-sm">
+                <BookOpen className="w-3.5 h-3.5" />
+                Delhi AOI Member (2022)
+              </span>
             </div>
 
             {/* Education timeline */}
@@ -102,22 +135,36 @@ const AboutSection: React.FC = () => {
                   {
                     degree: 'MBBS',
                     institution: 'Coimbatore Government Medical College',
-                    sub: 'Dr. MGR University, Chennai',
-                    year: '2015',
+                    sub: 'Tamil Nadu',
+                    year: '2009 – 2015',
                     icon: <GraduationCap className="w-4 h-4" />,
                   },
                   {
                     degree: 'DNB — ENT',
-                    institution: 'Dr. R.N. Cooper Municipal General Hospital & HBT Medical College',
+                    institution: 'HBT Medical College & Dr. R. N. Cooper Municipal General Hospital',
                     sub: 'Mumbai',
-                    year: '2020',
+                    year: '2017 – 2020',
                     icon: <FileText className="w-4 h-4" />,
                   },
                   {
                     degree: 'Senior Resident, ENT',
                     institution: 'Sir Ganga Ram Hospital',
                     sub: 'New Delhi',
-                    year: '2020–2023',
+                    year: '2020 – 2023',
+                    icon: <Building className="w-4 h-4" />,
+                  },
+                  {
+                    degree: 'Clinical Assistant, ENT',
+                    institution: 'Sir Ganga Ram Hospital',
+                    sub: 'New Delhi',
+                    year: 'March 2025 – June 2026',
+                    icon: <Building className="w-4 h-4" />,
+                  },
+                  {
+                    degree: 'Associate Consultant, ENT',
+                    institution: 'Sir Ganga Ram Hospital',
+                    sub: 'New Delhi',
+                    year: 'July 2026 – Present',
                     icon: <Building className="w-4 h-4" />,
                   },
                 ].map((item, i) => (
@@ -166,7 +213,7 @@ const AboutSection: React.FC = () => {
                     <MapPin className="w-4 h-4 text-[#0e4e50] shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-[13.5px] font-bold text-slate-900 leading-tight">Shivasha ENT Clinic</h4>
-                      <p className="text-[11.5px] text-slate-400 mt-0.5">148-B Pocket-4, Opp. Arya Samaj Mandir, Mayur Vihar Ph-1</p>
+                      <p className="text-[11.5px] text-slate-400 mt-0.5">Pocket 4, Main Road, Mayur Vihar Phase-1, New Delhi</p>
                     </div>
                   </div>
                   <div className="space-y-1.5 border-t border-slate-100 pt-3">
