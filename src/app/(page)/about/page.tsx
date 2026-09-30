@@ -121,18 +121,30 @@ const publications = [
 
 const independentSurgeries = [
   'Tonsillectomy', 'Coblation Adenoidectomy', 'Tracheostomy', 'Tympanoplasty',
-  'Modified Radical Mastoidectomy', 'Ossiculoplasty', 'Functional Endoscopic Sinus Surgery (FESS)',
-  'Caldwell-Luc', 'Denkers', 'Medial Maxillectomy', 'Orbital Decompression',
-  'Transnasal Endoscopic PPF & ITF Approach', 'Diagnostic & Therapeutic Oesophagoscopy',
+  'Modified Radical Mastoidectomy', 'Ossiculoplasty', 'Functional Endoscopic Sinus Surgery',
+  'Caldwel Luc', 'Denkers', 'Medial Maxillectomy', 'Orbital Decompression',
+  'Transnasal Endoscopic PPF And ITF Approach', 'Diagnostic And Therapeutic Oesophagoscopy',
   'Microlaryngeal Surgeries', 'Septoplasty', 'Endoscopic Endonasal DCR',
   'Thyroidectomy', 'Submandibular Gland Excision', 'AC Polypectomy',
-  'Limited Oral CA Wide Local Excision with Buccal Fat Pad Reconstruction',
+  'Limited Oral CA Wide Local Excision With Buccal Fat Pad Reconstruction',
   'Thyroglossal Duct Cyst Excision', 'Preauricular Sinus Excision', 'Meatoplasty',
   'Dentigerous Cyst Excision', 'Neck Lymph Nodes Excision Biopsy',
   'Laser Assisted Leukoplakic Patch Excision', 'Grommet Insertion',
   'Drug Induced Sleep Endoscopy', 'Endoscopic Tympanoplasty',
-  'Ludwig\'s Angina Drainage', 'Parapharyngeal Abscess Drainage',
-  'Peritonsillar Abscess Drainage', 'Balloon Eustachian Tuboplasty',
+  'Ludwings Angina Drainage', 'Parapharyngeal Abscess Drainage',
+  'Peritonsillar Abscess Drainage', 'Ballon Eustachian Tuboplasty',
+];
+
+const assistedSurgeries = [
+  'Oral Ca Wide Local Excision With Neck Dissection With Reconstruction',
+  'Laryngectomy', 'Diagnostic And Therapeutic Bronchoscopy',
+  'Endosopic Endonasal Transsphenoidal Pituitary Macradenoma Excision',
+  'CSF Leak Repair', 'Stapedotomy', 'Facial Nerve Decompression',
+  'JNA Excision', 'Maxillectomy', 'Mandibulectomy',
+  'Mandible Fracture Reduction With Screw And Plates', 'Parotidectomy',
+  'Sialendoscopy', 'Ballon Sinuplasty', 'Cochlear Implants',
+  'Endolymphatic Sac Decompression', 'Optic Nerve Decompression',
+  'Coblation BOT Reduction'
 ];
 
 const cmeList = [
@@ -270,6 +282,25 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Surgeries Assisted */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-[#0e4e50]">Surgeries Assisted</h2>
+          <p className="text-slate-500 mt-3">Extensive experience assisting in complex surgical procedures</p>
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 p-8 sm:p-10 overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+            {assistedSurgeries.map((surgery, idx) => (
+              <div key={idx} className="flex items-start gap-2.5 py-2 group hover:translate-x-1 transition-transform duration-200">
+                <Scissors className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
+                <span className="text-[13px] text-slate-600 font-medium leading-snug">{surgery}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Clinic Procedures */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="text-center mb-12">
@@ -376,6 +407,31 @@ export default function AboutPage() {
             <div>
               <h3 className="text-[14px] font-bold text-slate-900">Delhi AOI Membership</h3>
               <p className="text-[12px] text-slate-500">Member since 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Personal & Contact Details */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+        <div className="bg-[#0e4e50] rounded-3xl p-8 sm:p-10 shadow-xl text-white">
+          <h2 className="text-2xl font-serif font-bold mb-6 border-b border-teal-600/50 pb-4">Personal & Contact Details</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[14px]">
+            <div className="space-y-3">
+              <p><strong className="text-teal-200">Date of Birth:</strong> 18th July 1990</p>
+              <p><strong className="text-teal-200">Marital Status:</strong> Married</p>
+              <p><strong className="text-teal-200">Mobile:</strong> +91-8076268531</p>
+              <p><strong className="text-teal-200">Email:</strong> draditigarg90@gmail.com</p>
+            </div>
+            <div className="space-y-3">
+              <p>
+                <strong className="text-teal-200 block mb-1">Residence Address:</strong> 
+                46 A, Pocket 3, Mayur Vihar Phase 1, Delhi 91
+              </p>
+              <p>
+                <strong className="text-teal-200 block mb-1">Clinic Address:</strong> 
+                Shivasha ENT Clinic. Pocket 4, Main Road, Mayur Vihar Phase 1.
+              </p>
             </div>
           </div>
         </div>

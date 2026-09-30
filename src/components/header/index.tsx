@@ -39,6 +39,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
     { label: 'Services', href: '/services' },
     { label: 'Timings', href: '/timings' },
     { label: 'Gallery', href: '/gallery' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ];
 

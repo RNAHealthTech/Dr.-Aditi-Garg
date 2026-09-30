@@ -13,6 +13,7 @@ import {
   Award,
   BookOpen,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const AboutSection: React.FC = () => {
   return (
@@ -20,16 +21,28 @@ const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3 mb-14"
+        >
           <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">01</span>
           <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
           <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">About</span>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
           {/* Left column — Image */}
-          <div className="lg:col-span-4 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-4 space-y-6 lg:sticky lg:top-28"
+          >
             {/* Doctor desk photo */}
             <div className="relative">
               <div className="overflow-hidden rounded-sm bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] aspect-[3/4] flex flex-col items-center justify-center relative shadow-sm">
@@ -82,11 +95,22 @@ const AboutSection: React.FC = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right column — Bio */}
-          <div className="lg:col-span-8 space-y-10">
-            <div className="space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, staggerChildren: 0.1 }}
+            className="lg:col-span-8 space-y-10"
+          >
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
               <h2 className="text-4xl sm:text-[44px] font-bold text-[#0d3033] font-serif leading-tight tracking-tight">
                 Dr. Aditi Garg
               </h2>
@@ -95,9 +119,14 @@ const AboutSection: React.FC = () => {
                 <span className="bg-white border border-slate-200 px-3 py-1 rounded-sm font-semibold text-slate-700">Associate Consultant, ENT</span>
                 <span className="bg-[#f0f8f7] border border-teal-200 px-3 py-1 rounded-sm font-semibold text-[#0e4e50]">Sir Ganga Ram Hospital</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="space-y-4 text-[14.5px] text-slate-600 leading-[1.8]">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-4 text-[14.5px] text-slate-600 leading-[1.8]"
+            >
               <p>
                 Dr. Aditi Garg is an ENT Surgeon and Associate Consultant in the Department of ENT at Sir Ganga Ram Hospital, New Delhi. She is dedicated to providing comprehensive and patient-centred care across a wide range of ear, nose and throat disorders.
               </p>
@@ -113,10 +142,15 @@ const AboutSection: React.FC = () => {
               <p>
                 Her professional approach combines clinical expertise, meticulous surgical technique and compassionate patient care, with an emphasis on accurate diagnosis, appropriate treatment and good long-term outcomes.
               </p>
-            </div>
+            </motion.div>
 
             {/* Memberships */}
-            <div className="flex flex-wrap gap-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-3"
+            >
               <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#0e4e50] bg-[#f0f8f7] border border-teal-200 px-3 py-1.5 rounded-sm">
                 <BookOpen className="w-3.5 h-3.5" />
                 Life Member — AOI (LM: 5972)
@@ -125,10 +159,14 @@ const AboutSection: React.FC = () => {
                 <BookOpen className="w-3.5 h-3.5" />
                 Delhi AOI Member (2022)
               </span>
-            </div>
+            </motion.div>
 
             {/* Education timeline */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-5">Education &amp; Training</h3>
               <div className="space-y-0 border-l-2 border-[#d4e8e8] pl-6">
                 {[
@@ -173,19 +211,31 @@ const AboutSection: React.FC = () => {
                     <div className="absolute -left-[1.45rem] top-0.5 w-5 h-5 rounded-full bg-white border-2 border-[#0e4e50] flex items-center justify-center text-[#0e4e50]">
                       {item.icon}
                     </div>
-                    <div className="pl-3">
+                    <motion.div 
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="pl-3"
+                    >
                       <div className="text-[11px] font-bold text-[#0e4e50] mb-0.5">{item.year}</div>
                       <div className="text-[14px] font-bold text-slate-900">{item.degree}</div>
                       <div className="text-[13px] text-slate-600">{item.institution}</div>
                       <div className="text-[12px] text-slate-400">{item.sub}</div>
-                    </div>
+                    </motion.div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Consultation timings */}
-            <div id="timings" className="border-t border-slate-100 pt-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              id="timings" 
+              className="border-t border-slate-100 pt-8"
+            >
               <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-5">Consultation Timings</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white border border-slate-200 p-5 rounded-sm hover:border-[#0e4e50]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
@@ -228,9 +278,13 @@ const AboutSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               <a
                 href="/about"
                 className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] border-b border-[#0e4e50]/30 hover:border-[#0e4e50] pb-0.5 transition-colors"
@@ -238,8 +292,8 @@ const AboutSection: React.FC = () => {
                 Learn More About Dr. Aditi Garg
                 <ArrowRight className="w-4 h-4" />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
