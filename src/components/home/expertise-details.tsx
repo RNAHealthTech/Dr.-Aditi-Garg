@@ -2,6 +2,14 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
+import {
+  ScrollReveal,
+  ScrollStagger,
+  ScrollStaggerItem,
+  ScrollParagraph,
+  ScrollHeading,
+} from '@/components/ui/scroll-animation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const EarIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -154,50 +162,64 @@ const ExpertiseDetails: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="expertise" className="py-20 sm:py-28 bg-white border-y border-[#e4e8e5]">
+    <section id="expertise" className="py-20 sm:py-28 bg-white border-y border-[#e4e8e5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14 items-end">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">02</span>
-              <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Clinical Expertise</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight">
+            <ScrollReveal direction="down">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">02</span>
+                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Clinical Expertise</span>
+              </div>
+            </ScrollReveal>
+
+            <ScrollHeading
+              as="h2"
+              direction="up"
+              className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+            >
               Specialized ENT<br />Care & Procedures
-            </h2>
+            </ScrollHeading>
           </div>
-          <p className="text-[14px] text-slate-500 leading-relaxed lg:pl-8">
-            Dr. Aditi Garg offers comprehensive ENT care across six specialized disciplines — using state-of-the-art endoscopic & microscopic technology and evidence-based clinical protocols. Over 35 types of surgeries performed independently.
-          </p>
+
+          <ScrollParagraph
+            mode="sentences"
+            delay={0.1}
+            className="text-[14px] text-slate-500 leading-relaxed lg:pl-8"
+          >
+            Dr. Aditi Garg offers comprehensive ENT care across six specialized disciplines using state-of-the-art endoscopic and microscopic technology. Over 35 types of surgeries performed independently.
+          </ScrollParagraph>
         </div>
 
         {/* Category tabs — horizontal scrollable on mobile */}
-        <div className="flex flex-nowrap overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-px mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-[#e4e8e5]">
-          {categories.map((cat, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveTab(idx)}
-              className={`flex items-center gap-2.5 px-5 py-3.5 text-[12.5px] font-semibold whitespace-nowrap transition-all duration-150 border-b-2 -mb-px ${
-                activeTab === idx
-                  ? 'border-[#0e4e50] text-[#0e4e50]'
-                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
-              }`}
-            >
-              <span className={`${activeTab === idx ? 'text-[#0e4e50]' : 'text-slate-400'} transition-colors`}>
-                {cat.icon}
-              </span>
-              <span className="hidden sm:inline text-[10px] font-bold text-slate-400 mr-0.5">{cat.num}</span>
-              {cat.title}
-            </button>
-          ))}
-        </div>
+        <ScrollReveal direction="up" delay={0.1}>
+          <div className="flex flex-nowrap overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-px mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-[#e4e8e5]">
+            {categories.map((cat, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveTab(idx)}
+                className={`flex items-center gap-2.5 px-5 py-3.5 text-[12.5px] font-semibold whitespace-nowrap transition-all duration-150 border-b-2 -mb-px ${
+                  activeTab === idx
+                    ? 'border-[#0e4e50] text-[#0e4e50]'
+                    : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+                }`}
+              >
+                <span className={`${activeTab === idx ? 'text-[#0e4e50]' : 'text-slate-400'} transition-colors`}>
+                  {cat.icon}
+                </span>
+                <span className="hidden sm:inline text-[10px] font-bold text-slate-400 mr-0.5">{cat.num}</span>
+                {cat.title}
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Active category content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-4 animate-fade-in">
-          <div className="space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-4">
+          <ScrollReveal direction="right" distance={24} className="space-y-5">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 border border-[#0e4e50]/20 bg-[#f0f8f7] text-[#0e4e50] flex items-center justify-center rounded-sm">
                 {categories[activeTab].icon}
@@ -207,47 +229,57 @@ const ExpertiseDetails: React.FC = () => {
                 <h3 className="text-xl font-bold text-slate-900 font-serif leading-tight">{categories[activeTab].title}</h3>
               </div>
             </div>
-            <p className="text-[14px] text-slate-500 leading-relaxed">
+
+            <ScrollParagraph mode="sentences">
               {categories[activeTab].description}
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] border-b border-[#0e4e50]/30 hover:border-[#0e4e50] pb-0.5 transition-colors"
-            >
-              Book for this condition
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+            </ScrollParagraph>
+
+            <div>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] border-b border-[#0e4e50]/30 hover:border-[#0e4e50] pb-0.5 transition-colors"
+              >
+                Book for this condition
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </ScrollReveal>
 
           <div className="space-y-1">
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-4">Key Treatments &amp; Procedures</div>
-            {categories[activeTab].procedures.map((proc, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 py-3 border-b border-[#f0f0ee] last:border-0 hover:translate-x-1.5 transition-transform duration-200 cursor-default"
-              >
-                <div className="w-5 h-5 rounded-full border border-[#0e4e50]/30 bg-[#f0f8f7] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-3 h-3 text-[#0e4e50]" />
-                </div>
-                <span className="text-[13.5px] text-slate-700 font-medium">{proc}</span>
-              </div>
-            ))}
+            <ScrollReveal direction="left" distance={16}>
+              <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-4">Key Treatments &amp; Procedures</div>
+            </ScrollReveal>
+
+            <ScrollStagger staggerDelay={0.05} className="space-y-0">
+              {categories[activeTab].procedures.map((proc, i) => (
+                <ScrollStaggerItem key={`${activeTab}-${i}`} direction="left" distance={16}>
+                  <div className="flex items-start gap-3 py-3 border-b border-[#f0f0ee] last:border-0 hover:translate-x-1.5 transition-transform duration-200 cursor-default">
+                    <div className="w-5 h-5 rounded-full border border-[#0e4e50]/30 bg-[#f0f8f7] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-[#0e4e50]" />
+                    </div>
+                    <span className="text-[13.5px] text-slate-700 font-medium">{proc}</span>
+                  </div>
+                </ScrollStaggerItem>
+              ))}
+            </ScrollStagger>
           </div>
         </div>
 
         {/* Link to full services */}
-        <div className="mt-12 pt-8 border-t border-[#e4e8e5] flex items-center justify-between flex-wrap gap-4">
-          <p className="text-[13px] text-slate-500">
-            35+ types of surgeries performed independently across ear, nose, throat, head &amp; neck specialties.
-          </p>
-          <a
-            href="/services"
-            className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] hover:text-[#0b3e40] group transition-colors"
-          >
-            View all services
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </a>
-        </div>
+        <ScrollReveal direction="up" delay={0.15}>
+          <div className="mt-12 pt-8 border-t border-[#e4e8e5] flex items-center justify-between flex-wrap gap-4">
+            <p className="text-[13px] text-slate-500">
+              35+ types of surgeries performed independently across ear, nose, throat, head &amp; neck specialties.
+            </p>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] hover:text-[#0b3e40] group transition-colors"
+            >
+              View all services
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

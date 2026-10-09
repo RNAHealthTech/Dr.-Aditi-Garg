@@ -3,6 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone, Calendar } from 'lucide-react';
+import {
+  ScrollReveal,
+  ScrollStagger,
+  ScrollStaggerItem,
+  ScrollParagraph,
+  ScrollHeading,
+} from '@/components/ui/scroll-animation';
 
 interface CtaBannerProps {
   onBookClick?: () => void;
@@ -17,62 +24,76 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="block w-8 h-[1.5px] bg-teal-400"></span>
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-teal-400">Take the Next Step</span>
-          </div>
+          <ScrollReveal direction="down">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-8 h-[1.5px] bg-teal-400"></span>
+              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-teal-400">Take the Next Step</span>
+            </div>
+          </ScrollReveal>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold font-serif text-white tracking-tight leading-[1.08]">
+          <ScrollHeading
+            as="h2"
+            direction="up"
+            className="text-3xl sm:text-4xl lg:text-[46px] font-bold font-serif text-white tracking-tight leading-[1.08]"
+          >
             Towards better<br />
             ENT health.
-          </h2>
+          </ScrollHeading>
 
-          <p className="mt-5 text-[14.5px] text-white/60 leading-relaxed max-w-md">
+          <ScrollParagraph
+            mode="sentences"
+            delay={0.1}
+            className="mt-5 text-[14.5px] text-white/70 leading-relaxed max-w-md"
+          >
             Book a consultation with Dr. Aditi Garg at Sir Ganga Ram Hospital or Shivasha ENT Clinic.
-          </p>
+          </ScrollParagraph>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {onBookClick ? (
-              <button
-                onClick={onBookClick}
-                id="cta-book-appointment-btn"
-                className="inline-flex items-center gap-2 bg-white text-[#0d3638] hover:bg-teal-50 px-7 py-3.5 text-[13.5px] font-bold tracking-wide transition-colors duration-200 rounded-sm shadow-sm group"
+          <ScrollReveal direction="up" delay={0.15}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {onBookClick ? (
+                <button
+                  onClick={onBookClick}
+                  id="cta-book-appointment-btn"
+                  className="inline-flex items-center gap-2 bg-white text-[#0d3638] hover:bg-teal-50 px-7 py-3.5 text-[13.5px] font-bold tracking-wide transition-colors duration-200 rounded-sm shadow-sm group"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Book an Appointment
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              ) : (
+                <Link
+                  href="/contact"
+                  id="cta-book-appointment-btn"
+                  className="inline-flex items-center gap-2 bg-white text-[#0d3638] hover:bg-teal-50 px-7 py-3.5 text-[13.5px] font-bold tracking-wide transition-colors duration-200 rounded-sm shadow-sm group"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Book an Appointment
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              )}
+              <a
+                href="tel:+911142254000"
+                className="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white/80 hover:text-white px-6 py-3.5 text-[13.5px] font-semibold tracking-wide transition-colors duration-200 rounded-sm"
               >
-                <Calendar className="w-4 h-4" />
-                Book an Appointment
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            ) : (
-              <Link
-                href="/contact"
-                id="cta-book-appointment-btn"
-                className="inline-flex items-center gap-2 bg-white text-[#0d3638] hover:bg-teal-50 px-7 py-3.5 text-[13.5px] font-bold tracking-wide transition-colors duration-200 rounded-sm shadow-sm group"
-              >
-                <Calendar className="w-4 h-4" />
-                Book an Appointment
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            )}
-            <a
-              href="tel:+911142254000"
-              className="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white/80 hover:text-white px-6 py-3.5 text-[13.5px] font-semibold tracking-wide transition-colors duration-200 rounded-sm"
-            >
-              <Phone className="w-4 h-4" />
-              Contact Clinic
-            </a>
-          </div>
+                <Phone className="w-4 h-4" />
+                Contact Clinic
+              </a>
+            </div>
+          </ScrollReveal>
 
           {/* Location chips */}
-          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 text-[12.5px] text-white/50">
-            <div>
-              <span className="text-white/80 font-semibold">Sir Ganga Ram Hospital</span>
-              <span className="ml-2">Mon, Wed, Fri — 8:00–10:00 AM</span>
+          <ScrollReveal direction="up" delay={0.2}>
+            <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 text-[12.5px] text-white/50">
+              <div>
+                <span className="text-white/80 font-semibold">Sir Ganga Ram Hospital</span>
+                <span className="ml-2">Mon, Wed, Fri — 8:00–10:00 AM</span>
+              </div>
+              <div>
+                <span className="text-white/80 font-semibold">Shivasha ENT Clinic</span>
+                <span className="ml-2">Mon–Sat — 6:30–8:30 PM</span>
+              </div>
             </div>
-            <div>
-              <span className="text-white/80 font-semibold">Shivasha ENT Clinic</span>
-              <span className="ml-2">Mon–Sat — 6:30–8:30 PM</span>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

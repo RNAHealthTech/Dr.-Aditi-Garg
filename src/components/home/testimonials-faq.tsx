@@ -2,6 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  ScrollReveal,
+  ScrollStagger,
+  ScrollStaggerItem,
+  ScrollParagraph,
+  ScrollHeading,
+} from '@/components/ui/scroll-animation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
@@ -54,12 +62,12 @@ const TestimonialsFaq: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       next();
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="bg-[#faf9f7] border-t border-[#e4e8e5]">
+    <section className="bg-[#faf9f7] border-t border-[#e4e8e5] overflow-hidden">
 
       {/* Testimonials */}
       <div className="py-20 sm:py-24 border-b border-[#e4e8e5]">
@@ -69,68 +77,97 @@ const TestimonialsFaq: React.FC = () => {
 
             {/* Left label */}
             <div className="lg:col-span-4">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">05</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Patient Stories</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight">
+              <ScrollReveal direction="down">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">05</span>
+                  <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Patient Stories</span>
+                </div>
+              </ScrollReveal>
+
+              <ScrollHeading
+                as="h2"
+                direction="up"
+                className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+              >
                 Heard from<br />our patients.
-              </h2>
-              <p className="mt-4 text-[13.5px] text-slate-500 leading-relaxed">
+              </ScrollHeading>
+
+              <ScrollParagraph
+                mode="sentences"
+                delay={0.1}
+                className="mt-4 text-[13.5px] text-slate-500 leading-relaxed"
+              >
                 Real experiences from patients treated at Sir Ganga Ram Hospital and Shivasha ENT Clinic.
-              </p>
+              </ScrollParagraph>
 
               {/* Navigation */}
-              <div className="flex items-center gap-3 mt-8">
-                <button
-                  onClick={prev}
-                  aria-label="Previous testimonial"
-                  className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next testimonial"
-                  className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-                <span className="text-[12px] text-slate-400 ml-1">
-                  {activeTestimonial + 1} / {testimonials.length}
-                </span>
-              </div>
+              <ScrollReveal direction="up" delay={0.15}>
+                <div className="flex items-center gap-3 mt-8">
+                  <button
+                    onClick={prev}
+                    aria-label="Previous testimonial"
+                    className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={next}
+                    aria-label="Next testimonial"
+                    className="w-9 h-9 border border-slate-300 rounded-sm flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] transition-colors"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                  <span className="text-[12px] text-slate-400 ml-1">
+                    {activeTestimonial + 1} / {testimonials.length}
+                  </span>
+                </div>
+              </ScrollReveal>
             </div>
 
-            {/* Right: Single testimonial */}
+            {/* Right: Testimonial Card */}
             <div className="lg:col-span-8">
-              <div className="bg-white border border-slate-200 p-8 sm:p-10 rounded-sm shadow-sm min-h-[240px] relative animate-fade-in">
-                <div className="text-[80px] leading-none font-serif text-[#d4e8e7] select-none absolute top-4 left-8">"</div>
-                <div className="relative z-10 pt-4">
-                  <p className="text-[15px] sm:text-[16px] text-slate-700 leading-[1.75] font-medium">
-                    {testimonials[activeTestimonial].quote}
-                  </p>
-                </div>
-                <div className="mt-8 pt-6 border-t border-slate-100 flex items-end justify-between">
-                  <div>
-                    <div className="text-[14px] font-bold text-slate-900">{testimonials[activeTestimonial].name}</div>
-                    <div className="text-[12px] font-semibold text-[#0e4e50] mt-0.5">{testimonials[activeTestimonial].treatment}</div>
-                    <div className="text-[11.5px] text-slate-400 mt-0.5">{testimonials[activeTestimonial].location}</div>
+              <ScrollReveal direction="left" distance={30}>
+                <div className="bg-white border border-slate-200 p-8 sm:p-10 rounded-sm shadow-sm min-h-[240px] relative overflow-hidden">
+                  <div className="text-[80px] leading-none font-serif text-[#d4e8e7] select-none absolute top-4 left-8">
+                    &ldquo;
                   </div>
-                  {/* Dots */}
-                  <div className="flex gap-1.5">
-                    {testimonials.map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveTestimonial(i)}
-                        className={`w-1.5 h-1.5 rounded-full transition-colors ${i === activeTestimonial ? 'bg-[#0e4e50]' : 'bg-slate-300'}`}
-                        aria-label={`Go to testimonial ${i + 1}`}
-                      />
-                    ))}
+                  
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeTestimonial}
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -14 }}
+                      transition={{ duration: 0.4 }}
+                      className="relative z-10 pt-4"
+                    >
+                      <p className="text-[15px] sm:text-[16px] text-slate-700 leading-[1.75] font-medium">
+                        {testimonials[activeTestimonial].quote}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  <div className="mt-8 pt-6 border-t border-slate-100 flex items-end justify-between">
+                    <div>
+                      <div className="text-[14px] font-bold text-slate-900">{testimonials[activeTestimonial].name}</div>
+                      <div className="text-[12px] font-semibold text-[#0e4e50] mt-0.5">{testimonials[activeTestimonial].treatment}</div>
+                      <div className="text-[11.5px] text-slate-400 mt-0.5">{testimonials[activeTestimonial].location}</div>
+                    </div>
+                    {/* Dots */}
+                    <div className="flex gap-1.5">
+                      {testimonials.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveTestimonial(i)}
+                          className={`w-1.5 h-1.5 rounded-full transition-colors ${i === activeTestimonial ? 'bg-[#0e4e50]' : 'bg-slate-300'}`}
+                          aria-label={`Go to testimonial ${i + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
@@ -143,26 +180,38 @@ const TestimonialsFaq: React.FC = () => {
 
             {/* Left label */}
             <div className="lg:col-span-4">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">06</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">FAQs</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight">
+              <ScrollReveal direction="down">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">06</span>
+                  <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">FAQs</span>
+                </div>
+              </ScrollReveal>
+
+              <ScrollHeading
+                as="h2"
+                direction="up"
+                className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+              >
                 Frequently Asked<br />Questions
-              </h2>
-              <p className="mt-4 text-[13.5px] text-slate-500 leading-relaxed">
+              </ScrollHeading>
+
+              <ScrollParagraph
+                mode="sentences"
+                delay={0.1}
+                className="mt-4 text-[13.5px] text-slate-500 leading-relaxed"
+              >
                 Common questions about appointments, timings, and procedures.
-              </p>
+              </ScrollParagraph>
             </div>
 
             {/* Right: Accordion */}
             <div className="lg:col-span-8">
-              <div className="divide-y divide-[#eaeaea]">
+              <ScrollStagger staggerDelay={0.08} className="divide-y divide-[#eaeaea]">
                 {faqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   return (
-                    <div key={idx}>
+                    <ScrollStaggerItem key={idx} direction="up" distance={18}>
                       <button
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
                         className="w-full text-left py-5 flex items-start justify-between gap-6 group"
@@ -184,10 +233,10 @@ const TestimonialsFaq: React.FC = () => {
                           {faq.a}
                         </p>
                       </div>
-                    </div>
+                    </ScrollStaggerItem>
                   );
                 })}
-              </div>
+              </ScrollStagger>
             </div>
 
           </div>

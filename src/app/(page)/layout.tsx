@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import AppointmentModal from '@/components/appointment-modal';
+import { ScrollProgressBar } from '@/components/ui/scroll-animation';
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fbfdfc] selection:bg-teal-200 selection:text-[#0e4e50]">
+      <ScrollProgressBar />
       <Header onOpenAppointmentModal={() => handleOpenModal()} />
       <main className="flex-1">{children}</main>
       <Footer />
