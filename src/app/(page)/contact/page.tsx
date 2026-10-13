@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare, Instagram } from 'lucide-react';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
 import {
   ScrollReveal,
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
-          
+
           {/* Contact Details & Cards (Left Column) */}
           <div className="lg:col-span-2 space-y-6">
             <ScrollStagger staggerDelay={0.1} className="space-y-6">
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-teal-600 uppercase tracking-wider mb-1">Helpline</p>
-                      <p className="text-xl font-bold text-slate-900">+91 11-4225 4000</p>
+                      <p className="text-xl font-bold text-slate-900">+91 9289300329</p>
                     </div>
                   </div>
                 </a>
@@ -93,6 +93,26 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm font-bold text-teal-600 uppercase tracking-wider mb-1">Email</p>
                       <p className="text-lg font-bold text-slate-900 truncate">draditi.garg90@gmail.com</p>
+                    </div>
+                  </div>
+                </a>
+              </ScrollStaggerItem>
+
+              {/* Instagram Card */}
+              <ScrollStaggerItem direction="up" distance={20}>
+                <a
+                  href="https://www.instagram.com/shivasha_ent_clinic/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-2xl p-6 shadow-lg shadow-rose-500/25 border border-white/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-500/40 transition-all duration-300 group text-white"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white group-hover:rotate-6 transition-transform duration-300 shadow-inner">
+                      <Instagram className="w-7 h-7" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white/90 uppercase tracking-wider mb-1">Instagram</p>
+                      <p className="text-xl font-black text-white tracking-tight">@shivasha_ent_clinic</p>
                     </div>
                   </div>
                 </a>
@@ -129,7 +149,7 @@ export default function ContactPage() {
             <ScrollReveal direction="left" distance={28}>
               <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl shadow-teal-900/10 border border-slate-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-teal-50 rounded-bl-full -mr-10 -mt-10 pointer-events-none"></div>
-                
+
                 <div className="mb-8 relative z-10">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-bold tracking-widest uppercase mb-4">
                     <MessageSquare className="w-3 h-3" />
@@ -143,22 +163,22 @@ export default function ContactPage() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
                       <label className="text-sm font-bold text-slate-700">Full Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
                       />
                     </div>
                     <div className="space-y-1.5">
                       <label className="text-sm font-bold text-slate-700">Mobile Number</label>
-                      <input 
-                        type="tel" 
+                      <input
+                        type="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 99999 99999"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
                       />
@@ -167,11 +187,11 @@ export default function ContactPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-bold text-slate-700">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@example.com"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
                     />
@@ -179,19 +199,19 @@ export default function ContactPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-bold text-slate-700">Your Message / Query</label>
-                    <textarea 
+                    <textarea
                       rows={4}
                       required
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="How can we help you?"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors resize-none"
                     ></textarea>
                   </div>
 
                   <div className="pt-2">
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
                       className="w-full sm:w-auto bg-[#0e4e50] hover:bg-[#093537] text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-900/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 min-w-[200px]"
                     >
@@ -207,32 +227,23 @@ export default function ContactPage() {
                 </form>
               </div>
             </ScrollReveal>
-            
+
             {/* Booking Portal Banner */}
             <ScrollReveal direction="up" distance={20} delay={0.15}>
               <div className="mt-6 bg-[#0e4e50] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-teal-900/10 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
                 <div>
                   <h3 className="text-white font-bold font-serif text-xl">Ready for a consultation?</h3>
-                  <p className="text-teal-100 text-sm mt-1">Book directly via official hospital portal or Practo.</p>
+                  <p className="text-teal-100 text-sm mt-1">Book directly via official hospital portal</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 shrink-0">
-                  <a 
-                    href="https://appointment.sgrh.com" 
-                    target="_blank" 
+                  <a
+                    href="https://appointment.sgrh.com"
+                    target="_blank"
                     rel="noreferrer"
                     className="bg-white hover:bg-teal-50 text-[#0e4e50] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
                   >
                     SGRH Portal
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <a 
-                    href="https://www.practo.com/delhi/doctor/aditi-garg-ear-nose-throat-ent-specialist-general-physician" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="bg-teal-800/80 hover:bg-teal-700 border border-teal-400/30 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
-                  >
-                    Practo
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>

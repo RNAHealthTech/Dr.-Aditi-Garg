@@ -149,6 +149,7 @@ const categories = [
     icon: <ChildIcon />,
     description: 'Gentle, child-friendly ENT care for common paediatric ear, nose and throat conditions.',
     procedures: [
+      'Paediatric Airway Evaluation & Management',
       'Paediatric Hearing Screening (Glue Ear)',
       'Chronic Tonsillitis & Adenoid Hypertrophy',
       'Mouth Breathing Assessment',

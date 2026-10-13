@@ -16,9 +16,9 @@ const clinics = [
     name: 'Sir Ganga Ram Hospital',
     type: 'Primary Hospital OPD',
     address: 'Room No. F-87, Department of ENT\nSir Ganga Ram Hospital Marg, Old Rajinder Nagar\nNew Delhi — 110060',
-    days: 'Monday, Wednesday & Friday',
-    timing: '8:00 AM – 10:00 AM',
-    phone: '+91 11-4225 4000',
+    days: 'Monday through Saturday',
+    timing: 'Mon, Wed, Fri: 8:00 AM – 3:00 PM\nTue, Thu, Sat: 9:00 AM – 3:00 PM',
+    phone: '+91 9289300329',
     link: 'https://appointment.sgrh.com',
     linkLabel: 'Book via SGRH Portal',
     primary: true,
@@ -78,19 +78,17 @@ const Affiliations = () => {
           {clinics.map((clinic, idx) => (
             <ScrollStaggerItem key={idx} direction="up" distance={30}>
               <div
-                className={`relative flex flex-col border h-full ${
-                  clinic.primary
-                    ? 'bg-[#0d3638] text-white border-[#0d3638]'
-                    : 'bg-white text-slate-900 border-slate-200 hover:border-[#0e4e50]/40'
-                } p-8 rounded-sm hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300`}
+                className={`relative flex flex-col border h-full ${clinic.primary
+                  ? 'bg-[#0d3638] text-white border-[#0d3638]'
+                  : 'bg-white text-slate-900 border-slate-200 hover:border-[#0e4e50]/40'
+                  } p-8 rounded-sm hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300`}
               >
                 {/* Type badge */}
                 <div className="mb-6">
-                  <span className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm ${
-                    clinic.primary
-                      ? 'bg-white/15 text-white/80'
-                      : 'bg-[#f0f8f7] text-[#0e4e50]'
-                  }`}>
+                  <span className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm ${clinic.primary
+                    ? 'bg-white/15 text-white/80'
+                    : 'bg-[#f0f8f7] text-[#0e4e50]'
+                    }`}>
                     {clinic.type}
                   </span>
                 </div>
@@ -121,9 +119,9 @@ const Affiliations = () => {
                         {clinic.days}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className={`w-4 h-4 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
-                      <span className={`text-[15px] font-bold ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
+                    <div className="flex items-start gap-3">
+                      <Clock className={`w-4 h-4 shrink-0 mt-0.5 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
+                      <span className={`text-[13.5px] font-bold whitespace-pre-line leading-snug ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
                         {clinic.timing}
                       </span>
                     </div>
@@ -153,11 +151,10 @@ const Affiliations = () => {
                     href={clinic.link}
                     target={clinic.link.startsWith('http') ? '_blank' : '_self'}
                     rel="noreferrer"
-                    className={`inline-flex items-center gap-2 text-[13px] font-semibold transition-all duration-200 ${
-                      clinic.primary
-                        ? 'bg-white text-[#0d3638] hover:bg-teal-50 px-5 py-2.5 rounded-sm shadow-sm'
-                        : 'border border-[#0e4e50] text-[#0e4e50] hover:bg-[#f0f8f7] px-5 py-2.5 rounded-sm'
-                    }`}
+                    className={`inline-flex items-center gap-2 text-[13px] font-semibold transition-all duration-200 ${clinic.primary
+                      ? 'bg-white text-[#0d3638] hover:bg-teal-50 px-5 py-2.5 rounded-sm shadow-sm'
+                      : 'border border-[#0e4e50] text-[#0e4e50] hover:bg-[#f0f8f7] px-5 py-2.5 rounded-sm'
+                      }`}
                   >
                     {clinic.linkLabel}
                     {clinic.link.startsWith('http') ? <ExternalLink className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}

@@ -480,32 +480,6 @@ export default function AboutContent() {
         </ScrollStagger>
       </div>
 
-      {/* Personal & Contact Details */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
-        <ScrollReveal direction="up" distance={25}>
-          <div className="bg-[#0e4e50] rounded-3xl p-8 sm:p-10 shadow-xl text-white">
-            <h2 className="text-2xl font-serif font-bold mb-6 border-b border-teal-600/50 pb-4">Personal &amp; Contact Details</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[14px]">
-              <div className="space-y-3">
-                <p><strong className="text-teal-200">Date of Birth:</strong> 18th July 1990</p>
-                <p><strong className="text-teal-200">Marital Status:</strong> Married</p>
-                <p><strong className="text-teal-200">Mobile:</strong> +91-8076268531</p>
-                <p><strong className="text-teal-200">Email:</strong> draditigarg90@gmail.com</p>
-              </div>
-              <div className="space-y-3">
-                <p>
-                  <strong className="text-teal-200 block mb-1">Residence Address:</strong> 
-                  46 A, Pocket 3, Mayur Vihar Phase 1, Delhi 91
-                </p>
-                <p>
-                  <strong className="text-teal-200 block mb-1">Clinic Address:</strong> 
-                  Shivasha ENT Clinic. Pocket 4, Main Road, Mayur Vihar Phase 1.
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-      </div>
 
       <TestimonialsFaq />
       

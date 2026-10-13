@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Instagram, ArrowRight } from 'lucide-react';
+import { Instagram, ArrowRight, Heart, MessageCircle, CheckCircle2, ExternalLink } from 'lucide-react';
 import {
   ScrollReveal,
   ScrollStagger,
@@ -15,32 +15,44 @@ const instagramPosts = [
   {
     id: 1,
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80',
-    caption: 'Advancements in Endoscopic Sinus Surgery at SGRH.',
+    caption: 'Advanced Endoscopic Sinus Surgery (FESS) case study at SGRH.',
+    tag: 'Surgical Update',
+    likes: '348',
+    comments: '24',
   },
   {
     id: 2,
     image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80',
-    caption: 'Successful paediatric ENT camp at Shivasha Clinic.',
+    caption: 'Paediatric airway & tonsil care camp at Shivasha ENT Clinic.',
+    tag: 'Paediatric ENT',
+    likes: '512',
+    comments: '41',
   },
   {
     id: 3,
     image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80',
-    caption: 'Discussing hearing preservation techniques at the annual conference.',
+    caption: 'Hearing restoration & microscopic ear evaluation techniques.',
+    tag: 'Ear Care',
+    likes: '289',
+    comments: '18',
   },
   {
     id: 4,
     image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-    caption: 'State-of-the-art audiology setups for precise patient care.',
+    caption: 'Everyday ENT tips: Identifying chronic sinusitis vs allergic rhinitis.',
+    tag: 'Health Tips',
+    likes: '426',
+    comments: '33',
   },
 ];
 
 const InstagramFeed = () => {
   return (
-    <section className="py-20 sm:py-24 bg-white border-t border-[#e4e8e5] overflow-hidden">
+    <section className="py-20 sm:py-28 bg-[#fafcfa] border-t border-[#e4e8e5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <ScrollReveal direction="down">
               <div className="flex items-center gap-3 mb-4">
@@ -53,60 +65,164 @@ const InstagramFeed = () => {
             <ScrollHeading
               as="h2"
               direction="up"
-              className="text-3xl sm:text-[34px] font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+              className="text-3xl sm:text-[36px] font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
             >
-              Health Insights &amp; Clinic Updates
+              Health Insights &amp; Clinic Stories
             </ScrollHeading>
 
             <ScrollParagraph
               mode="sentences"
               delay={0.1}
-              className="mt-3 text-[13.5px] text-slate-500 leading-relaxed max-w-lg"
+              className="mt-3 text-[14px] text-slate-500 leading-relaxed max-w-xl"
             >
-              Moments from everyday ENT care, surgical updates, and health information from Dr. Aditi Garg&apos;s practice.
+              Real moments from everyday ENT consultations, surgical case insights, and health advice from Dr. Aditi Garg&apos;s practice.
             </ScrollParagraph>
           </div>
 
+          {/* Profile Badge Link */}
           <ScrollReveal direction="left" delay={0.15}>
             <a
               href="https://www.instagram.com/shivasha_ent_clinic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-slate-700 border border-slate-300 hover:border-[#0e4e50] hover:text-[#0e4e50] px-4 py-2.5 rounded-sm transition-colors shrink-0"
+              className="group inline-flex items-center gap-3.5 bg-white border border-slate-200/90 hover:border-pink-300 p-2 pr-5 rounded-full shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <Instagram className="w-4 h-4" />
-              @shivasha_ent_clinic
-              <ArrowRight className="w-3.5 h-3.5" />
+              <div className="p-[2px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                  <Instagram className="w-5 h-5 text-[#dc2743]" />
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[14px] font-extrabold text-slate-900 group-hover:text-[#dc2743] transition-colors">
+                    @shivasha_ent_clinic
+                  </span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 fill-teal-50" />
+                </div>
+                <span className="text-[11px] text-slate-500 font-medium">Follow Dr. Aditi on Instagram</span>
+              </div>
+              <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#dc2743] group-hover:translate-x-1 transition-all ml-1" />
             </a>
           </ScrollReveal>
         </div>
 
-        {/* Grid — asymmetric editorial layout */}
-        <ScrollStagger staggerDelay={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {instagramPosts.map((post, idx) => (
-            <ScrollStaggerItem key={post.id} direction="zoom" className={idx === 0 ? 'col-span-2 row-span-2' : ''}>
+        {/* Instagram Profile Card */}
+        <ScrollReveal direction="up" delay={0.1}>
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-sm mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+            <div className="flex items-center gap-4">
+              {/* Instagram Story Ring Avatar */}
+              <div className="relative p-[3px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shrink-0">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0e4e50] text-white flex items-center justify-center font-serif font-bold text-xl border-2 border-white">
+                  AG
+                </div>
+                <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-500 border-2 border-white"></span>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900">Dr. Aditi Garg</h3>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full border border-teal-200/50">
+                    <CheckCircle2 className="w-3 h-3" /> Verified ENT
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm font-semibold text-[#dc2743]">@shivasha_ent_clinic</p>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  ENT Specialist • Sir Ganga Ram Hospital &amp; Shivasha ENT Clinic, New Delhi
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://www.instagram.com/shivasha_ent_clinic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-xs sm:text-sm font-bold shadow-md shadow-rose-500/20 hover:shadow-lg hover:shadow-rose-500/35 hover:scale-105 active:scale-95 transition-all duration-200 w-full sm:w-auto"
+            >
+              <Instagram className="w-4 h-4" />
+              <span>Follow on Instagram</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+            </a>
+          </div>
+        </ScrollReveal>
+
+        {/* Grid of Instagram Posts */}
+        <ScrollStagger staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {instagramPosts.map((post) => (
+            <ScrollStaggerItem key={post.id} direction="up" distance={20}>
               <a
                 href="https://www.instagram.com/shivasha_ent_clinic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block overflow-hidden bg-[#f0f5f4] rounded-sm w-full h-full"
-                style={{ aspectRatio: idx === 0 ? '1/1' : '1/1' }}
+                className="group relative block rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all duration-500"
               >
-                <Image
-                  src={post.image}
-                  alt={post.caption}
-                  fill
-                  className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-[#0d3638]/0 group-hover:bg-[#0d3638]/50 transition-colors duration-300 flex items-end p-4">
-                  <p className="text-white text-[12px] leading-snug font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+                {/* Image Container with 4:5 Portrait Instagram ratio */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.caption}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+
+                  {/* Top Instagram Pill */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                    <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-white border border-white/20">
+                      {post.tag}
+                    </span>
+                    <div className="w-7 h-7 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:bg-[#dc2743] transition-colors">
+                      <Instagram className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 z-20">
+                    {/* Likes & Comments Counter */}
+                    <div className="flex items-center gap-4 text-white text-xs font-bold mb-2">
+                      <span className="flex items-center gap-1.5">
+                        <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                        {post.likes}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MessageCircle className="w-4 h-4 text-white fill-white/20" />
+                        {post.comments}
+                      </span>
+                    </div>
+
+                    <p className="text-white text-[12.5px] leading-snug font-medium line-clamp-3">
+                      {post.caption}
+                    </p>
+
+                    <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold text-amber-300 tracking-wide uppercase">
+                      View on Instagram <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom subtle card label (visible always) */}
+                <div className="p-3.5 bg-white border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[11px] font-semibold text-slate-500 truncate max-w-[170px]">
                     {post.caption}
-                  </p>
+                  </span>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#dc2743] transition-colors shrink-0" />
                 </div>
               </a>
             </ScrollStaggerItem>
           ))}
         </ScrollStagger>
+
+        {/* Footer callout */}
+        <div className="mt-10 text-center">
+          <a
+            href="https://www.instagram.com/shivasha_ent_clinic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#dc2743] transition-colors group"
+          >
+            <span>Want more patient recovery stories and ENT health tips?</span>
+            <span className="font-extrabold text-[#dc2743] group-hover:underline">Explore all posts on @shivasha_ent_clinic</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
 
       </div>
     </section>

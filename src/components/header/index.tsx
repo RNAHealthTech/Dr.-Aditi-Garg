@@ -61,8 +61,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
           <div className="flex items-center space-x-4">
             <a href="tel:+918076268531" className="hover:text-white transition-colors flex items-center gap-1.5">
               <Phone className="w-3 h-3 text-[#6bbdbd]" />
-              +91-8076268531
-            </a>
+              +91- 9289300329            </a>
             <span className="opacity-30">|</span>
             <a href="mailto:draditigarg90@gmail.com" className="hover:text-white transition-colors">
               draditigarg90@gmail.com
@@ -73,11 +72,10 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
 
       {/* Main header */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3'
             : 'bg-white/90 backdrop-blur-sm border-b border-slate-100/80 py-4'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand */}

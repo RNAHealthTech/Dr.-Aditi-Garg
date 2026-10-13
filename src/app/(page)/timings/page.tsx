@@ -65,7 +65,7 @@ export default function TimingsPage() {
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Days</p>
-                    <p className="text-slate-900 font-semibold text-lg">Mon, Wed, Fri</p>
+                    <p className="text-slate-900 font-semibold text-lg">Mon – Sat</p>
                   </div>
                 </div>
                 
@@ -75,7 +75,16 @@ export default function TimingsPage() {
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Time</p>
-                    <p className="text-slate-900 font-semibold text-lg">8:00 AM – 10:00 AM</p>
+                    <div className="space-y-1">
+                      <div>
+                        <span className="font-bold text-slate-900">Mon, Wed, Fri:</span>{' '}
+                        <span className="text-[#0e4e50] font-semibold">8:00 AM – 3:00 PM</span>
+                      </div>
+                      <div>
+                        <span className="font-bold text-slate-900">Tue, Thu, Sat:</span>{' '}
+                        <span className="text-[#0e4e50] font-semibold">9:00 AM – 3:00 PM</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 

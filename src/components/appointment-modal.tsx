@@ -31,7 +31,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
     name: '',
     phone: '',
     date: '',
-    timeSlot: 'Morning (08:00 AM - 10:00 AM)',
+    timeSlot: '08:00 AM - 10:00 AM (Mon, Wed, Fri)',
     concern: preselectedConcern,
   });
   const [submitted, setSubmitted] = useState(false);
@@ -143,7 +143,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
             <div className="bg-teal-50/70 border border-teal-100 rounded-xl p-3 mb-4 text-[11px] text-[#0e4e50]">
               {clinic === 'sgrh' ? (
                 <div>
-                  <strong>Sir Ganga Ram Hospital:</strong> Room F-87, Rajinder Nagar • <strong>Mon, Wed, Fri (8:00 AM – 10:00 AM)</strong>
+                  <strong>Sir Ganga Ram Hospital:</strong> Room F-87, Rajinder Nagar • <strong>Mon, Wed, Fri (8:00 AM – 3:00 PM) • Tue, Thu, Sat (9:00 AM – 3:00 PM)</strong>
                 </div>
               ) : (
                 <div>
@@ -208,8 +208,10 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   >
                     {clinic === 'sgrh' ? (
                       <>
-                        <option value="08:00 AM - 09:00 AM">08:00 AM - 09:00 AM</option>
-                        <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                        <option value="08:00 AM - 10:00 AM (Mon, Wed, Fri)">08:00 AM - 10:00 AM (Mon, Wed, Fri)</option>
+                        <option value="09:00 AM - 11:00 AM (Tue, Thu, Sat)">09:00 AM - 11:00 AM (Tue, Thu, Sat)</option>
+                        <option value="11:00 AM - 01:00 PM">11:00 AM - 01:00 PM</option>
+                        <option value="01:00 PM - 03:00 PM">01:00 PM - 03:00 PM</option>
                       </>
                     ) : (
                       <>

@@ -86,9 +86,14 @@ const HeroSection: React.FC = () => {
                   <div className="text-[13px] font-semibold text-slate-800">
                     Old Rajinder Nagar, New Delhi
                   </div>
-                  <div className="flex items-center gap-1.5 text-[12px] text-slate-500 mt-1">
-                    <Clock className="w-3 h-3 text-slate-400 shrink-0" />
-                    <span>Mon, Wed, Fri | 8:00 AM – 10:00 AM</span>
+                  <div className="text-[11.5px] text-slate-500 mt-1 space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-3 h-3 text-[#0e4e50] shrink-0" />
+                      <span className="font-medium text-slate-700">Mon, Wed, Fri: 8:00 AM – 3:00 PM</span>
+                    </div>
+                    <div className="text-[11px] text-slate-500 pl-4.5">
+                      Tue, Thu, Sat: 9:00 AM – 3:00 PM
+                    </div>
                   </div>
                 </div>
               </ScrollStaggerItem>

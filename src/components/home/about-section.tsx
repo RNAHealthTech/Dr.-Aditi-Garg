@@ -252,13 +252,12 @@ const AboutSection: React.FC = () => {
                       </div>
                     </div>
                     <div className="space-y-1.5 border-t border-slate-100 pt-3">
-                      <div className="flex items-center gap-2 text-[12.5px] text-slate-700">
-                        <Calendar className="w-3.5 h-3.5 text-[#0e4e50]" />
-                        <span className="font-medium">Monday, Wednesday, Friday</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-[12.5px] text-slate-700">
-                        <Clock className="w-3.5 h-3.5 text-[#0e4e50]" />
-                        <span className="font-bold text-slate-900">8:00 AM – 10:00 AM</span>
+                      <div className="flex items-start gap-2 text-[12px] text-slate-700">
+                        <Clock className="w-3.5 h-3.5 text-[#0e4e50] shrink-0 mt-0.5" />
+                        <div>
+                          <div><span className="font-bold text-slate-900">Mon, Wed, Fri:</span> 8:00 AM – 3:00 PM</div>
+                          <div className="mt-0.5"><span className="font-bold text-slate-900">Tue, Thu, Sat:</span> 9:00 AM – 3:00 PM</div>
+                        </div>
                       </div>
                     </div>
                   </div>

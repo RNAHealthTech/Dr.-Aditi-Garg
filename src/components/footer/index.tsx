@@ -44,18 +44,10 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/shivasha_ent_clinic/"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-sm border border-teal-800/60 hover:border-teal-600 hover:bg-teal-900/40 flex items-center justify-center text-teal-500 hover:text-white transition-colors"
+                className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shadow-md shadow-pink-500/20 hover:scale-110 hover:shadow-pink-500/40 transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://www.practo.com/delhi/doctor/aditi-garg-ear-nose-throat-ent-specialist-general-physician"
-                target="_blank"
-                rel="noreferrer"
-                className="text-[11px] font-semibold text-teal-500 hover:text-white border border-teal-800/60 hover:border-teal-600 px-2.5 py-1 rounded-sm flex items-center gap-1 transition-colors"
-              >
-                Practo <ExternalLink className="w-3 h-3" />
+                <Instagram className="w-4 h-4" />
               </a>
               <a
                 href="https://sgrh.com/doctor-details/ent/dr-aditi-garg"
@@ -64,6 +56,15 @@ const Footer: React.FC = () => {
                 className="text-[11px] font-semibold text-teal-500 hover:text-white border border-teal-800/60 hover:border-teal-600 px-2.5 py-1 rounded-sm flex items-center gap-1 transition-colors"
               >
                 SGRH <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="https://share.google/Htr2yxz0AdRjeiNzB"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[11px] font-semibold text-teal-500 hover:text-white border border-teal-800/60 hover:border-teal-600 px-2.5 py-1 rounded-sm flex items-center gap-1 transition-colors"
+                title="Google Reviews"
+              >
+                Google Reviews <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </div>
@@ -78,9 +79,14 @@ const Footer: React.FC = () => {
                 <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">Dept. of ENT, Room F-87, Sir Ganga Ram Hospital Marg, Old Rajinder Nagar, New Delhi 110060</span>
               </div>
-              <div className="flex items-center gap-2.5 text-teal-400 font-semibold">
-                <Clock className="w-3.5 h-3.5" />
-                <span>Mon, Wed, Fri — 8:00–10:00 AM</span>
+              <div className="text-teal-400 font-semibold text-[12px] space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 shrink-0" />
+                  <span>Mon, Wed, Fri — 8:00 AM – 3:00 PM</span>
+                </div>
+                <div className="pl-5.5 text-teal-400/90 text-[11.5px]">
+                  <span>Tue, Thu, Sat — 9:00 AM – 3:00 PM</span>
+                </div>
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
                 <Phone className="w-3.5 h-3.5 text-teal-600" />

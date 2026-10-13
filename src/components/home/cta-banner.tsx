@@ -85,8 +85,8 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
           <ScrollReveal direction="up" delay={0.2}>
             <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-6 text-[12.5px] text-white/50">
               <div>
-                <span className="text-white/80 font-semibold">Sir Ganga Ram Hospital</span>
-                <span className="ml-2">Mon, Wed, Fri — 8:00–10:00 AM</span>
+                <span className="text-white/80 font-semibold">Sir Ganga Ram Hospital:</span>
+                <span className="ml-2">Mon, Wed, Fri (8:00 AM – 3:00 PM) • Tue, Thu, Sat (9:00 AM – 3:00 PM)</span>
               </div>
               <div>
                 <span className="text-white/80 font-semibold">Shivasha ENT Clinic</span>
