@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import {
   GraduationCap,
   FileText,
@@ -38,13 +39,23 @@ const AboutSection: React.FC = () => {
           {/* Left column — Image & Highlights */}
           <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
             <ScrollReveal direction="right" distance={30} duration={0.7}>
-              {/* Doctor desk photo */}
+              {/* Doctor surgeon photo */}
               <div className="relative">
-                <div className="overflow-hidden rounded-sm bg-gradient-to-b from-[#e6f0ef] to-[#cde4e1] aspect-[3/4] flex flex-col items-center justify-center relative shadow-sm">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d3033]/20 to-transparent"></div>
-                  <div className="absolute bottom-6 flex flex-col items-center gap-1.5 z-10">
-                    <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-[#0e4e50] text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-sm shadow-md">
-                      Photo Coming Soon
+                <div className="overflow-hidden rounded-2xl aspect-[3/4] relative shadow-lg border border-slate-200/80 bg-slate-100 group">
+                  <Image
+                    src="/images/dr-aditi-surgeon.jpg"
+                    alt="Dr. Aditi Garg - ENT & Head-Neck Surgeon in OT"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50]/80 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#0e4e50] text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-full shadow-md">
+                      ENT &amp; Head-Neck Surgeon
+                    </span>
+                    <span className="text-[10px] text-teal-100 font-semibold bg-[#0e4e50]/80 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                      In OT
                     </span>
                   </div>
                 </div>

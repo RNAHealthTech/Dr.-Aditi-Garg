@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare, Instagram } from 'lucide-react';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
 import {
@@ -133,9 +134,17 @@ export default function ContactPage() {
                     <div className="w-full h-px bg-slate-100"></div>
                     <div className="flex gap-4 group">
                       <MapPin className="w-6 h-6 text-[#0e4e50] shrink-0 mt-1" />
-                      <div>
+                      <div className="w-full">
                         <h4 className="font-bold text-slate-900 group-hover:text-[#0e4e50] transition-colors">Shivasha ENT Clinic</h4>
                         <p className="text-sm text-slate-600 mt-1 leading-relaxed">148 B Pocket 4, Opp. Arya Samaj Mandir, Mayur Vihar Phase 1, New Delhi, 110091</p>
+                        <div className="mt-3 relative w-full h-36 rounded-xl overflow-hidden border border-slate-200/80 shadow-xs group-hover:border-[#0e4e50]/40 transition-colors">
+                          <Image
+                            src="/images/shivasha-clinic-front.jpg"
+                            alt="Shivasha ENT Clinic Entrance & Signboard"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

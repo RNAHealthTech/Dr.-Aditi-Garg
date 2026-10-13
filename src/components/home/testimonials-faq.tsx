@@ -110,15 +110,18 @@ const TestimonialsFaq: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <section id="patient-stories" className="bg-[#faf9f7] border-t border-[#e4e8e5] overflow-hidden">
+    <section id="patient-stories" className="bg-[#faf9f7] border-t border-[#e4e8e5] overflow-hidden relative">
+      {/* Background ambient medical glows */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-0" />
 
       {/* Testimonials */}
-      <div className="py-20 sm:py-24 border-b border-[#e4e8e5]">
+      <div className="py-20 sm:py-28 border-b border-[#e4e8e5] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-            {/* Left label */}
+            {/* Left label & Stats */}
             <div className="lg:col-span-4">
               <ScrollReveal direction="down" once>
                 <div className="flex items-center gap-3 mb-6">
@@ -132,18 +135,19 @@ const TestimonialsFaq: React.FC = () => {
                 as="h2"
                 direction="up"
                 once
-                className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+                className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0d3033] font-serif tracking-tight leading-[1.12]"
               >
-                Hear from<br />our patients.
+                Hear from<br />
+                <span className="text-[#0e4e50] italic">our patients.</span>
               </ScrollHeading>
 
               <ScrollParagraph
                 mode="sentences"
                 delay={0.1}
                 once
-                className="mt-4 text-[13.5px] text-slate-500 leading-relaxed"
+                className="mt-4 text-[14px] text-slate-500 leading-relaxed"
               >
-                Real experiences from patients treated at Sir Ganga Ram Hospital and Shivasha ENT Clinic.
+                Real experiences and verified recovery stories from patients treated at Sir Ganga Ram Hospital and Shivasha ENT Clinic.
               </ScrollParagraph>
 
               {/* Trust Badge with Google Reviews Link */}
@@ -152,100 +156,120 @@ const TestimonialsFaq: React.FC = () => {
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2.5 bg-white hover:bg-[#f0f7f6] border border-[#d2e7e4] hover:border-[#0e4e50] px-4 py-2 rounded-full shadow-2xs hover:shadow-xs transition-all group cursor-pointer"
+                  className="mt-6 inline-flex items-center gap-3 bg-white hover:bg-[#f0f7f6] border border-[#d2e7e4] hover:border-[#0e4e50] px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all group cursor-pointer"
                   title="View reviews on Google"
                 >
                   <GoogleIcon className="w-4 h-4 shrink-0" />
-                  <div className="flex items-center text-amber-500">
+                  <div className="flex items-center text-amber-400">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[12px] font-semibold text-[#0d3033]">
-                    5.0 on Google Reviews
+                  <span className="text-[12.5px] font-bold text-[#0d3033]">
+                    5.0 Star Rating
+                  </span>
+                  <span className="text-[11px] text-slate-400 font-medium border-l border-slate-200 pl-2">
+                    Google Reviews
                   </span>
                   <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#0e4e50] group-hover:translate-x-0.5 transition-all" />
                 </a>
               </ScrollReveal>
 
+              {/* Quick Satisfaction Metrics */}
+              <ScrollReveal direction="up" delay={0.14} once>
+                <div className="grid grid-cols-2 gap-3 mt-6 max-w-xs">
+                  <div className="bg-white/80 backdrop-blur-xs border border-slate-200/90 rounded-2xl p-3 shadow-2xs">
+                    <div className="text-xl font-bold font-serif text-[#0e4e50]">100%</div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">Compassionate Care</div>
+                  </div>
+                  <div className="bg-white/80 backdrop-blur-xs border border-slate-200/90 rounded-2xl p-3 shadow-2xs">
+                    <div className="text-xl font-bold font-serif text-[#0e4e50]">11+ Yrs</div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">Clinical Practice</div>
+                  </div>
+                </div>
+              </ScrollReveal>
+
               {/* Navigation & Direct Google Link */}
-              <ScrollReveal direction="up" delay={0.15} once>
-                <div className="flex items-center gap-3 mt-8">
+              <ScrollReveal direction="up" delay={0.16} once>
+                <div className="flex items-center gap-3 mt-7">
                   <button
                     onClick={prev}
                     aria-label="Previous testimonial"
-                    className="w-10 h-10 border border-slate-300 bg-white rounded-md flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] hover:bg-[#f0f7f6] transition-all shadow-2xs cursor-pointer"
+                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-white hover:bg-[#0e4e50] transition-all shadow-sm cursor-pointer active:scale-95"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={next}
                     aria-label="Next testimonial"
-                    className="w-10 h-10 border border-slate-300 bg-white rounded-md flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-[#0e4e50] hover:bg-[#f0f7f6] transition-all shadow-2xs cursor-pointer"
+                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-white hover:bg-[#0e4e50] transition-all shadow-sm cursor-pointer active:scale-95"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
                   <span className="text-[12.5px] font-medium text-slate-500 ml-2 tracking-wide">
-                    <span className="text-[#0d3033] font-semibold">{activeTestimonial + 1}</span> / {testimonials.length}
+                    <span className="text-[#0d3033] font-bold">{activeTestimonial + 1}</span> of {testimonials.length}
                   </span>
                 </div>
 
-                <div className="mt-7 pt-5 border-t border-slate-200/80">
+                <div className="mt-6 pt-5 border-t border-slate-200/80">
                   <a
                     href={GOOGLE_REVIEWS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-[#0e4e50] hover:text-[#093537] hover:underline transition-colors group"
                   >
-                    <span>Read all patient reviews on Google</span>
+                    <span>Read all patient stories on Google</span>
                     <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </ScrollReveal>
             </div>
 
-            {/* Right: Testimonial Card */}
+            {/* Right: Premium Glassmorphic Testimonial Card */}
             <div className="lg:col-span-8">
               <ScrollReveal direction="left" distance={30} once>
                 <div
                   onMouseEnter={() => setIsPaused(true)}
                   onMouseLeave={() => setIsPaused(false)}
-                  className="bg-white border border-[#e4e8e5] p-8 sm:p-10 rounded-lg shadow-xs min-h-[300px] relative overflow-hidden transition-shadow hover:shadow-md"
+                  className="bg-white border border-[#dbe6e4] p-8 sm:p-12 rounded-3xl shadow-[0_15px_45px_rgba(14,78,80,0.06)] relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(14,78,80,0.1)] group"
                 >
+                  {/* Top subtle emerald gradient highlight bar */}
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0e4e50] via-teal-400 to-amber-400"></div>
+
                   {/* Decorative background quote mark */}
-                  <div className="absolute top-4 right-6 text-slate-100 pointer-events-none select-none">
-                    <Quote className="w-20 h-20 opacity-40 rotate-180" />
+                  <div className="absolute top-6 right-8 text-teal-900/5 pointer-events-none select-none group-hover:text-teal-900/10 transition-colors">
+                    <Quote className="w-24 h-24 rotate-180" />
                   </div>
 
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeTestimonial}
-                      initial={{ opacity: 0, y: 12 }}
+                      initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -12 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="relative z-10 flex flex-col justify-between min-h-[220px]"
+                      exit={{ opacity: 0, y: -14 }}
+                      transition={{ duration: 0.35, ease: 'easeOut' }}
+                      className="relative z-10 flex flex-col justify-between min-h-[240px]"
                     >
                       <div>
                         {/* Top Meta: Stars & Treatment Tag & Google badge */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                           <div className="flex items-center gap-2">
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200/60">
                               {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                               ))}
+                              <span className="text-[12px] font-bold text-amber-700 ml-1">5.0</span>
                             </div>
-                            <span className="text-[12px] font-semibold text-slate-700">5.0</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="inline-flex items-center text-[11px] font-semibold text-[#0e4e50] bg-[#e8f3f2] px-3 py-1 rounded-full uppercase tracking-wider">
+                            <span className="inline-flex items-center text-[11px] font-semibold text-[#0e4e50] bg-teal-50 border border-teal-200/70 px-3.5 py-1 rounded-full uppercase tracking-wider">
                               {testimonials[activeTestimonial].tag}
                             </span>
                             <a
                               href={GOOGLE_REVIEWS_URL}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-600 bg-slate-50 hover:bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-full transition-colors"
+                              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate-600 bg-slate-50 hover:bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-full transition-colors"
                               title="Verified Google Review"
                             >
                               <GoogleIcon className="w-3 h-3" />
@@ -256,44 +280,45 @@ const TestimonialsFaq: React.FC = () => {
                         </div>
 
                         {/* Testimonial Quote */}
-                        <p className="text-[16px] sm:text-[17.5px] text-slate-800 leading-[1.8] font-normal">
+                        <p className="text-[17px] sm:text-[18.5px] text-slate-800 leading-[1.8] font-normal italic">
                           &ldquo;{testimonials[activeTestimonial].quote}&rdquo;
                         </p>
                       </div>
 
                       {/* Author Details - Synced inside animation */}
-                      <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-4">
-                        <div className="flex items-center gap-3.5">
-                          <div className="w-10 h-10 rounded-full bg-[#0e4e50] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+                      <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#0e4e50] to-teal-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md ring-2 ring-teal-100">
                             {testimonials[activeTestimonial].initials}
                           </div>
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="text-[14.5px] font-bold text-slate-900">
+                              <span className="text-[15.5px] font-bold text-slate-900">
                                 {testimonials[activeTestimonial].name}
                               </span>
-                              <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
                                 <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                                 Verified Patient
                               </span>
                             </div>
-                            <div className="text-[12px] font-medium text-[#0e4e50] mt-0.5">
+                            <div className="text-[12.5px] font-medium text-[#0e4e50] mt-0.5">
                               {testimonials[activeTestimonial].treatment}
                             </div>
-                            <div className="text-[11.5px] text-slate-500 mt-0.5">
+                            <div className="text-[12px] text-slate-500 mt-0.5">
                               {testimonials[activeTestimonial].location}
                             </div>
                           </div>
                         </div>
 
                         {/* Pagination indicator dots */}
-                        <div className="flex gap-1.5 shrink-0">
+                        <div className="flex items-center gap-2 shrink-0 pt-2 sm:pt-0">
                           {testimonials.map((_, i) => (
                             <button
                               key={i}
                               onClick={() => setActiveTestimonial(i)}
-                              className={`h-2 rounded-full transition-all duration-300 ${i === activeTestimonial ? 'w-6 bg-[#0e4e50]' : 'w-2 bg-slate-200 hover:bg-slate-300'
-                                }`}
+                              className={`h-2.5 rounded-full transition-all duration-300 ${
+                                i === activeTestimonial ? 'w-8 bg-[#0e4e50]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                              }`}
                               aria-label={`Go to testimonial ${i + 1}`}
                             />
                           ))}
@@ -307,7 +332,7 @@ const TestimonialsFaq: React.FC = () => {
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-[12.5px] text-slate-500">
                   <div className="flex items-center gap-2">
                     <GoogleIcon className="w-3.5 h-3.5 shrink-0" />
-                    <span>Verified Google &amp; Practo patient feedback</span>
+                    <span>Verified patient reviews from Sir Ganga Ram Hospital &amp; Shivasha Clinic</span>
                   </div>
                   <a
                     href={GOOGLE_REVIEWS_URL}
@@ -315,7 +340,7 @@ const TestimonialsFaq: React.FC = () => {
                     rel="noopener noreferrer"
                     className="font-semibold text-[#0e4e50] hover:text-[#0a3839] hover:underline inline-flex items-center gap-1"
                   >
-                    <span>Share your review on Google</span>
+                    <span>Share your experience</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -326,7 +351,7 @@ const TestimonialsFaq: React.FC = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-20 sm:py-24">
+      <div className="py-20 sm:py-28 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
@@ -343,46 +368,91 @@ const TestimonialsFaq: React.FC = () => {
               <ScrollHeading
                 as="h2"
                 direction="up"
-                className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+                className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
               >
-                Frequently Asked<br />Questions
+                Frequently Asked<br />
+                <span className="text-[#0e4e50] italic">Questions.</span>
               </ScrollHeading>
 
               <ScrollParagraph
                 mode="sentences"
                 delay={0.1}
-                className="mt-4 text-[13.5px] text-slate-500 leading-relaxed"
+                className="mt-4 text-[14px] text-slate-500 leading-relaxed"
               >
-                Common questions about appointments, timings, and procedures.
+                Clear answers regarding consultations, OPD timings, insurance coverage, and surgical procedures.
               </ScrollParagraph>
+
+              <ScrollReveal direction="up" delay={0.15}>
+                <div className="mt-8 p-5 bg-white border border-[#d8e6e4] rounded-2xl shadow-sm">
+                  <div className="text-[12.5px] font-bold text-slate-800">Have a specific question?</div>
+                  <p className="text-[12px] text-slate-500 mt-1 leading-relaxed">
+                    Our clinic desk is available to assist you with appointment scheduling and queries.
+                  </p>
+                  <a
+                    href="tel:+918076268531"
+                    className="mt-3.5 inline-flex items-center gap-2 text-xs font-bold text-[#0e4e50] hover:text-[#0b3839] hover:underline"
+                  >
+                    <span>Call +91-8076268531</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </ScrollReveal>
             </div>
 
-            {/* Right: Accordion */}
+            {/* Right: Modern Card Accordion */}
             <div className="lg:col-span-8">
-              <ScrollStagger staggerDelay={0.08} className="divide-y divide-[#eaeaea]">
+              <ScrollStagger staggerDelay={0.08} className="space-y-4">
                 {faqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   return (
                     <ScrollStaggerItem key={idx} direction="up" distance={18}>
-                      <button
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full text-left py-5 flex items-start justify-between gap-6 group"
-                        aria-expanded={isOpen}
-                      >
-                        <span className={`text-[14px] font-semibold leading-snug transition-colors ${isOpen ? 'text-[#0e4e50]' : 'text-slate-800 group-hover:text-[#0e4e50]'}`}>
-                          {faq.q}
-                        </span>
-                        <ChevronDown
-                          className={`w-4 h-4 text-slate-400 shrink-0 mt-0.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#0e4e50]' : ''}`}
-                        />
-                      </button>
                       <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-72 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                          }`}
+                        className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
+                          isOpen
+                            ? 'bg-white border-teal-500/40 shadow-md ring-1 ring-teal-500/20'
+                            : 'bg-white/70 hover:bg-white border-slate-200/90 hover:border-slate-300 shadow-2xs hover:shadow-xs'
+                        }`}
                       >
-                        <p className="text-[13.5px] text-slate-500 leading-relaxed">
-                          {faq.a}
-                        </p>
+                        <button
+                          onClick={() => setOpenFaq(isOpen ? null : idx)}
+                          className="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 group cursor-pointer"
+                          aria-expanded={isOpen}
+                        >
+                          <div className="flex items-start gap-3.5">
+                            <span
+                              className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition-colors ${
+                                isOpen ? 'bg-[#0e4e50] text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-teal-50 group-hover:text-[#0e4e50]'
+                              }`}
+                            >
+                              {idx + 1}
+                            </span>
+                            <span
+                              className={`text-[15px] sm:text-[16px] font-semibold leading-snug transition-colors ${
+                                isOpen ? 'text-[#0e4e50]' : 'text-slate-800 group-hover:text-[#0e4e50]'
+                              }`}
+                            >
+                              {faq.q}
+                            </span>
+                          </div>
+                          <div
+                            className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                              isOpen ? 'bg-teal-50 text-[#0e4e50] rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'
+                            }`}
+                          >
+                            <ChevronDown className="w-4 h-4" />
+                          </div>
+                        </button>
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out px-5 sm:px-6 ${
+                            isOpen ? 'max-h-72 pb-6 opacity-100' : 'max-h-0 opacity-0'
+                          }`}
+                        >
+                          <div className="pl-9.5 pt-1 border-t border-slate-100">
+                            <p className="text-[14px] text-slate-600 leading-relaxed pt-3 font-normal">
+                              {faq.a}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </ScrollStaggerItem>
                   );

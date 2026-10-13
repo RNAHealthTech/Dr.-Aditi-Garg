@@ -14,35 +14,51 @@ import {
 const instagramPosts = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80',
-    caption: 'Advanced Endoscopic Sinus Surgery (FESS) case study at SGRH.',
-    tag: 'Surgical Update',
-    likes: '348',
-    comments: '24',
+    image: '/images/dr-aditi-saree.jpg',
+    caption: 'Associate Consultant ENT at Sir Ganga Ram Hospital & Shivasha ENT Clinic. Dedicated to compassionate healing.',
+    tag: 'Consultant ENT',
+    likes: '542',
+    comments: '46',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80',
-    caption: 'Paediatric airway & tonsil care camp at Shivasha ENT Clinic.',
-    tag: 'Paediatric ENT',
-    likes: '512',
-    comments: '41',
+    image: '/images/dr-aditi-surgery-procedure.jpg',
+    caption: 'Intraoperative focus during delicate microscopic ear and endoscopic sinus surgery (FESS). Patient safety is always top priority.',
+    tag: 'In the OT',
+    likes: '684',
+    comments: '58',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80',
-    caption: 'Hearing restoration & microscopic ear evaluation techniques.',
-    tag: 'Ear Care',
-    likes: '289',
-    comments: '18',
+    image: '/images/dr-aditi-surgery-team.jpg',
+    caption: 'Collaborative surgical & anaesthesia team in OT ensuring high-precision outcomes for complex ENT and head-neck procedures.',
+    tag: 'OT Teamwork',
+    likes: '512',
+    comments: '39',
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-    caption: 'Everyday ENT tips: Identifying chronic sinusitis vs allergic rhinitis.',
-    tag: 'Health Tips',
-    likes: '426',
-    comments: '33',
+    image: '/images/dr-aditi-garg-portrait.jpg',
+    caption: 'Clinical OPD consultations at Sir Ganga Ram Hospital & Shivasha ENT Clinic. Individualized, patient-first care.',
+    tag: 'Clinical OPD',
+    likes: '482',
+    comments: '38',
+  },
+  {
+    id: 5,
+    image: '/images/shivasha-clinic-front.jpg',
+    caption: 'Shivasha ENT Clinic, Mayur Vihar Phase 1. Evening clinics 6:30 PM – 8:30 PM. Walk-ins and appointments open.',
+    tag: 'Clinic Entrance',
+    likes: '412',
+    comments: '29',
+  },
+  {
+    id: 6,
+    image: '/images/clinic-room.jpg',
+    caption: 'Inside our dedicated examination and treatment room designed for patient comfort, hygiene, and thorough evaluation.',
+    tag: 'Clinic Facility',
+    likes: '378',
+    comments: '21',
   },
 ];
 
@@ -146,7 +162,7 @@ const InstagramFeed = () => {
         </ScrollReveal>
 
         {/* Grid of Instagram Posts */}
-        <ScrollStagger staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <ScrollStagger staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-4">
           {instagramPosts.map((post) => (
             <ScrollStaggerItem key={post.id} direction="up" distance={20}>
               <a

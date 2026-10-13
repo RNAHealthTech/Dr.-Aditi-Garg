@@ -10,24 +10,44 @@ import {
 
 const images = [
   {
-    src: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80',
-    title: 'Advanced Diagnostics',
+    src: '/images/dr-aditi-patient-examination.png',
+    title: 'Dr. Aditi Garg | Detailed Otoscopic Ear Examination',
   },
   {
-    src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80',
-    title: 'Microscopic Precision',
+    src: '/images/dr-aditi-video-otoscopy.jpg',
+    title: 'Real-Time HD Video Endoscopy & Eardrum Visualization',
   },
   {
-    src: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80',
-    title: 'Modern OT Setups',
+    src: '/images/dr-aditi-patient-consultation.png',
+    title: 'Compassionate OPD Consultation & Care Guidance',
   },
   {
-    src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-    title: 'Comprehensive Audiology',
+    src: '/images/dr-aditi-surgery-procedure.jpg',
+    title: 'Microscopic & Endoscopic Surgery in OT',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
-    title: 'State-of-the-art Endoscopy',
+    src: '/images/dr-aditi-garg-portrait.jpg',
+    title: 'Dr. Aditi Garg | ENT Specialist & Head-Neck Surgeon',
+  },
+  {
+    src: '/images/dr-aditi-surgery-team.jpg',
+    title: 'Advanced Operating Theatre & Surgical Teamwork',
+  },
+  {
+    src: '/images/shivasha-clinic-front.jpg',
+    title: 'Shivasha ENT Clinic | Mayur Vihar Phase 1',
+  },
+  {
+    src: '/images/dr-aditi-saree.jpg',
+    title: 'Dr. Aditi Garg | Ganga Ram Hospital & Shivasha ENT',
+  },
+  {
+    src: '/images/endoscopy-equipment.jpg',
+    title: 'HD Video Endoscopy & ESU Surgical Station',
+  },
+  {
+    src: '/images/clinic-room.jpg',
+    title: 'Modern Consultation & Examination Suite',
   },
 ];
 

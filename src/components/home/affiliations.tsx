@@ -74,31 +74,42 @@ const Affiliations = () => {
         </div>
 
         {/* Two clinic cards */}
-        <ScrollStagger staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ScrollStagger staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {clinics.map((clinic, idx) => (
             <ScrollStaggerItem key={idx} direction="up" distance={30}>
               <div
-                className={`relative flex flex-col border h-full ${clinic.primary
-                  ? 'bg-[#0d3638] text-white border-[#0d3638]'
-                  : 'bg-white text-slate-900 border-slate-200 hover:border-[#0e4e50]/40'
-                  } p-8 rounded-sm hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300`}
+                className={`relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  clinic.primary
+                    ? 'bg-gradient-to-br from-[#0c3133] to-[#0e4e50] text-white shadow-xl shadow-teal-950/20 border border-teal-600/30'
+                    : 'bg-white text-slate-900 border border-[#d6e4e2] hover:border-teal-400 shadow-md'
+                } p-8 sm:p-10`}
               >
-                {/* Type badge */}
-                <div className="mb-6">
-                  <span className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm ${clinic.primary
-                    ? 'bg-white/15 text-white/80'
-                    : 'bg-[#f0f8f7] text-[#0e4e50]'
-                    }`}>
+                {/* Top glow accent */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1.5 ${
+                    clinic.primary ? 'bg-gradient-to-r from-teal-300 via-teal-400 to-amber-300' : 'bg-gradient-to-r from-[#0e4e50] to-teal-400'
+                  }`}
+                />
+
+                {/* Type badge & Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <span
+                    className={`inline-block text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full ${
+                      clinic.primary
+                        ? 'bg-white/15 text-teal-200 border border-white/20'
+                        : 'bg-teal-50 text-[#0e4e50] border border-teal-200/60'
+                    }`}
+                  >
                     {clinic.type}
+                  </span>
+                  <span className={`text-[12px] font-bold font-serif ${clinic.primary ? 'text-teal-300/80' : 'text-slate-400'}`}>
+                    Location {clinic.num}
                   </span>
                 </div>
 
-                {/* Number + name */}
+                {/* Clinic name */}
                 <div className="mb-6">
-                  <div className={`text-[11px] font-bold tracking-[0.2em] mb-1 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`}>
-                    {clinic.num}
-                  </div>
-                  <h3 className={`text-2xl font-bold font-serif leading-tight ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
+                  <h3 className={`text-2xl sm:text-[28px] font-bold font-serif leading-tight ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
                     {clinic.name}
                   </h3>
                 </div>
@@ -106,22 +117,22 @@ const Affiliations = () => {
                 {/* Details */}
                 <div className="space-y-4 flex-1">
                   <div className="flex items-start gap-3">
-                    <MapPin className={`w-4 h-4 shrink-0 mt-0.5 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
-                    <p className={`text-[13px] leading-relaxed whitespace-pre-line ${clinic.primary ? 'text-white/80' : 'text-slate-600'}`}>
+                    <MapPin className={`w-4 h-4 shrink-0 mt-1 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
+                    <p className={`text-[13.5px] leading-relaxed whitespace-pre-line ${clinic.primary ? 'text-teal-50/90' : 'text-slate-600'}`}>
                       {clinic.address}
                     </p>
                   </div>
 
-                  <div className={`border-t ${clinic.primary ? 'border-white/15' : 'border-slate-100'} pt-4 space-y-2.5`}>
+                  <div className={`border-t ${clinic.primary ? 'border-white/15' : 'border-slate-100'} pt-4 space-y-3`}>
                     <div className="flex items-center gap-3">
                       <Calendar className={`w-4 h-4 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
-                      <span className={`text-[13px] font-semibold ${clinic.primary ? 'text-white' : 'text-slate-800'}`}>
+                      <span className={`text-[13.5px] font-bold ${clinic.primary ? 'text-white' : 'text-slate-800'}`}>
                         {clinic.days}
                       </span>
                     </div>
                     <div className="flex items-start gap-3">
                       <Clock className={`w-4 h-4 shrink-0 mt-0.5 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
-                      <span className={`text-[13.5px] font-bold whitespace-pre-line leading-snug ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
+                      <span className={`text-[13.5px] font-semibold whitespace-pre-line leading-relaxed ${clinic.primary ? 'text-teal-100' : 'text-slate-700'}`}>
                         {clinic.timing}
                       </span>
                     </div>
@@ -130,7 +141,7 @@ const Affiliations = () => {
                         <PhoneCall className={`w-4 h-4 ${clinic.primary ? 'text-teal-300' : 'text-[#0e4e50]'}`} />
                         <a
                           href={`tel:${clinic.phone.replace(/\s/g, '')}`}
-                          className={`text-[13px] font-medium transition-colors ${clinic.primary ? 'text-white/80 hover:text-white' : 'text-slate-600 hover:text-[#0e4e50]'}`}
+                          className={`text-[13.5px] font-bold transition-colors ${clinic.primary ? 'text-amber-300 hover:text-white' : 'text-[#0e4e50] hover:underline'}`}
                         >
                           {clinic.phone}
                         </a>
@@ -139,25 +150,26 @@ const Affiliations = () => {
                   </div>
 
                   {clinic.note && (
-                    <div className={`text-[11.5px] ${clinic.primary ? 'text-teal-300/80' : 'text-slate-400'} italic`}>
-                      {clinic.note}
+                    <div className={`text-[12px] pt-1 ${clinic.primary ? 'text-teal-200/80' : 'text-slate-500'} italic`}>
+                      &bull; {clinic.note}
                     </div>
                   )}
                 </div>
 
-                {/* CTA */}
-                <div className="mt-8 pt-6 border-t border-white/10">
+                {/* CTA Button */}
+                <div className={`mt-8 pt-6 border-t ${clinic.primary ? 'border-white/10' : 'border-slate-100'}`}>
                   <a
                     href={clinic.link}
                     target={clinic.link.startsWith('http') ? '_blank' : '_self'}
                     rel="noreferrer"
-                    className={`inline-flex items-center gap-2 text-[13px] font-semibold transition-all duration-200 ${clinic.primary
-                      ? 'bg-white text-[#0d3638] hover:bg-teal-50 px-5 py-2.5 rounded-sm shadow-sm'
-                      : 'border border-[#0e4e50] text-[#0e4e50] hover:bg-[#f0f8f7] px-5 py-2.5 rounded-sm'
-                      }`}
+                    className={`inline-flex items-center justify-center gap-2.5 text-[13.5px] font-bold transition-all duration-200 w-full py-3.5 rounded-full ${
+                      clinic.primary
+                        ? 'bg-white text-[#0d3638] hover:bg-teal-50 shadow-md hover:shadow-lg hover:scale-[1.02]'
+                        : 'bg-[#0e4e50] text-white hover:bg-[#093537] shadow-sm hover:shadow-md hover:scale-[1.02]'
+                    }`}
                   >
-                    {clinic.linkLabel}
-                    {clinic.link.startsWith('http') ? <ExternalLink className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
+                    <span>{clinic.linkLabel}</span>
+                    {clinic.link.startsWith('http') ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
                   </a>
                 </div>
               </div>

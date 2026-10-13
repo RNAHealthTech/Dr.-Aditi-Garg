@@ -6,6 +6,7 @@ import InfiniteMarquee from '@/components/home/infinite-marquee';
 import AboutSection from '@/components/home/about-section';
 import ExpertiseDetails from '@/components/home/expertise-details';
 import WhyChooseUs from '@/components/home/why-choose-us';
+import PatientCareShowcase from '@/components/home/patient-care-showcase';
 import AutoImageSlider from '@/components/home/auto-image-slider';
 import Affiliations from '@/components/home/affiliations';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
@@ -28,6 +29,9 @@ const HomePage = () => {
 
       {/* Why Choose Dr. Aditi */}
       <WhyChooseUs />
+
+      {/* Real Patient Care & Video Diagnostics Showcase */}
+      <PatientCareShowcase />
 
       <AutoImageSlider />
 

@@ -92,18 +92,22 @@ const WhyChooseUs = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right: Quality points — editorial list */}
+          {/* Right: Quality points — modern feature card grid */}
           <div className="lg:col-span-7">
-            <ScrollStagger staggerDelay={0.09} className="divide-y divide-[#eaeeec]">
+            <ScrollStagger staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {qualities.map((q, idx) => (
-                <ScrollStaggerItem key={idx} direction="up" distance={22}>
-                  <div className="flex items-start gap-5 py-5 group hover:translate-x-2 transition-transform duration-200 cursor-default">
-                    <div className="w-8 h-8 rounded-sm border border-[#c8dede] bg-[#f0f8f7] text-[#0e4e50] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#0e4e50] group-hover:text-white group-hover:border-[#0e4e50] transition-all duration-200 shadow-2xs">
-                      {q.icon}
-                    </div>
+                <ScrollStaggerItem key={idx} direction="up" distance={20}>
+                  <div className="bg-white border border-[#e2ecea] hover:border-teal-400/60 p-6 rounded-2xl shadow-2xs hover:shadow-lg hover:shadow-teal-900/5 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between group">
                     <div>
-                      <h3 className="text-[14px] font-bold text-slate-900 mb-1">{q.title}</h3>
-                      <p className="text-[13px] text-slate-500 leading-relaxed">{q.description}</p>
+                      <div className="w-10 h-10 rounded-xl bg-teal-50 group-hover:bg-[#0e4e50] text-[#0e4e50] group-hover:text-white flex items-center justify-center mb-4 transition-colors duration-300 shadow-2xs">
+                        {q.icon}
+                      </div>
+                      <h3 className="text-[15px] font-bold text-slate-900 mb-2 group-hover:text-[#0e4e50] transition-colors">
+                        {q.title}
+                      </h3>
+                      <p className="text-[13px] text-slate-500 leading-relaxed font-normal">
+                        {q.description}
+                      </p>
                     </div>
                   </div>
                 </ScrollStaggerItem>

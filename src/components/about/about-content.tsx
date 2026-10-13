@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import AboutSection from '@/components/home/about-section';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
 import InstagramFeed from '@/components/home/instagram-feed';
@@ -186,10 +187,12 @@ export default function AboutContent() {
       {/* Realistic Header Banner */}
       <div className="relative bg-[#093537] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1600&q=80"
-            alt="Clinic Setup"
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+          <Image
+            src="/images/dr-aditi-garg-portrait.jpg"
+            alt="Dr. Aditi Garg"
+            fill
+            className="object-cover opacity-15 mix-blend-overlay"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#093537] via-[#093537]/80 to-transparent"></div>
         </div>
@@ -366,6 +369,107 @@ export default function AboutContent() {
                 </ScrollStaggerItem>
               ))}
             </ScrollStagger>
+          </div>
+        </ScrollReveal>
+
+        {/* Clinic & Facility Showcase Cards */}
+        <ScrollReveal direction="up" distance={25} className="mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/dr-aditi-surgery-procedure.jpg"
+                  alt="Microscopic Ear & Endoscopic Sinus Surgery in OT"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Precision Surgery in OT</h4>
+                <p className="text-xs text-slate-500 mt-1">Microscopic ear &amp; endoscopic sinus procedures</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/dr-aditi-surgery-team.jpg"
+                  alt="Operating Theatre Team & Safe Protocols"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Collaborative OT Team</h4>
+                <p className="text-xs text-slate-500 mt-1">Patient-safety focused surgical protocols</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/dr-aditi-saree.jpg"
+                  alt="Dr. Aditi Garg - Consultant ENT Surgeon"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Consultant ENT Surgeon</h4>
+                <p className="text-xs text-slate-500 mt-1">Ganga Ram Hospital &amp; Shivasha ENT Clinic</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/shivasha-clinic-front.jpg"
+                  alt="Shivasha ENT Clinic Front"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Clinic Entrance &amp; OPD</h4>
+                <p className="text-xs text-slate-500 mt-1">Pocket 4, Mayur Vihar Phase 1</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/clinic-room.jpg"
+                  alt="OPD Examination Room"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Examination Room</h4>
+                <p className="text-xs text-slate-500 mt-1">Hygienic setup for clinical checkups</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 group hover:shadow-xl transition-all duration-300">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/endoscopy-equipment.jpg"
+                  alt="Video Endoscopy & ESU Unit"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-slate-800 text-sm">Endoscopy &amp; ESU Station</h4>
+                <p className="text-xs text-slate-500 mt-1">High-definition diagnostic equipment</p>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>

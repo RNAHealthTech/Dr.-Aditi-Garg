@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import ExpertiseDetails from '@/components/home/expertise-details';
 import AutoImageSlider from '@/components/home/auto-image-slider';
 import WhyChooseUs from '@/components/home/why-choose-us';
@@ -16,7 +17,13 @@ export default function ExpertisePage() {
       {/* Realistic Header Banner */}
       <div className="relative bg-[#081c1d] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1600&q=80" alt="Surgical Setup" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+          <Image
+            src="/images/dr-aditi-surgeon.jpg"
+            alt="Surgical Setup"
+            fill
+            className="object-cover opacity-25 mix-blend-overlay"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-[#081c1d] via-[#081c1d]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">

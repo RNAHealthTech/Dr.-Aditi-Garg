@@ -197,87 +197,126 @@ const ExpertiseDetails: React.FC = () => {
 
         {/* Category tabs — horizontal scrollable on mobile */}
         <ScrollReveal direction="up" delay={0.1}>
-          <div className="flex flex-nowrap overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-px mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-[#e4e8e5]">
-            {categories.map((cat, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveTab(idx)}
-                className={`flex items-center gap-2.5 px-5 py-3.5 text-[12.5px] font-semibold whitespace-nowrap transition-all duration-150 border-b-2 -mb-px ${
-                  activeTab === idx
-                    ? 'border-[#0e4e50] text-[#0e4e50]'
-                    : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
-                }`}
-              >
-                <span className={`${activeTab === idx ? 'text-[#0e4e50]' : 'text-slate-400'} transition-colors`}>
-                  {cat.icon}
-                </span>
-                <span className="hidden sm:inline text-[10px] font-bold text-slate-400 mr-0.5">{cat.num}</span>
-                {cat.title}
-              </button>
-            ))}
+          <div className="flex flex-nowrap overflow-x-auto pb-3 sm:pb-2 gap-2 mb-10 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar">
+            {categories.map((cat, idx) => {
+              const isActive = activeTab === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveTab(idx)}
+                  className={`relative flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-gradient-to-r from-[#0e4e50] to-[#136063] text-white shadow-md shadow-teal-900/15'
+                      : 'bg-slate-100/80 hover:bg-slate-200/80 text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  <span className={`${isActive ? 'text-teal-200' : 'text-slate-500'} transition-colors`}>
+                    {cat.icon}
+                  </span>
+                  <span>{cat.title}</span>
+                  <span
+                    className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                      isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-500'
+                    }`}
+                  >
+                    {cat.procedures.length}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </ScrollReveal>
 
-        {/* Active category content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-4">
-          <ScrollReveal direction="right" distance={24} className="space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border border-[#0e4e50]/20 bg-[#f0f8f7] text-[#0e4e50] flex items-center justify-center rounded-sm">
-                {categories[activeTab].icon}
-              </div>
-              <div>
-                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0e4e50]">{categories[activeTab].num}</div>
-                <h3 className="text-xl font-bold text-slate-900 font-serif leading-tight">{categories[activeTab].title}</h3>
-              </div>
-            </div>
+        {/* Active category content card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.3 }}
+            className="bg-[#fafcfa] border border-[#d8e6e3] rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden"
+          >
+            {/* Ambient decorative glow */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-teal-100/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
 
-            <ScrollParagraph mode="sentences">
-              {categories[activeTab].description}
-            </ScrollParagraph>
-
-            <div>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] border-b border-[#0e4e50]/30 hover:border-[#0e4e50] pb-0.5 transition-colors"
-              >
-                Book for this condition
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </ScrollReveal>
-
-          <div className="space-y-1">
-            <ScrollReveal direction="left" distance={16}>
-              <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-4">Key Treatments &amp; Procedures</div>
-            </ScrollReveal>
-
-            <ScrollStagger staggerDelay={0.05} className="space-y-0">
-              {categories[activeTab].procedures.map((proc, i) => (
-                <ScrollStaggerItem key={`${activeTab}-${i}`} direction="left" distance={16}>
-                  <div className="flex items-start gap-3 py-3 border-b border-[#f0f0ee] last:border-0 hover:translate-x-1.5 transition-transform duration-200 cursor-default">
-                    <div className="w-5 h-5 rounded-full border border-[#0e4e50]/30 bg-[#f0f8f7] flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-[#0e4e50]" />
-                    </div>
-                    <span className="text-[13.5px] text-slate-700 font-medium">{proc}</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
+              
+              {/* Left Column: Category Description */}
+              <div className="lg:col-span-5 space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0e4e50] to-teal-600 text-white flex items-center justify-center rounded-2xl shadow-md ring-4 ring-teal-50">
+                    {categories[activeTab].icon}
                   </div>
-                </ScrollStaggerItem>
-              ))}
-            </ScrollStagger>
-          </div>
-        </div>
+                  <div>
+                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0e4e50]">
+                      Specialty {categories[activeTab].num}
+                    </span>
+                    <h3 className="text-2xl font-bold text-slate-900 font-serif leading-tight">
+                      {categories[activeTab].title}
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-[15px] text-slate-600 leading-relaxed font-normal">
+                  {categories[activeTab].description}
+                </p>
+
+                <div className="pt-2">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2.5 bg-white border border-[#0e4e50]/30 hover:border-[#0e4e50] text-[#0e4e50] hover:bg-[#0e4e50] hover:text-white px-6 py-3 rounded-full text-xs font-bold tracking-wide shadow-xs hover:shadow-md transition-all duration-200 group"
+                  >
+                    <span>Consult for {categories[activeTab].title}</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Procedures Grid */}
+              <div className="lg:col-span-7">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400">
+                    Procedures &amp; Clinical Management
+                  </span>
+                  <span className="text-[11px] font-bold text-[#0e4e50] bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200/60">
+                    {categories[activeTab].procedures.length} Surgeries &amp; Treatments
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {categories[activeTab].procedures.map((proc, i) => (
+                    <div
+                      key={`${activeTab}-${i}`}
+                      className="bg-white border border-slate-200/80 hover:border-teal-400/60 p-3.5 rounded-xl shadow-2xs hover:shadow-xs transition-all duration-200 flex items-start gap-3 group"
+                    >
+                      <div className="w-5 h-5 rounded-full bg-teal-50 group-hover:bg-[#0e4e50] text-[#0e4e50] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                        <Check className="w-3 h-3" />
+                      </div>
+                      <span className="text-[13px] text-slate-700 font-medium group-hover:text-slate-900 leading-snug">
+                        {proc}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Link to full services */}
         <ScrollReveal direction="up" delay={0.15}>
           <div className="mt-12 pt-8 border-t border-[#e4e8e5] flex items-center justify-between flex-wrap gap-4">
-            <p className="text-[13px] text-slate-500">
-              35+ types of surgeries performed independently across ear, nose, throat, head &amp; neck specialties.
+            <p className="text-[13.5px] text-slate-500 font-medium">
+              35+ types of ENT &amp; Head-Neck surgeries performed independently with advanced endoscopic &amp; microscopic techniques.
             </p>
             <a
               href="/services"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] hover:text-[#0b3e40] group transition-colors"
+              className="inline-flex items-center gap-2 text-[13.5px] font-bold text-[#0e4e50] hover:text-[#0b3e40] group transition-colors"
             >
-              View all services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <span>Explore all services</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </ScrollReveal>

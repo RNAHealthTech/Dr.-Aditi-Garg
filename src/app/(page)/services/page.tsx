@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import ServicesSection from '@/components/home/services-section';
 import AutoImageSlider from '@/components/home/auto-image-slider';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
@@ -11,7 +12,13 @@ export default function ServicesPage() {
       {/* Realistic Header Banner */}
       <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80" alt="Hospital Services" className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+          <Image
+            src="/images/clinic-room.jpg"
+            alt="Clinic & Hospital Services"
+            fill
+            className="object-cover opacity-20 mix-blend-overlay"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">

@@ -172,3 +172,54 @@ h1, h2, h3, .font-display {
   color: #0a3a3c;
 }
 
+/* Luxury & Modern UI Utilities */
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shine {
+  animation: shine 3s infinite linear;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(14, 78, 80, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glow-teal-sm {
+  box-shadow: 0 0 20px -5px rgba(20, 184, 166, 0.25);
+}
+
+.glow-teal-lg {
+  box-shadow: 0 10px 40px -10px rgba(14, 78, 80, 0.35);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 18px -3px rgba(245, 158, 11, 0.25);
+}
+
+.gradient-border {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.5), rgba(217, 119, 6, 0.2), rgba(14, 78, 80, 0.1));
+}
+
