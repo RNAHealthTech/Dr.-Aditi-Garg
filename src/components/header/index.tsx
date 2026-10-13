@@ -59,9 +59,10 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
             Sir Ganga Ram Hospital, Rajinder Nagar &amp; Shivasha ENT Clinic, Mayur Vihar — New Delhi
           </span>
           <div className="flex items-center space-x-4">
-            <a href="tel:+918076268531" className="hover:text-white transition-colors flex items-center gap-1.5">
+            <a href="tel:+919289300329" className="hover:text-white transition-colors flex items-center gap-1.5">
               <Phone className="w-3 h-3 text-[#6bbdbd]" />
-              +91- 9289300329            </a>
+              +91-9289300329
+            </a>
             <span className="opacity-30">|</span>
             <a href="mailto:draditigarg90@gmail.com" className="hover:text-white transition-colors">
               draditigarg90@gmail.com
@@ -175,7 +176,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
                 </Link>
               )}
               <div className="mt-4 text-[11px] text-slate-400 text-center space-y-1">
-                <div><a href="tel:+918076268531" className="hover:text-[#0e4e50]">+91-8076268531</a></div>
+                <div><a href="tel:+919289300329" className="hover:text-[#0e4e50]">+91-9289300329</a></div>
                 <div><a href="mailto:draditigarg90@gmail.com" className="hover:text-[#0e4e50]">draditigarg90@gmail.com</a></div>
               </div>
             </div>

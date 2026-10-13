@@ -66,7 +66,7 @@ export default function ContactPage() {
               {/* Phone Card */}
               <ScrollStaggerItem direction="up" distance={20}>
                 <a
-                  href="tel:+911142254000"
+                  href="tel:+919289300329"
                   className="block bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-slate-200/40 border border-slate-100 hover:-translate-y-1 hover:shadow-xl hover:border-teal-300 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-5">

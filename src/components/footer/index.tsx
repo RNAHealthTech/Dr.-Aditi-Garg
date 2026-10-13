@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
                 <Phone className="w-3.5 h-3.5 text-teal-600" />
-                <a href="tel:+918076268531" className="hover:text-white transition-colors">+91-8076268531</a>
+                <a href="tel:+919289300329" className="hover:text-white transition-colors">+91-9289300329</a>
               </div>
             </div>
           </div>
@@ -108,6 +108,10 @@ const Footer: React.FC = () => {
               <div className="flex items-center gap-2.5 text-teal-400 font-semibold">
                 <Clock className="w-3.5 h-3.5" />
                 <span>Mon–Sat — 6:30–8:30 PM</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-slate-500">
+                <Phone className="w-3.5 h-3.5 text-teal-600" />
+                <a href="tel:+919289300329" className="hover:text-white transition-colors">+91-9289300329</a>
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
                 <Mail className="w-3.5 h-3.5 text-teal-600" />

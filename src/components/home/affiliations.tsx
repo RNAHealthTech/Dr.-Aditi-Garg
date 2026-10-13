@@ -31,7 +31,7 @@ const clinics = [
     address: 'Pocket 4, Main Road\nMayur Vihar Phase-1\nNew Delhi — 110091',
     days: 'Monday – Saturday',
     timing: '6:30 PM – 8:30 PM',
-    phone: '',
+    phone: '+91 9289300329',
     link: '/contact',
     linkLabel: 'Book Appointment',
     primary: false,

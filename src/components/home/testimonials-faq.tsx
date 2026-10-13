@@ -389,10 +389,10 @@ const TestimonialsFaq: React.FC = () => {
                     Our clinic desk is available to assist you with appointment scheduling and queries.
                   </p>
                   <a
-                    href="tel:+918076268531"
+                    href="tel:+919289300329"
                     className="mt-3.5 inline-flex items-center gap-2 text-xs font-bold text-[#0e4e50] hover:text-[#0b3839] hover:underline"
                   >
-                    <span>Call +91-8076268531</span>
+                    <span>Call +91-9289300329</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>

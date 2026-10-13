@@ -97,6 +97,16 @@ export default function TimingsPage() {
                     <p className="text-slate-700 font-medium leading-relaxed">Room No. F-87, Sir Ganga Ram Hospital Marg, Rajinder Nagar, New Delhi</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-[#0e4e50]" />
+                  </div>
+                  <div>
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Appointment / Inquiry</p>
+                    <a href="tel:+919289300329" className="text-slate-900 font-semibold text-lg hover:text-[#0e4e50] transition-colors">+91-9289300329</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -141,6 +151,16 @@ export default function TimingsPage() {
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Location</p>
                     <p className="text-slate-700 font-medium leading-relaxed">148 B Pocket 4, Opp. Arya Samaj Mandir, Mayur Vihar Phase 1, Delhi</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-indigo-700" />
+                  </div>
+                  <div>
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Appointment / Inquiry</p>
+                    <a href="tel:+919289300329" className="text-slate-900 font-semibold text-lg hover:text-indigo-700 transition-colors">+91-9289300329</a>
                   </div>
                 </div>
               </div>

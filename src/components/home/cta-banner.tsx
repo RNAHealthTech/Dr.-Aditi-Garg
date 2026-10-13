@@ -73,11 +73,11 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
                 </Link>
               )}
               <a
-                href="tel:+918076268531"
+                href="tel:+919289300329"
                 className="inline-flex items-center gap-2.5 border border-white/30 hover:border-white text-white hover:bg-white/10 px-7 py-4 text-[14px] font-bold tracking-wide transition-all duration-300 rounded-full backdrop-blur-xs"
               >
                 <Phone className="w-4 h-4 text-teal-300" />
-                <span>+91-8076268531</span>
+                <span>+91-9289300329</span>
               </a>
             </div>
           </ScrollReveal>

@@ -77,10 +77,17 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
             <div className="pt-4 flex flex-col gap-2.5">
               <a
+                href="tel:+919289300329"
+                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-[#0e4e50] hover:underline"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>For urgent inquiries, call +91-9289300329</span>
+              </a>
+              <a
                 href="https://appointment.sgrh.com"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-[#0e4e50] hover:underline"
+                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#0e4e50] hover:underline"
               >
                 <span>Or book via official Sir Ganga Ram Portal</span>
                 <ExternalLink className="w-3.5 h-3.5" />
