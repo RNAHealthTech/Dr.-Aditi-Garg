@@ -11,7 +11,7 @@ export default function TimingsPage() {
   return (
     <div className="min-h-screen bg-slate-50/50 pb-24">
       {/* Dynamic Header Banner */}
-      <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
+      <div className="relative bg-[#1b6ea8] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-400/20 rounded-full blur-[120px] -mr-40 -mt-40"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-800/40 rounded-full blur-[80px] -ml-20 -mb-20"></div>
@@ -51,7 +51,7 @@ export default function TimingsPage() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-teal-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-125"></div>
             
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 text-[#0e4e50] rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-teal-200/50">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 text-[#1b6ea8] rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-teal-200/50">
                 <Building2 className="w-8 h-8" />
               </div>
               
@@ -61,7 +61,7 @@ export default function TimingsPage() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-[#0e4e50]" />
+                    <Calendar className="w-5 h-5 text-[#1b6ea8]" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Days</p>
@@ -71,18 +71,18 @@ export default function TimingsPage() {
                 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-[#0e4e50]" />
+                    <Clock className="w-5 h-5 text-[#1b6ea8]" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Time</p>
                     <div className="space-y-1">
                       <div>
                         <span className="font-bold text-slate-900">Mon, Wed, Fri:</span>{' '}
-                        <span className="text-[#0e4e50] font-semibold">8:00 AM – 3:00 PM</span>
+                        <span className="text-[#1b6ea8] font-semibold">8:00 AM – 3:00 PM</span>
                       </div>
                       <div>
                         <span className="font-bold text-slate-900">Tue, Thu, Sat:</span>{' '}
-                        <span className="text-[#0e4e50] font-semibold">9:00 AM – 3:00 PM</span>
+                        <span className="text-[#1b6ea8] font-semibold">9:00 AM – 3:00 PM</span>
                       </div>
                     </div>
                   </div>
@@ -90,7 +90,7 @@ export default function TimingsPage() {
                 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-[#0e4e50]" />
+                    <MapPin className="w-5 h-5 text-[#1b6ea8]" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Location</p>
@@ -100,11 +100,11 @@ export default function TimingsPage() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-[#0e4e50]" />
+                    <Phone className="w-5 h-5 text-[#1b6ea8]" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Appointment / Inquiry</p>
-                    <a href="tel:+919289300329" className="text-slate-900 font-semibold text-lg hover:text-[#0e4e50] transition-colors">+91-9289300329</a>
+                    <a href="tel:+919289300329" className="text-slate-900 font-semibold text-lg hover:text-[#1b6ea8] transition-colors">+91-9289300329</a>
                   </div>
                 </div>
               </div>

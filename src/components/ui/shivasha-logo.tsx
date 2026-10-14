@@ -126,7 +126,7 @@ export const ShivashaLogo: React.FC<ShivashaLogoProps> = ({
   className = '',
 }) => {
   const textColor = theme === 'dark' ? 'text-white' : 'text-slate-900';
-  const subTextColor = theme === 'dark' ? 'text-teal-400' : 'text-[#0e4e50]';
+  const subTextColor = theme === 'dark' ? 'text-blue-300' : 'text-[#1b6ea8]';
 
   if (variant === 'mark') {
     return <ShivashaEmblem className={className || 'w-10 h-6'} />;
@@ -158,5 +158,27 @@ export const ShivashaLogo: React.FC<ShivashaLogoProps> = ({
     </div>
   );
 };
+
+export const LogoColorDots: React.FC<{ className?: string; size?: string }> = ({
+  className = '',
+  size = 'w-2 h-2',
+}) => (
+  <span className={`inline-flex items-center gap-1.5 ${className}`}>
+    <span className={`${size} rounded-full bg-[#DE4937] shadow-2xs`} title="Ear (Red)" />
+    <span className={`${size} rounded-full bg-[#2787C8] shadow-2xs`} title="Nose (Blue)" />
+    <span className={`${size} rounded-full bg-[#F1AA37] shadow-2xs`} title="Throat (Yellow)" />
+  </span>
+);
+
+export const LogoColorBar: React.FC<{ className?: string; height?: string }> = ({
+  className = '',
+  height = 'h-1',
+}) => (
+  <div className={`flex rounded-full overflow-hidden ${height} ${className}`}>
+    <div className="flex-1 bg-[#DE4937]" />
+    <div className="flex-1 bg-[#2787C8]" />
+    <div className="flex-1 bg-[#F1AA37]" />
+  </div>
+);
 
 export default ShivashaLogo;

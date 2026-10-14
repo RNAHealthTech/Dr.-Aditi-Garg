@@ -10,6 +10,7 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
 export const GOOGLE_REVIEWS_URL = 'https://share.google/Htr2yxz0AdRjeiNzB';
 
@@ -40,7 +41,10 @@ const testimonials = [
     initials: 'RM',
     location: 'Sir Ganga Ram Hospital',
     treatment: 'Endoscopic Sinus Surgery (FESS)',
-    tag: 'Sinus & Nasal Surgery',
+    tag: 'Sinus & Nasal Surgery (Blue)',
+    color: '#2787C8',
+    pillBg: 'bg-blue-50 text-[#2787C8] border-blue-200/70',
+    avatarGradient: 'from-[#0f2942] to-[#2787C8]',
     rating: 5,
     quote: 'Dr. Aditi Garg is extremely patient, kind, and thorough. After suffering from chronic sinus headaches and blocked breathing for 3 years, her accurate diagnosis and minimally invasive surgery gave me complete relief. Highly recommended for any ENT issues.',
   },
@@ -49,7 +53,10 @@ const testimonials = [
     initials: 'PV',
     location: 'Shivasha ENT Clinic, Mayur Vihar',
     treatment: 'Vertigo & Balance Disorder Treatment',
-    tag: 'Vertigo & Dizziness',
+    tag: 'Vertigo & Balance (Blue)',
+    color: '#2787C8',
+    pillBg: 'bg-blue-50 text-[#2787C8] border-blue-200/70',
+    avatarGradient: 'from-[#1b6ea8] to-[#2787C8]',
     rating: 5,
     quote: 'I visited Dr. Aditi at Shivasha Clinic for severe dizziness and ear fullness. She explained the condition with utmost clarity and performed the balance maneuver right away. I felt remarkably better within 24 hours. A truly reassuring doctor.',
   },
@@ -58,7 +65,10 @@ const testimonials = [
     initials: 'SA',
     location: 'Sir Ganga Ram Hospital',
     treatment: 'Tympanoplasty — Eardrum Surgery',
-    tag: 'Ear & Hearing Care',
+    tag: 'Ear & Hearing Care (Red)',
+    color: '#DE4937',
+    pillBg: 'bg-red-50 text-[#DE4937] border-red-200/70',
+    avatarGradient: 'from-[#DE4937] to-[#e66353]',
     rating: 5,
     quote: 'Outstanding doctor with exceptional surgical skills. She operated on my long-standing perforated eardrum. Post-operative care and follow-up was flawless, and my hearing is now completely restored.',
   },
@@ -67,7 +77,10 @@ const testimonials = [
     initials: 'MS',
     location: 'Shivasha ENT Clinic, Mayur Vihar',
     treatment: 'Paediatric Tonsil & Adenoid Care',
-    tag: 'Paediatric ENT',
+    tag: 'Paediatric Throat Care (Yellow)',
+    color: '#F1AA37',
+    pillBg: 'bg-amber-50 text-[#b57715] border-amber-200/70',
+    avatarGradient: 'from-[#c28420] to-[#F1AA37]',
     rating: 5,
     quote: 'Dr. Aditi was wonderful with my 6-year-old child who struggled with night mouth-breathing and recurrent throat infections. Her gentle approach made our child feel safe, and the treatment worked wonderfully.',
   },
@@ -110,7 +123,7 @@ const TestimonialsFaq: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <section id="patient-stories" className="bg-[#faf9f7] border-t border-[#e4e8e5] overflow-hidden relative">
+    <section id="patient-stories" className="bg-[#f8fafc] border-t border-[#e4e8e5] overflow-hidden relative">
       {/* Background ambient medical glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-0" />
@@ -125,9 +138,9 @@ const TestimonialsFaq: React.FC = () => {
             <div className="lg:col-span-4">
               <ScrollReveal direction="down" once>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">05</span>
-                  <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Patient Stories</span>
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">05</span>
+                  <LogoColorDots size="w-2 h-2" />
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">Patient Stories</span>
                 </div>
               </ScrollReveal>
 
@@ -135,10 +148,10 @@ const TestimonialsFaq: React.FC = () => {
                 as="h2"
                 direction="up"
                 once
-                className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0d3033] font-serif tracking-tight leading-[1.12]"
+                className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0f2942] font-serif tracking-tight leading-[1.12]"
               >
                 Hear from<br />
-                <span className="text-[#0e4e50] italic">our patients.</span>
+                <span className="text-[#1b6ea8] italic">our patients.</span>
               </ScrollHeading>
 
               <ScrollParagraph
@@ -156,7 +169,7 @@ const TestimonialsFaq: React.FC = () => {
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-3 bg-white hover:bg-[#f0f7f6] border border-[#d2e7e4] hover:border-[#0e4e50] px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all group cursor-pointer"
+                  className="mt-6 inline-flex items-center gap-3 bg-white hover:bg-[#f0f7fc] border border-blue-100 hover:border-[#1b6ea8] px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all group cursor-pointer"
                   title="View reviews on Google"
                 >
                   <GoogleIcon className="w-4 h-4 shrink-0" />
@@ -165,13 +178,13 @@ const TestimonialsFaq: React.FC = () => {
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[12.5px] font-bold text-[#0d3033]">
+                  <span className="text-[12.5px] font-bold text-[#0f2942]">
                     5.0 Star Rating
                   </span>
                   <span className="text-[11px] text-slate-400 font-medium border-l border-slate-200 pl-2">
                     Google Reviews
                   </span>
-                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#0e4e50] group-hover:translate-x-0.5 transition-all" />
+                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-[#1b6ea8] group-hover:translate-x-0.5 transition-all" />
                 </a>
               </ScrollReveal>
 
@@ -179,11 +192,11 @@ const TestimonialsFaq: React.FC = () => {
               <ScrollReveal direction="up" delay={0.14} once>
                 <div className="grid grid-cols-2 gap-3 mt-6 max-w-xs">
                   <div className="bg-white/80 backdrop-blur-xs border border-slate-200/90 rounded-2xl p-3 shadow-2xs">
-                    <div className="text-xl font-bold font-serif text-[#0e4e50]">100%</div>
+                    <div className="text-xl font-bold font-serif text-[#1b6ea8]">100%</div>
                     <div className="text-[11px] text-slate-500 mt-0.5">Compassionate Care</div>
                   </div>
                   <div className="bg-white/80 backdrop-blur-xs border border-slate-200/90 rounded-2xl p-3 shadow-2xs">
-                    <div className="text-xl font-bold font-serif text-[#0e4e50]">11+ Yrs</div>
+                    <div className="text-xl font-bold font-serif text-[#1b6ea8]">11+ Yrs</div>
                     <div className="text-[11px] text-slate-500 mt-0.5">Clinical Practice</div>
                   </div>
                 </div>
@@ -195,19 +208,19 @@ const TestimonialsFaq: React.FC = () => {
                   <button
                     onClick={prev}
                     aria-label="Previous testimonial"
-                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-white hover:bg-[#0e4e50] transition-all shadow-sm cursor-pointer active:scale-95"
+                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#1b6ea8] hover:text-white hover:bg-[#1b6ea8] transition-all shadow-sm cursor-pointer active:scale-95"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={next}
                     aria-label="Next testimonial"
-                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#0e4e50] hover:text-white hover:bg-[#0e4e50] transition-all shadow-sm cursor-pointer active:scale-95"
+                    className="w-10 h-10 border border-slate-300 bg-white rounded-full flex items-center justify-center text-slate-600 hover:border-[#1b6ea8] hover:text-white hover:bg-[#1b6ea8] transition-all shadow-sm cursor-pointer active:scale-95"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
                   <span className="text-[12.5px] font-medium text-slate-500 ml-2 tracking-wide">
-                    <span className="text-[#0d3033] font-bold">{activeTestimonial + 1}</span> of {testimonials.length}
+                    <span className="text-[#0f2942] font-bold">{activeTestimonial + 1}</span> of {testimonials.length}
                   </span>
                 </div>
 
@@ -216,7 +229,7 @@ const TestimonialsFaq: React.FC = () => {
                     href={GOOGLE_REVIEWS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-[#0e4e50] hover:text-[#093537] hover:underline transition-colors group"
+                    className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-[#1b6ea8] hover:text-[#155887] hover:underline transition-colors group"
                   >
                     <span>Read all patient stories on Google</span>
                     <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -233,8 +246,8 @@ const TestimonialsFaq: React.FC = () => {
                   onMouseLeave={() => setIsPaused(false)}
                   className="bg-white border border-[#dbe6e4] p-8 sm:p-12 rounded-3xl shadow-[0_15px_45px_rgba(14,78,80,0.06)] relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(14,78,80,0.1)] group"
                 >
-                  {/* Top subtle emerald gradient highlight bar */}
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0e4e50] via-teal-400 to-amber-400"></div>
+                  {/* Top subtle 3-color brand accent bar */}
+                  <LogoColorBar height="h-1.5" className="absolute top-0 left-0 right-0" />
 
                   {/* Decorative background quote mark */}
                   <div className="absolute top-6 right-8 text-teal-900/5 pointer-events-none select-none group-hover:text-teal-900/10 transition-colors">
@@ -262,7 +275,7 @@ const TestimonialsFaq: React.FC = () => {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="inline-flex items-center text-[11px] font-semibold text-[#0e4e50] bg-teal-50 border border-teal-200/70 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                            <span className={`inline-flex items-center text-[11px] font-semibold border px-3.5 py-1 rounded-full uppercase tracking-wider ${testimonials[activeTestimonial].pillBg}`}>
                               {testimonials[activeTestimonial].tag}
                             </span>
                             <a
@@ -288,7 +301,7 @@ const TestimonialsFaq: React.FC = () => {
                       {/* Author Details - Synced inside animation */}
                       <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#0e4e50] to-teal-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md ring-2 ring-teal-100">
+                          <div className={`w-12 h-12 rounded-full bg-gradient-to-tr ${testimonials[activeTestimonial].avatarGradient} text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md ring-2 ring-slate-100`}>
                             {testimonials[activeTestimonial].initials}
                           </div>
                           <div>
@@ -301,7 +314,7 @@ const TestimonialsFaq: React.FC = () => {
                                 Verified Patient
                               </span>
                             </div>
-                            <div className="text-[12.5px] font-medium text-[#0e4e50] mt-0.5">
+                            <div className="text-[12.5px] font-medium text-[#1b6ea8] mt-0.5">
                               {testimonials[activeTestimonial].treatment}
                             </div>
                             <div className="text-[12px] text-slate-500 mt-0.5">
@@ -312,13 +325,14 @@ const TestimonialsFaq: React.FC = () => {
 
                         {/* Pagination indicator dots */}
                         <div className="flex items-center gap-2 shrink-0 pt-2 sm:pt-0">
-                          {testimonials.map((_, i) => (
+                          {testimonials.map((t, i) => (
                             <button
                               key={i}
                               onClick={() => setActiveTestimonial(i)}
                               className={`h-2.5 rounded-full transition-all duration-300 ${
-                                i === activeTestimonial ? 'w-8 bg-[#0e4e50]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                                i === activeTestimonial ? 'w-8' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
                               }`}
+                              style={{ backgroundColor: i === activeTestimonial ? t.color : undefined }}
                               aria-label={`Go to testimonial ${i + 1}`}
                             />
                           ))}
@@ -338,7 +352,7 @@ const TestimonialsFaq: React.FC = () => {
                     href={GOOGLE_REVIEWS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-[#0e4e50] hover:text-[#0a3839] hover:underline inline-flex items-center gap-1"
+                    className="font-semibold text-[#1b6ea8] hover:text-[#0f2942] hover:underline inline-flex items-center gap-1"
                   >
                     <span>Share your experience</span>
                     <ExternalLink className="w-3 h-3" />
@@ -359,19 +373,19 @@ const TestimonialsFaq: React.FC = () => {
             <div className="lg:col-span-4">
               <ScrollReveal direction="down">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">06</span>
-                  <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">FAQs</span>
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">06</span>
+                  <LogoColorDots size="w-2 h-2" />
+                  <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">FAQs</span>
                 </div>
               </ScrollReveal>
 
               <ScrollHeading
                 as="h2"
                 direction="up"
-                className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+                className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#0f2942] font-serif tracking-tight leading-tight"
               >
                 Frequently Asked<br />
-                <span className="text-[#0e4e50] italic">Questions.</span>
+                <span className="text-[#1b6ea8] italic">Questions.</span>
               </ScrollHeading>
 
               <ScrollParagraph
@@ -390,7 +404,7 @@ const TestimonialsFaq: React.FC = () => {
                   </p>
                   <a
                     href="tel:+919289300329"
-                    className="mt-3.5 inline-flex items-center gap-2 text-xs font-bold text-[#0e4e50] hover:text-[#0b3839] hover:underline"
+                    className="mt-3.5 inline-flex items-center gap-2 text-xs font-bold text-[#1b6ea8] hover:text-[#0b3839] hover:underline"
                   >
                     <span>Call +91-9289300329</span>
                     <ExternalLink className="w-3 h-3" />
@@ -404,14 +418,17 @@ const TestimonialsFaq: React.FC = () => {
               <ScrollStagger staggerDelay={0.08} className="space-y-4">
                 {faqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
+                  const faqThemeColors = ['#DE4937', '#2787C8', '#F1AA37', '#2787C8'];
+                  const currentColor = faqThemeColors[idx % faqThemeColors.length];
                   return (
                     <ScrollStaggerItem key={idx} direction="up" distance={18}>
                       <div
                         className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
                           isOpen
-                            ? 'bg-white border-teal-500/40 shadow-md ring-1 ring-teal-500/20'
+                            ? 'bg-white shadow-md'
                             : 'bg-white/70 hover:bg-white border-slate-200/90 hover:border-slate-300 shadow-2xs hover:shadow-xs'
                         }`}
+                        style={{ borderColor: isOpen ? currentColor : undefined }}
                       >
                         <button
                           onClick={() => setOpenFaq(isOpen ? null : idx)}
@@ -421,14 +438,15 @@ const TestimonialsFaq: React.FC = () => {
                           <div className="flex items-start gap-3.5">
                             <span
                               className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition-colors ${
-                                isOpen ? 'bg-[#0e4e50] text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-teal-50 group-hover:text-[#0e4e50]'
+                                isOpen ? 'text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'
                               }`}
+                              style={{ backgroundColor: isOpen ? currentColor : undefined }}
                             >
                               {idx + 1}
                             </span>
                             <span
                               className={`text-[15px] sm:text-[16px] font-semibold leading-snug transition-colors ${
-                                isOpen ? 'text-[#0e4e50]' : 'text-slate-800 group-hover:text-[#0e4e50]'
+                                isOpen ? 'text-[#0f2942]' : 'text-slate-800 group-hover:text-[#1b6ea8]'
                               }`}
                             >
                               {faq.q}
@@ -436,7 +454,7 @@ const TestimonialsFaq: React.FC = () => {
                           </div>
                           <div
                             className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                              isOpen ? 'bg-teal-50 text-[#0e4e50] rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'
+                              isOpen ? 'bg-teal-50 text-[#1b6ea8] rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'
                             }`}
                           >
                             <ChevronDown className="w-4 h-4" />

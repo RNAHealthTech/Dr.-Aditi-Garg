@@ -84,7 +84,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-slate-50/50 pb-16">
       {/* Realistic Header Banner */}
-      <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
+      <div className="relative bg-[#1b6ea8] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
           <Image
             src="/images/clinic-room.jpg"
@@ -93,7 +93,7 @@ export default function GalleryPage() {
             className="object-cover opacity-20 mix-blend-overlay"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b6ea8] via-[#1b6ea8]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-100 text-xs font-semibold tracking-widest uppercase mb-6 shadow-sm">
@@ -139,7 +139,7 @@ export default function GalleryPage() {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold font-serif text-slate-900 group-hover:text-[#0e4e50] transition-colors">
+                  <h3 className="text-xl font-bold font-serif text-slate-900 group-hover:text-[#1b6ea8] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-sm text-slate-600 mt-2 leading-relaxed">

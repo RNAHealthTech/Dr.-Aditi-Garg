@@ -21,12 +21,15 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LogoColorDots } from '@/components/ui/shivasha-logo';
 
 const showcaseItems = [
   {
     id: 'consultation',
     tag: 'One-on-One Consultation',
     tagIcon: HeartHandshake,
+    accentColor: '#DE4937', // Red
+    colorBadge: 'bg-[#DE4937]',
     title: 'Compassionate Patient Counseling',
     subtitle: 'Listening first. Explaining with clarity.',
     description:
@@ -44,6 +47,8 @@ const showcaseItems = [
     id: 'examination',
     tag: 'Detailed ENT Examination',
     tagIcon: Stethoscope,
+    accentColor: '#2787C8', // Blue
+    colorBadge: 'bg-[#2787C8]',
     title: 'Gentle Physical & Otoscopic Evaluation',
     subtitle: 'Gentle, thorough, and comfortable checkups.',
     description:
@@ -61,6 +66,8 @@ const showcaseItems = [
     id: 'endoscopy',
     tag: 'Advanced HD Video Endoscopy',
     tagIcon: Tv,
+    accentColor: '#F1AA37', // Yellow
+    colorBadge: 'bg-[#F1AA37]',
     title: 'Real-Time High-Definition Diagnostics',
     subtitle: 'See what your doctor sees on the screen.',
     description:
@@ -80,10 +87,10 @@ const PatientCareShowcase: React.FC = () => {
   const [activeItem, setActiveItem] = useState(0);
 
   return (
-    <section className="py-20 sm:py-28 bg-[#f8faf9] border-t border-[#e2e8e5] overflow-hidden relative">
+    <section className="py-20 sm:py-28 bg-[#f8fafc] border-t border-slate-200/80 overflow-hidden relative">
       {/* Ambient background glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -92,9 +99,9 @@ const PatientCareShowcase: React.FC = () => {
           <div className="max-w-2xl">
             <ScrollReveal direction="down">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">03.5</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">03.5</span>
+                <LogoColorDots size="w-2 h-2" />
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">
                   Clinical Care in Action
                 </span>
               </div>
@@ -103,10 +110,10 @@ const PatientCareShowcase: React.FC = () => {
             <ScrollHeading
               as="h2"
               direction="up"
-              className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0d3033] font-serif tracking-tight leading-[1.12]"
+              className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f2942] font-serif tracking-tight leading-[1.12]"
             >
               Real Care.<br />
-              <span className="text-[#0e4e50] italic">Clear Visual Diagnostics.</span>
+              <span className="text-[#1b6ea8] italic">Clear Visual Diagnostics.</span>
             </ScrollHeading>
 
             <ScrollParagraph
@@ -140,12 +147,18 @@ const PatientCareShowcase: React.FC = () => {
               <ScrollReveal key={item.id} direction="up" distance={25} delay={0.08 * idx}>
                 <div
                   onMouseEnter={() => setActiveItem(idx)}
-                  className={`bg-white rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                  className={`bg-white rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col h-full group relative ${
                     activeItem === idx
-                      ? 'border-teal-400 shadow-[0_20px_50px_rgba(14,78,80,0.12)] -translate-y-2'
+                      ? 'border-slate-300 shadow-[0_20px_50px_rgba(15,41,66,0.12)] -translate-y-2'
                       : 'border-slate-200/80 hover:border-slate-300 shadow-sm hover:shadow-md'
                   }`}
                 >
+                  {/* Top color strip */}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-1.5 z-20"
+                    style={{ backgroundColor: item.accentColor }}
+                  />
+
                   {/* Photo Container */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                     <Image
@@ -160,10 +173,13 @@ const PatientCareShowcase: React.FC = () => {
                     {/* Top Floating Badge */}
                     <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold border border-white/20">
-                        <Icon className="w-3 h-3 text-teal-300" />
+                        <Icon className="w-3 h-3 text-white" />
                         {item.tag}
                       </span>
-                      <span className="text-[10px] font-bold text-white/90 bg-[#0e4e50]/90 backdrop-blur-xs px-2.5 py-1 rounded-full border border-teal-300/30">
+                      <span
+                        className="text-[10px] font-bold text-white px-2.5 py-1 rounded-full shadow-xs"
+                        style={{ backgroundColor: item.accentColor }}
+                      >
                         {item.highlightBadge}
                       </span>
                     </div>
@@ -179,7 +195,7 @@ const PatientCareShowcase: React.FC = () => {
                   {/* Card Content */}
                   <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-lg sm:text-xl font-bold font-serif text-slate-900 group-hover:text-[#0e4e50] transition-colors leading-snug">
+                      <h3 className="text-lg sm:text-xl font-bold font-serif text-slate-900 group-hover:text-[#1b6ea8] transition-colors leading-snug">
                         {item.title}
                       </h3>
                       <p className="text-slate-600 text-[13.5px] mt-2.5 leading-relaxed font-normal">
@@ -201,7 +217,7 @@ const PatientCareShowcase: React.FC = () => {
                     <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0e4e50] group-hover:text-teal-700 transition-colors group/btn"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1b6ea8] group-hover:text-teal-700 transition-colors group/btn"
                       >
                         <span>Schedule a Visit</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -221,7 +237,7 @@ const PatientCareShowcase: React.FC = () => {
         <ScrollReveal direction="up" delay={0.2}>
           <div className="mt-12 bg-white rounded-2xl p-5 sm:p-6 border border-[#d8e8e5] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-full bg-teal-50 border border-teal-200/60 flex items-center justify-center text-[#0e4e50] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-teal-50 border border-teal-200/60 flex items-center justify-center text-[#1b6ea8] shrink-0">
                 <Eye className="w-5 h-5" />
               </div>
               <div>
@@ -236,7 +252,7 @@ const PatientCareShowcase: React.FC = () => {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#0e4e50] hover:bg-[#0b3e40] text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-sm hover:shadow-md transition-all shrink-0"
+              className="inline-flex items-center justify-center gap-2 bg-[#1b6ea8] hover:bg-[#155887] text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-sm hover:shadow-md transition-all shrink-0"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book Consultation</span>

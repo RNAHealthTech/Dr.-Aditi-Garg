@@ -21,17 +21,18 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
+import { LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#faf9f7] overflow-hidden">
+    <section id="about" className="py-20 sm:py-28 bg-[#f8fafc] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label */}
         <ScrollReveal direction="down" className="flex items-center gap-3 mb-14">
-          <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">01</span>
-          <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-          <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">About</span>
+          <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">01</span>
+          <LogoColorDots size="w-2 h-2" />
+          <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">About</span>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -49,12 +50,12 @@ const AboutSection: React.FC = () => {
                     sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50]/80 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1b6ea8]/80 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#0e4e50] text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-full shadow-md">
+                    <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#1b6ea8] text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-full shadow-md">
                       ENT &amp; Head-Neck Surgeon
                     </span>
-                    <span className="text-[10px] text-teal-100 font-semibold bg-[#0e4e50]/80 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                    <span className="text-[10px] text-teal-100 font-semibold bg-[#1b6ea8]/80 px-2.5 py-1 rounded-full backdrop-blur-xs">
                       In OT
                     </span>
                   </div>
@@ -64,15 +65,16 @@ const AboutSection: React.FC = () => {
                   <p className="text-[13px] text-slate-700 italic leading-relaxed">
                     &ldquo;My aim is to provide compassionate, evidence-based and personalised ENT care for every patient.&rdquo;
                   </p>
-                  <div className="text-[11px] font-bold text-[#0e4e50] mt-3">― Dr. Aditi Garg</div>
+                  <div className="text-[11px] font-bold text-[#1b6ea8] mt-3">― Dr. Aditi Garg</div>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Clinical interests */}
             <ScrollReveal direction="up" delay={0.1}>
-              <div className="bg-[#0e4e50] text-white px-6 py-5 rounded-sm shadow-sm">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-70">Special Interests</h3>
+              <div className="bg-[#1b6ea8] text-white px-6 py-5 rounded-2xl shadow-sm relative overflow-hidden">
+                <LogoColorBar height="h-1.5" className="absolute top-0 left-0 right-0" />
+                <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-80 pt-1">Special Interests</h3>
                 <ScrollStagger staggerDelay={0.06} className="space-y-2.5">
                   {[
                     'Microscopic ear surgery',
@@ -121,7 +123,7 @@ const AboutSection: React.FC = () => {
               <ScrollHeading
                 as="h2"
                 direction="up"
-                className="text-4xl sm:text-[44px] font-bold text-[#0d3033] font-serif leading-tight tracking-tight mb-4"
+                className="text-4xl sm:text-[44px] font-bold text-[#0f2942] font-serif leading-tight tracking-tight mb-4"
               >
                 Dr. Aditi Garg
               </ScrollHeading>
@@ -137,7 +139,7 @@ const AboutSection: React.FC = () => {
                   </span>
                 </ScrollStaggerItem>
                 <ScrollStaggerItem direction="up">
-                  <span className="bg-[#f0f8f7] border border-teal-200 px-3 py-1 rounded-sm font-semibold text-[#0e4e50] shadow-2xs">
+                  <span className="bg-[#f0f8f7] border border-teal-200 px-3 py-1 rounded-sm font-semibold text-[#1b6ea8] shadow-2xs">
                     Sir Ganga Ram Hospital
                   </span>
                 </ScrollStaggerItem>
@@ -170,7 +172,7 @@ const AboutSection: React.FC = () => {
             {/* Memberships */}
             <ScrollStagger staggerDelay={0.08} className="flex flex-wrap gap-3">
               <ScrollStaggerItem direction="up">
-                <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#0e4e50] bg-[#f0f8f7] border border-teal-200 px-3 py-1.5 rounded-sm">
+                <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#1b6ea8] bg-[#f0f8f7] border border-teal-200 px-3 py-1.5 rounded-sm">
                   <BookOpen className="w-3.5 h-3.5" />
                   Life Member — AOI (LM: 5972)
                 </span>
@@ -230,11 +232,11 @@ const AboutSection: React.FC = () => {
                 ].map((item, i) => (
                   <ScrollReveal key={i} direction="left" distance={20} delay={i * 0.06} className="relative pb-8 last:pb-0">
                     {/* Timeline dot */}
-                    <div className="absolute -left-[1.45rem] top-0.5 w-5 h-5 rounded-full bg-white border-2 border-[#0e4e50] flex items-center justify-center text-[#0e4e50]">
+                    <div className="absolute -left-[1.45rem] top-0.5 w-5 h-5 rounded-full bg-white border-2 border-[#1b6ea8] flex items-center justify-center text-[#1b6ea8]">
                       {item.icon}
                     </div>
                     <div className="pl-3">
-                      <div className="text-[11px] font-bold text-[#0e4e50] mb-0.5">{item.year}</div>
+                      <div className="text-[11px] font-bold text-[#1b6ea8] mb-0.5">{item.year}</div>
                       <div className="text-[14px] font-bold text-slate-900">{item.degree}</div>
                       <div className="text-[13px] text-slate-600">{item.institution}</div>
                       <div className="text-[12px] text-slate-400">{item.sub}</div>
@@ -254,9 +256,9 @@ const AboutSection: React.FC = () => {
 
               <ScrollStagger staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <ScrollStaggerItem direction="up">
-                  <div className="bg-white border border-slate-200 p-5 rounded-sm hover:border-[#0e4e50]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <div className="bg-white border border-slate-200 p-5 rounded-sm hover:border-[#1b6ea8]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                     <div className="flex items-start gap-3 mb-4">
-                      <MapPin className="w-4 h-4 text-[#0e4e50] shrink-0 mt-0.5" />
+                      <MapPin className="w-4 h-4 text-[#1b6ea8] shrink-0 mt-0.5" />
                       <div>
                         <h4 className="text-[13.5px] font-bold text-slate-900 leading-tight">Sir Ganga Ram Hospital</h4>
                         <p className="text-[11.5px] text-slate-400 mt-0.5">Room F-87, Rajinder Nagar, New Delhi</p>
@@ -264,7 +266,7 @@ const AboutSection: React.FC = () => {
                     </div>
                     <div className="space-y-1.5 border-t border-slate-100 pt-3">
                       <div className="flex items-start gap-2 text-[12px] text-slate-700">
-                        <Clock className="w-3.5 h-3.5 text-[#0e4e50] shrink-0 mt-0.5" />
+                        <Clock className="w-3.5 h-3.5 text-[#1b6ea8] shrink-0 mt-0.5" />
                         <div>
                           <div><span className="font-bold text-slate-900">Mon, Wed, Fri:</span> 8:00 AM – 3:00 PM</div>
                           <div className="mt-0.5"><span className="font-bold text-slate-900">Tue, Thu, Sat:</span> 9:00 AM – 3:00 PM</div>
@@ -275,9 +277,9 @@ const AboutSection: React.FC = () => {
                 </ScrollStaggerItem>
 
                 <ScrollStaggerItem direction="up">
-                  <div className="bg-white border border-slate-200 p-5 rounded-sm hover:border-[#0e4e50]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <div className="bg-white border border-slate-200 p-5 rounded-sm hover:border-[#1b6ea8]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                     <div className="flex items-start gap-3 mb-4">
-                      <MapPin className="w-4 h-4 text-[#0e4e50] shrink-0 mt-0.5" />
+                      <MapPin className="w-4 h-4 text-[#1b6ea8] shrink-0 mt-0.5" />
                       <div>
                         <h4 className="text-[13.5px] font-bold text-slate-900 leading-tight">Shivasha ENT Clinic</h4>
                         <p className="text-[11.5px] text-slate-400 mt-0.5">Pocket 4, Main Road, Mayur Vihar Phase-1, New Delhi</p>
@@ -285,11 +287,11 @@ const AboutSection: React.FC = () => {
                     </div>
                     <div className="space-y-1.5 border-t border-slate-100 pt-3">
                       <div className="flex items-center gap-2 text-[12.5px] text-slate-700">
-                        <Calendar className="w-3.5 h-3.5 text-[#0e4e50]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#1b6ea8]" />
                         <span className="font-medium">Monday – Saturday</span>
                       </div>
                       <div className="flex items-center gap-2 text-[12.5px] text-slate-700">
-                        <Clock className="w-3.5 h-3.5 text-[#0e4e50]" />
+                        <Clock className="w-3.5 h-3.5 text-[#1b6ea8]" />
                         <span className="font-bold text-slate-900">6:30 PM – 8:30 PM</span>
                       </div>
                     </div>
@@ -301,7 +303,7 @@ const AboutSection: React.FC = () => {
             <ScrollReveal direction="up" delay={0.1}>
               <a
                 href="/about"
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0e4e50] border-b border-[#0e4e50]/30 hover:border-[#0e4e50] pb-0.5 transition-colors"
+                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#1b6ea8] border-b border-[#1b6ea8]/30 hover:border-[#1b6ea8] pb-0.5 transition-colors"
               >
                 Learn More About Dr. Aditi Garg
                 <ArrowRight className="w-4 h-4" />

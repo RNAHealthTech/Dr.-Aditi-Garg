@@ -30,14 +30,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-slate-50/50 pb-24 overflow-hidden">
       {/* Realistic Header Banner */}
-      <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
+      <div className="relative bg-[#1b6ea8] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1600&q=80"
             alt="Contact Us"
             className="w-full h-full object-cover opacity-20 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b6ea8] via-[#1b6ea8]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollHeading
@@ -70,7 +70,7 @@ export default function ContactPage() {
                   className="block bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-slate-200/40 border border-slate-100 hover:-translate-y-1 hover:shadow-xl hover:border-teal-300 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl flex items-center justify-center text-[#0e4e50] group-hover:bg-[#0e4e50] group-hover:text-white transition-colors duration-300 shadow-inner">
+                    <div className="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl flex items-center justify-center text-[#1b6ea8] group-hover:bg-[#1b6ea8] group-hover:text-white transition-colors duration-300 shadow-inner">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   className="block bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-slate-200/40 border border-slate-100 hover:-translate-y-1 hover:shadow-xl hover:border-teal-300 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl flex items-center justify-center text-[#0e4e50] group-hover:bg-[#0e4e50] group-hover:text-white transition-colors duration-300 shadow-inner">
+                    <div className="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl flex items-center justify-center text-[#1b6ea8] group-hover:bg-[#1b6ea8] group-hover:text-white transition-colors duration-300 shadow-inner">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
@@ -125,19 +125,19 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold font-serif text-slate-900 mb-6">Clinic Locations</h3>
                   <div className="space-y-6">
                     <div className="flex gap-4 group">
-                      <MapPin className="w-6 h-6 text-[#0e4e50] shrink-0 mt-1" />
+                      <MapPin className="w-6 h-6 text-[#1b6ea8] shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-bold text-slate-900 group-hover:text-[#0e4e50] transition-colors">Sir Ganga Ram Hospital</h4>
+                        <h4 className="font-bold text-slate-900 group-hover:text-[#1b6ea8] transition-colors">Sir Ganga Ram Hospital</h4>
                         <p className="text-sm text-slate-600 mt-1 leading-relaxed">Room No. F-87, Sir Ganga Ram Hospital Marg, Rajinder Nagar, New Delhi, 110060</p>
                       </div>
                     </div>
                     <div className="w-full h-px bg-slate-100"></div>
                     <div className="flex gap-4 group">
-                      <MapPin className="w-6 h-6 text-[#0e4e50] shrink-0 mt-1" />
+                      <MapPin className="w-6 h-6 text-[#1b6ea8] shrink-0 mt-1" />
                       <div className="w-full">
-                        <h4 className="font-bold text-slate-900 group-hover:text-[#0e4e50] transition-colors">Shivasha ENT Clinic</h4>
+                        <h4 className="font-bold text-slate-900 group-hover:text-[#1b6ea8] transition-colors">Shivasha ENT Clinic</h4>
                         <p className="text-sm text-slate-600 mt-1 leading-relaxed">148 B Pocket 4, Opp. Arya Samaj Mandir, Mayur Vihar Phase 1, New Delhi, 110091</p>
-                        <div className="mt-3 relative w-full h-36 rounded-xl overflow-hidden border border-slate-200/80 shadow-xs group-hover:border-[#0e4e50]/40 transition-colors">
+                        <div className="mt-3 relative w-full h-36 rounded-xl overflow-hidden border border-slate-200/80 shadow-xs group-hover:border-[#1b6ea8]/40 transition-colors">
                           <Image
                             src="/images/shivasha-clinic-front.jpg"
                             alt="Shivasha ENT Clinic Entrance & Signboard"
@@ -178,7 +178,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8] transition-colors"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -189,7 +189,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 99999 99999"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8] transition-colors"
                       />
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8] transition-colors"
                     />
                   </div>
 
@@ -214,7 +214,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="How can we help you?"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50] transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8] transition-colors resize-none"
                     ></textarea>
                   </div>
 
@@ -222,7 +222,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto bg-[#0e4e50] hover:bg-[#093537] text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-900/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 min-w-[200px]"
+                      className="w-full sm:w-auto bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-900/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 min-w-[200px]"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">Sending...</span>
@@ -239,7 +239,7 @@ export default function ContactPage() {
 
             {/* Booking Portal Banner */}
             <ScrollReveal direction="up" distance={20} delay={0.15}>
-              <div className="mt-6 bg-[#0e4e50] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-teal-900/10 relative overflow-hidden">
+              <div className="mt-6 bg-[#1b6ea8] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-teal-900/10 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
                 <div>
                   <h3 className="text-white font-bold font-serif text-xl">Ready for a consultation?</h3>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                     href="https://appointment.sgrh.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-white hover:bg-teal-50 text-[#0e4e50] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
+                    className="bg-white hover:bg-teal-50 text-[#1b6ea8] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
                   >
                     SGRH Portal
                     <ExternalLink className="w-4 h-4" />

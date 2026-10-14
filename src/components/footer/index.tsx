@@ -12,12 +12,15 @@ import {
   Calendar,
 } from 'lucide-react';
 import { EarLogoIcon } from '../header';
-import { ShivashaEmblem } from '@/components/ui/shivasha-logo';
+import { ShivashaEmblem, LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
 const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-[#081c1d] text-slate-400 pt-16 pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-[#0a1a2c] text-slate-400 pb-10 relative">
+      {/* Top 3-Color Brand Bar */}
+      <LogoColorBar height="h-1.5" className="w-full" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
 
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/8">
@@ -30,8 +33,9 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <div className="text-[17px] font-bold font-serif text-white tracking-tight">Dr. Aditi Garg</div>
-                <div className="text-[9.5px] uppercase tracking-[0.18em] font-semibold text-teal-400 mt-0.5">
-                  Shivasha ENT Clinic &bull; Surgeon
+                <div className="text-[9.5px] uppercase tracking-[0.18em] font-semibold text-blue-300 mt-0.5 flex items-center gap-1.5">
+                  <LogoColorDots size="w-1.5 h-1.5" />
+                  <span>Shivasha ENT Clinic</span>
                 </div>
               </div>
             </div>
@@ -77,20 +81,20 @@ const Footer: React.FC = () => {
             </h4>
             <div className="space-y-3 text-[12.5px]">
               <div className="flex items-start gap-2.5 text-slate-500">
-                <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#2787C8] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">Dept. of ENT, Room F-87, Sir Ganga Ram Hospital Marg, Old Rajinder Nagar, New Delhi 110060</span>
               </div>
-              <div className="text-teal-400 font-semibold text-[12px] space-y-0.5">
+              <div className="text-blue-300 font-semibold text-[12px] space-y-0.5">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 shrink-0" />
+                  <Clock className="w-3.5 h-3.5 text-[#2787C8] shrink-0" />
                   <span>Mon, Wed, Fri — 8:00 AM – 3:00 PM</span>
                 </div>
-                <div className="pl-5.5 text-teal-400/90 text-[11.5px]">
+                <div className="pl-5.5 text-blue-300/80 text-[11.5px]">
                   <span>Tue, Thu, Sat — 9:00 AM – 3:00 PM</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
-                <Phone className="w-3.5 h-3.5 text-teal-600" />
+                <Phone className="w-3.5 h-3.5 text-[#2787C8]" />
                 <a href="tel:+919289300329" className="hover:text-white transition-colors">+91-9289300329</a>
               </div>
             </div>
@@ -106,19 +110,19 @@ const Footer: React.FC = () => {
             </div>
             <div className="space-y-3 text-[12.5px]">
               <div className="flex items-start gap-2.5 text-slate-500">
-                <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#DE4937] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">Pocket 4, Main Road, Mayur Vihar Phase-1, New Delhi 110091</span>
               </div>
-              <div className="flex items-center gap-2.5 text-teal-400 font-semibold">
+              <div className="flex items-center gap-2.5 text-[#F1AA37] font-semibold">
                 <Clock className="w-3.5 h-3.5" />
                 <span>Mon–Sat — 6:30–8:30 PM</span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
-                <Phone className="w-3.5 h-3.5 text-teal-600" />
+                <Phone className="w-3.5 h-3.5 text-[#2787C8]" />
                 <a href="tel:+919289300329" className="hover:text-white transition-colors">+91-9289300329</a>
               </div>
               <div className="flex items-center gap-2.5 text-slate-500">
-                <Mail className="w-3.5 h-3.5 text-teal-600" />
+                <Mail className="w-3.5 h-3.5 text-[#2787C8]" />
                 <a href="mailto:draditigarg90@gmail.com" className="hover:text-white transition-colors">draditigarg90@gmail.com</a>
               </div>
             </div>
@@ -128,18 +132,18 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Quick Links</h4>
             <ul className="space-y-2 text-[12.5px]">
-              <li><a href="/" className="text-slate-500 hover:text-teal-400 transition-colors">Home</a></li>
-              <li><a href="/about" className="text-slate-500 hover:text-teal-400 transition-colors">About</a></li>
-              <li><a href="/services" className="text-slate-500 hover:text-teal-400 transition-colors">ENT Services</a></li>
-              <li><a href="/expertise" className="text-slate-500 hover:text-teal-400 transition-colors">Expertise</a></li>
-              <li><a href="/timings" className="text-slate-500 hover:text-teal-400 transition-colors">OPD Timings</a></li>
-              <li><a href="/gallery" className="text-slate-500 hover:text-teal-400 transition-colors">Gallery</a></li>
-              <li><a href="/contact" className="text-slate-500 hover:text-teal-400 transition-colors">Contact</a></li>
+              <li><a href="/" className="text-slate-500 hover:text-[#2787C8] transition-colors">Home</a></li>
+              <li><a href="/about" className="text-slate-500 hover:text-[#2787C8] transition-colors">About</a></li>
+              <li><a href="/services" className="text-slate-500 hover:text-[#2787C8] transition-colors">ENT Services</a></li>
+              <li><a href="/expertise" className="text-slate-500 hover:text-[#2787C8] transition-colors">Expertise</a></li>
+              <li><a href="/timings" className="text-slate-500 hover:text-[#2787C8] transition-colors">OPD Timings</a></li>
+              <li><a href="/gallery" className="text-slate-500 hover:text-[#2787C8] transition-colors">Gallery</a></li>
+              <li><a href="/contact" className="text-slate-500 hover:text-[#2787C8] transition-colors">Contact</a></li>
             </ul>
             <div className="pt-2">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-1.5 text-[12px] font-semibold bg-teal-700/30 hover:bg-teal-700/50 text-teal-300 px-3.5 py-2 rounded-sm transition-colors"
+                className="inline-flex items-center gap-1.5 text-[12px] font-semibold bg-[#1b6ea8] hover:bg-[#155887] text-white px-4 py-2.5 rounded-full transition-colors shadow-sm"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 Book Appointment

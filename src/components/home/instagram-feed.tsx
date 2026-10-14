@@ -10,6 +10,7 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
+import { LogoColorDots } from '@/components/ui/shivasha-logo';
 
 const instagramPosts = [
   {
@@ -72,16 +73,16 @@ const InstagramFeed = () => {
           <div>
             <ScrollReveal direction="down">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">07</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">From the Clinic</span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">07</span>
+                <LogoColorDots size="w-2 h-2" />
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">From the Clinic</span>
               </div>
             </ScrollReveal>
 
             <ScrollHeading
               as="h2"
               direction="up"
-              className="text-3xl sm:text-[36px] font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+              className="text-3xl sm:text-[36px] font-bold text-[#0f2942] font-serif tracking-tight leading-tight"
             >
               Health Insights &amp; Clinic Stories
             </ScrollHeading>
@@ -128,7 +129,7 @@ const InstagramFeed = () => {
             <div className="flex items-center gap-4">
               {/* Instagram Story Ring Avatar */}
               <div className="relative p-[3px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shrink-0">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0e4e50] text-white flex items-center justify-center font-serif font-bold text-xl border-2 border-white">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1b6ea8] text-white flex items-center justify-center font-serif font-bold text-xl border-2 border-white">
                   AG
                 </div>
                 <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-500 border-2 border-white"></span>

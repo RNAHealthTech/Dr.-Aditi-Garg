@@ -10,6 +10,7 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
 const EarIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -64,6 +65,14 @@ const categories = [
     num: '01',
     title: 'Ear & Hearing',
     icon: <EarIcon />,
+    color: '#DE4937', // Logo Red (Ear)
+    colorName: 'Red (Ear)',
+    dotColor: 'bg-[#DE4937]',
+    gradient: 'from-[#DE4937] to-[#e86657]',
+    lightPill: 'bg-red-50 text-[#DE4937] border-red-200/70',
+    ring: 'ring-red-100',
+    iconBg: 'bg-red-50 text-[#DE4937]',
+    btnStyle: 'border-[#DE4937]/30 text-[#DE4937] hover:bg-[#DE4937] hover:text-white',
     description: 'Expert care for chronic ear infections, hearing loss, and microsurgical ear procedures using advanced microscopic & endoscopic techniques.',
     procedures: [
       'Tympanoplasty (Eardrum Repair)',
@@ -81,6 +90,14 @@ const categories = [
     num: '02',
     title: 'Nose & Sinus',
     icon: <NoseIcon />,
+    color: '#2787C8', // Logo Blue (Nose)
+    colorName: 'Blue (Nose)',
+    dotColor: 'bg-[#2787C8]',
+    gradient: 'from-[#0f2942] to-[#2787C8]',
+    lightPill: 'bg-blue-50 text-[#1b6ea8] border-blue-200/70',
+    ring: 'ring-blue-100',
+    iconBg: 'bg-blue-50 text-[#2787C8]',
+    btnStyle: 'border-[#1b6ea8]/30 text-[#1b6ea8] hover:bg-[#1b6ea8] hover:text-white',
     description: 'Comprehensive management of sinusitis, allergies, nasal obstruction and endoscopic sinus surgeries including advanced skull base approaches.',
     procedures: [
       'Functional Endoscopic Sinus Surgery (FESS)',
@@ -99,6 +116,14 @@ const categories = [
     num: '03',
     title: 'Throat & Voice',
     icon: <ThroatIcon />,
+    color: '#F1AA37', // Logo Yellow (Throat)
+    colorName: 'Yellow (Throat)',
+    dotColor: 'bg-[#F1AA37]',
+    gradient: 'from-[#c28420] to-[#F1AA37]',
+    lightPill: 'bg-amber-50 text-[#b57715] border-amber-200/70',
+    ring: 'ring-amber-100',
+    iconBg: 'bg-amber-50 text-[#b57715]',
+    btnStyle: 'border-[#F1AA37]/40 text-[#b57715] hover:bg-[#F1AA37] hover:text-white',
     description: 'Precision care for voice disorders, throat infections, airway management and laryngeal conditions.',
     procedures: [
       'Microlaryngeal Surgeries (MLS)',
@@ -117,6 +142,14 @@ const categories = [
     num: '04',
     title: 'Head & Neck',
     icon: <HeadNeckIcon />,
+    color: '#DE4937', // Cycles back to Red
+    colorName: 'Red (Ear/Head-Neck)',
+    dotColor: 'bg-[#DE4937]',
+    gradient: 'from-[#DE4937] to-[#e86657]',
+    lightPill: 'bg-red-50 text-[#DE4937] border-red-200/70',
+    ring: 'ring-red-100',
+    iconBg: 'bg-red-50 text-[#DE4937]',
+    btnStyle: 'border-[#DE4937]/30 text-[#DE4937] hover:bg-[#DE4937] hover:text-white',
     description: 'Surgical management of thyroid, salivary gland, oral and neck pathologies including oncological procedures.',
     procedures: [
       'Thyroidectomy',
@@ -134,6 +167,14 @@ const categories = [
     num: '05',
     title: 'Vertigo & Balance',
     icon: <VertigoIcon />,
+    color: '#2787C8', // Cycles back to Blue
+    colorName: 'Blue (Nose/Balance)',
+    dotColor: 'bg-[#2787C8]',
+    gradient: 'from-[#0f2942] to-[#2787C8]',
+    lightPill: 'bg-blue-50 text-[#1b6ea8] border-blue-200/70',
+    ring: 'ring-blue-100',
+    iconBg: 'bg-blue-50 text-[#2787C8]',
+    btnStyle: 'border-[#1b6ea8]/30 text-[#1b6ea8] hover:bg-[#1b6ea8] hover:text-white',
     description: 'Accurate diagnosis and treatment of dizziness, tinnitus and balance disorders with clinical evaluation & maneuvers.',
     procedures: [
       'BPPV & Epley Maneuver for Vertigo',
@@ -147,6 +188,14 @@ const categories = [
     num: '06',
     title: 'Paediatric ENT',
     icon: <ChildIcon />,
+    color: '#F1AA37', // Cycles back to Yellow
+    colorName: 'Yellow (Throat/Paediatric)',
+    dotColor: 'bg-[#F1AA37]',
+    gradient: 'from-[#c28420] to-[#F1AA37]',
+    lightPill: 'bg-amber-50 text-[#b57715] border-amber-200/70',
+    ring: 'ring-amber-100',
+    iconBg: 'bg-amber-50 text-[#b57715]',
+    btnStyle: 'border-[#F1AA37]/40 text-[#b57715] hover:bg-[#F1AA37] hover:text-white',
     description: 'Gentle, child-friendly ENT care for common paediatric ear, nose and throat conditions.',
     procedures: [
       'Paediatric Airway Evaluation & Management',
@@ -171,16 +220,16 @@ const ExpertiseDetails: React.FC = () => {
           <div>
             <ScrollReveal direction="down">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">02</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Clinical Expertise</span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">02</span>
+                <LogoColorDots size="w-2 h-2" />
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">Clinical Expertise</span>
               </div>
             </ScrollReveal>
 
             <ScrollHeading
               as="h2"
               direction="up"
-              className="text-3xl sm:text-4xl font-bold text-[#0d3033] font-serif tracking-tight leading-tight"
+              className="text-3xl sm:text-4xl font-bold text-[#0f2942] font-serif tracking-tight leading-tight"
             >
               Specialized ENT<br />Care & Procedures
             </ScrollHeading>
@@ -206,17 +255,18 @@ const ExpertiseDetails: React.FC = () => {
                   onClick={() => setActiveTab(idx)}
                   className={`relative flex items-center gap-2.5 px-5 py-3 rounded-full text-[13px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'bg-gradient-to-r from-[#0e4e50] to-[#136063] text-white shadow-md shadow-teal-900/15'
-                      : 'bg-slate-100/80 hover:bg-slate-200/80 text-slate-600 hover:text-slate-900'
+                      ? `bg-gradient-to-r ${cat.gradient} text-white shadow-md shadow-slate-900/15`
+                      : 'bg-slate-100/80 hover:bg-slate-200/80 text-slate-700 hover:text-slate-900'
                   }`}
                 >
-                  <span className={`${isActive ? 'text-teal-200' : 'text-slate-500'} transition-colors`}>
+                  <span className={`w-2 h-2 rounded-full ${isActive ? 'bg-white' : cat.dotColor}`} />
+                  <span className={`${isActive ? 'text-white' : 'text-slate-600'} transition-colors`}>
                     {cat.icon}
                   </span>
                   <span>{cat.title}</span>
                   <span
                     className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-500'
+                      isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-600'
                     }`}
                   >
                     {cat.procedures.length}
@@ -235,24 +285,27 @@ const ExpertiseDetails: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#fafcfa] border border-[#d8e6e3] rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden"
+            className="bg-[#f8fafc] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden"
           >
-            {/* Ambient decorative glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-teal-100/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
+            {/* Top 3-Color Brand Bar */}
+            <LogoColorBar height="h-1.5" className="absolute top-0 left-0 right-0" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
+            {/* Ambient decorative glow */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10 pt-2">
               
               {/* Left Column: Category Description */}
               <div className="lg:col-span-5 space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#0e4e50] to-teal-600 text-white flex items-center justify-center rounded-2xl shadow-md ring-4 ring-teal-50">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${categories[activeTab].gradient} text-white flex items-center justify-center rounded-2xl shadow-md ring-4 ${categories[activeTab].ring}`}>
                     {categories[activeTab].icon}
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0e4e50]">
-                      Specialty {categories[activeTab].num}
+                    <span className={`text-[11px] font-bold tracking-[0.2em] uppercase px-2.5 py-0.5 rounded-full border ${categories[activeTab].lightPill}`}>
+                      Specialty {categories[activeTab].num} &bull; {categories[activeTab].colorName}
                     </span>
-                    <h3 className="text-2xl font-bold text-slate-900 font-serif leading-tight">
+                    <h3 className="text-2xl font-bold text-slate-900 font-serif leading-tight mt-1.5">
                       {categories[activeTab].title}
                     </h3>
                   </div>
@@ -265,7 +318,7 @@ const ExpertiseDetails: React.FC = () => {
                 <div className="pt-2">
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2.5 bg-white border border-[#0e4e50]/30 hover:border-[#0e4e50] text-[#0e4e50] hover:bg-[#0e4e50] hover:text-white px-6 py-3 rounded-full text-xs font-bold tracking-wide shadow-xs hover:shadow-md transition-all duration-200 group"
+                    className={`inline-flex items-center gap-2.5 bg-white border px-6 py-3 rounded-full text-xs font-bold tracking-wide shadow-xs hover:shadow-md transition-all duration-200 group ${categories[activeTab].btnStyle}`}
                   >
                     <span>Consult for {categories[activeTab].title}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -279,7 +332,7 @@ const ExpertiseDetails: React.FC = () => {
                   <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400">
                     Procedures &amp; Clinical Management
                   </span>
-                  <span className="text-[11px] font-bold text-[#0e4e50] bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200/60">
+                  <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${categories[activeTab].lightPill}`}>
                     {categories[activeTab].procedures.length} Surgeries &amp; Treatments
                   </span>
                 </div>
@@ -288,10 +341,13 @@ const ExpertiseDetails: React.FC = () => {
                   {categories[activeTab].procedures.map((proc, i) => (
                     <div
                       key={`${activeTab}-${i}`}
-                      className="bg-white border border-slate-200/80 hover:border-teal-400/60 p-3.5 rounded-xl shadow-2xs hover:shadow-xs transition-all duration-200 flex items-start gap-3 group"
+                      className="bg-white border border-slate-200/80 hover:border-slate-300 p-3.5 rounded-xl shadow-2xs hover:shadow-xs transition-all duration-200 flex items-start gap-3 group"
                     >
-                      <div className="w-5 h-5 rounded-full bg-teal-50 group-hover:bg-[#0e4e50] text-[#0e4e50] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition-colors">
-                        <Check className="w-3 h-3" />
+                      <div
+                        className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-colors text-white"
+                        style={{ backgroundColor: categories[activeTab].color }}
+                      >
+                        <Check className="w-3 h-3 stroke-[3]" />
                       </div>
                       <span className="text-[13px] text-slate-700 font-medium group-hover:text-slate-900 leading-snug">
                         {proc}
@@ -313,7 +369,7 @@ const ExpertiseDetails: React.FC = () => {
             </p>
             <a
               href="/services"
-              className="inline-flex items-center gap-2 text-[13.5px] font-bold text-[#0e4e50] hover:text-[#0b3e40] group transition-colors"
+              className="inline-flex items-center gap-2 text-[13.5px] font-bold text-[#1b6ea8] hover:text-[#155887] group transition-colors"
             >
               <span>Explore all services</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

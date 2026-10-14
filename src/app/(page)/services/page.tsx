@@ -10,7 +10,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[#fbfdfc] pb-20">
       {/* Realistic Header Banner */}
-      <div className="relative bg-[#0e4e50] overflow-hidden pt-24 pb-32">
+      <div className="relative bg-[#1b6ea8] overflow-hidden pt-24 pb-32">
         <div className="absolute inset-0">
           <Image
             src="/images/clinic-room.jpg"
@@ -19,7 +19,7 @@ export default function ServicesPage() {
             className="object-cover opacity-20 mix-blend-overlay"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e50] via-[#0e4e50]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b6ea8] via-[#1b6ea8]/80 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif font-bold text-[#0e4e50]">The Patient Journey</h2>
+            <h2 className="text-3xl font-serif font-bold text-[#1b6ea8]">The Patient Journey</h2>
             <p className="text-slate-500 mt-3">What to expect when you consult with us</p>
           </div>
 
@@ -55,10 +55,10 @@ export default function ServicesPage() {
             ].map((item, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
                 <div className="w-20 h-20 bg-white rounded-full border-4 border-teal-50 flex items-center justify-center shadow-lg shadow-teal-900/5 mb-6 group-hover:border-teal-500 transition-colors duration-300 relative">
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#0e4e50] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-md">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#1b6ea8] text-white rounded-full flex items-center justify-center text-xs font-bold shadow-md">
                     {item.step}
                   </div>
-                  <item.icon className="w-8 h-8 text-[#0e4e50]" />
+                  <item.icon className="w-8 h-8 text-[#1b6ea8]" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed px-2">{item.desc}</p>

@@ -19,7 +19,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fbfdfc] selection:bg-teal-200 selection:text-[#0e4e50]">
+    <div className="min-h-screen flex flex-col bg-[#f8fafc] selection:bg-blue-100 selection:text-blue-900">
       <ScrollProgressBar />
       <Header onOpenAppointmentModal={() => handleOpenModal()} />
       <main className="flex-1">{children}</main>

@@ -53,15 +53,15 @@ const images = [
 
 const AutoImageSlider = () => {
   return (
-    <section className="py-20 sm:py-24 bg-[#081c1d] overflow-hidden relative">
+    <section className="py-20 sm:py-24 bg-[#0a1a2c] overflow-hidden relative">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <ScrollReveal direction="down">
-              <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] text-teal-400 uppercase mb-4">
-                <span className="w-8 h-[1.5px] bg-teal-400"></span>
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] text-blue-400 uppercase mb-4">
+                <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#DE4937] via-[#2787C8] to-[#F1AA37]"></span>
                 Facilities &amp; Technologies
               </div>
             </ScrollReveal>
@@ -88,8 +88,8 @@ const AutoImageSlider = () => {
       <ScrollReveal direction="up" distance={30} delay={0.15}>
         <div className="relative w-full overflow-hidden pb-10">
           {/* Gradient Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#081c1d] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#081c1d] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#0a1a2c] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#0a1a2c] to-transparent z-10 pointer-events-none"></div>
 
           <div className="flex w-fit animate-marquee-fast">
             {[...images, ...images, ...images].map((img, idx) => (
@@ -102,7 +102,7 @@ const AutoImageSlider = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="w-8 h-1 bg-teal-500 mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-2 group-hover:translate-y-0"></div>
+                  <div className="w-10 h-1 bg-gradient-to-r from-[#DE4937] via-[#2787C8] to-[#F1AA37] mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-2 group-hover:translate-y-0"></div>
                   <h3 className="text-white font-bold text-lg sm:text-xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {img.title}
                   </h3>

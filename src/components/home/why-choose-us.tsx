@@ -9,43 +9,62 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
+import { LogoColorDots } from '@/components/ui/shivasha-logo';
 
 const qualities = [
   {
     icon: <Users className="w-4 h-4" />,
     title: 'Patient-Centred Care',
     description: 'Every consultation begins with listening. Your symptoms, concerns, and history are central to the diagnosis and treatment plan.',
+    colorClass: 'bg-red-50 text-[#DE4937] group-hover:bg-[#DE4937]',
+    borderHover: 'hover:border-red-300',
+    dotColor: 'bg-[#DE4937]',
   },
   {
     icon: <Shield className="w-4 h-4" />,
     title: 'Evidence-Based Treatment',
     description: 'Adhering to the latest international ENT guidelines to ensure safe, effective, and clinically grounded care.',
+    colorClass: 'bg-blue-50 text-[#2787C8] group-hover:bg-[#2787C8]',
+    borderHover: 'hover:border-blue-300',
+    dotColor: 'bg-[#2787C8]',
   },
   {
     icon: <Sparkles className="w-4 h-4" />,
     title: 'Advanced Technology',
     description: 'High-definition endoscopes and state-of-the-art diagnostic tools for precise, minimally invasive ENT procedures.',
+    colorClass: 'bg-amber-50 text-[#d4891b] group-hover:bg-[#F1AA37]',
+    borderHover: 'hover:border-amber-300',
+    dotColor: 'bg-[#F1AA37]',
   },
   {
     icon: <Heart className="w-4 h-4" />,
     title: 'Compassionate Approach',
     description: 'Patients feel heard, comfortable, and well-informed at every step — from first consultation through recovery.',
+    colorClass: 'bg-red-50 text-[#DE4937] group-hover:bg-[#DE4937]',
+    borderHover: 'hover:border-red-300',
+    dotColor: 'bg-[#DE4937]',
   },
   {
     icon: <Clock className="w-4 h-4" />,
     title: 'Minimal Wait Times',
     description: 'Streamlined appointment scheduling and efficient clinic management that respects your time.',
+    colorClass: 'bg-blue-50 text-[#2787C8] group-hover:bg-[#2787C8]',
+    borderHover: 'hover:border-blue-300',
+    dotColor: 'bg-[#2787C8]',
   },
   {
     icon: <CheckCircle2 className="w-4 h-4" />,
     title: 'Holistic Approach',
     description: 'Treating the root cause of ENT conditions rather than managing symptoms — for lasting health outcomes.',
+    colorClass: 'bg-amber-50 text-[#d4891b] group-hover:bg-[#F1AA37]',
+    borderHover: 'hover:border-amber-300',
+    dotColor: 'bg-[#F1AA37]',
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 sm:py-28 bg-[#faf9f7] overflow-hidden">
+    <section className="py-20 sm:py-28 bg-[#f8fafc] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -54,20 +73,20 @@ const WhyChooseUs = () => {
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <ScrollReveal direction="down">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">03</span>
-                <span className="block w-8 h-[1.5px] bg-[#0e4e50]"></span>
-                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0e4e50]">Why Dr. Aditi</span>
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">03</span>
+                <LogoColorDots size="w-2 h-2" />
+                <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1b6ea8]">Why Dr. Aditi</span>
               </div>
             </ScrollReveal>
 
             <ScrollHeading
               as="h2"
               direction="up"
-              className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0d3033] font-serif tracking-tight leading-[1.12]"
+              className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0f2942] font-serif tracking-tight leading-[1.12]"
             >
               Care that begins
               <br />
-              <span className="italic text-[#0e4e50]">with listening.</span>
+              <span className="italic text-[#1b6ea8]">with listening.</span>
             </ScrollHeading>
 
             <ScrollParagraph
@@ -97,12 +116,17 @@ const WhyChooseUs = () => {
             <ScrollStagger staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {qualities.map((q, idx) => (
                 <ScrollStaggerItem key={idx} direction="up" distance={20}>
-                  <div className="bg-white border border-[#e2ecea] hover:border-teal-400/60 p-6 rounded-2xl shadow-2xs hover:shadow-lg hover:shadow-teal-900/5 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between group">
+                  <div className={`bg-white border border-[#e2ecea] ${q.borderHover} p-6 rounded-2xl shadow-2xs hover:shadow-lg hover:shadow-slate-900/5 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between group relative overflow-hidden`}>
+                    {/* Top small color dot indicator */}
+                    <div className="absolute top-4 right-4 flex items-center gap-1.5">
+                      <span className={`w-2 h-2 rounded-full ${q.dotColor} opacity-70`} />
+                    </div>
+
                     <div>
-                      <div className="w-10 h-10 rounded-xl bg-teal-50 group-hover:bg-[#0e4e50] text-[#0e4e50] group-hover:text-white flex items-center justify-center mb-4 transition-colors duration-300 shadow-2xs">
+                      <div className={`w-10 h-10 rounded-xl ${q.colorClass} group-hover:text-white flex items-center justify-center mb-4 transition-colors duration-300 shadow-2xs`}>
                         {q.icon}
                       </div>
-                      <h3 className="text-[15px] font-bold text-slate-900 mb-2 group-hover:text-[#0e4e50] transition-colors">
+                      <h3 className="text-[15px] font-bold text-slate-900 mb-2 group-hover:text-[#0f2942] transition-colors">
                         {q.title}
                       </h3>
                       <p className="text-[13px] text-slate-500 leading-relaxed font-normal">

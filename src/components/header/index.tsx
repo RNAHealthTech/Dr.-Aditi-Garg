@@ -53,15 +53,15 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
   return (
     <>
       {/* Slim info bar */}
-      <div className="bg-[#0c3e40] text-[#9fcece]/90 text-[11px] py-1.5 px-4 hidden md:block">
+      <div className="bg-[#0f2942] text-[#b9dcf2]/90 text-[11px] py-1.5 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 text-[#6bbdbd]" />
+            <MapPin className="w-3 h-3 text-[#7ebfea]" />
             Sir Ganga Ram Hospital, Rajinder Nagar &amp; Shivasha ENT Clinic, Mayur Vihar — New Delhi
           </span>
           <div className="flex items-center space-x-4">
             <a href="tel:+919289300329" className="hover:text-white transition-colors flex items-center gap-1.5">
-              <Phone className="w-3 h-3 text-[#6bbdbd]" />
+              <Phone className="w-3 h-3 text-[#7ebfea]" />
               +91-9289300329
             </a>
             <span className="opacity-30">|</span>
@@ -74,11 +74,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
 
       {/* Main header */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3'
-            : 'bg-white/90 backdrop-blur-sm border-b border-slate-100/80 py-4'
+        className={`sticky top-0 z-50 w-full transition-all duration-300 relative ${isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-sm py-3'
+            : 'bg-white/90 backdrop-blur-sm py-4'
           }`}
       >
+        {/* Subtle 3-color accent line at the bottom of header */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#DE4937] via-[#2787C8] to-[#F1AA37] opacity-90" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="Dr. Aditi Garg | Shivasha ENT Clinic — Home">
@@ -86,11 +89,16 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
               <ShivashaEmblem className="w-full h-full aspect-[300/145] drop-shadow-[0_1px_2px_rgba(0,0,0,0.06)]" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-[17px] font-semibold tracking-tight text-[#0d3638] font-serif group-hover:text-[#0e4e50] transition-colors">
+              <span className="text-[17px] font-semibold tracking-tight text-[#0f2942] font-serif group-hover:text-[#1b6ea8] transition-colors">
                 Dr. Aditi Garg
               </span>
-              <span className="text-[9px] tracking-[0.16em] uppercase font-bold text-slate-400 mt-0.5">
-                Shivasha ENT Clinic &bull; Surgeon
+              <span className="text-[9px] tracking-[0.16em] uppercase font-bold text-slate-500 mt-1 flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DE4937]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2787C8]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F1AA37]" />
+                </span>
+                <span>Shivasha ENT Clinic</span>
               </span>
             </div>
           </Link>
@@ -101,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[13px] font-medium text-slate-500 hover:text-[#0e4e50] transition-colors relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1.5px] after:bg-[#0e4e50] hover:after:w-full after:transition-all after:duration-200"
+                className="text-[13px] font-medium text-slate-500 hover:text-[#1b6ea8] transition-colors relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1.5px] after:bg-[#1b6ea8] hover:after:w-full after:transition-all after:duration-200"
               >
                 {link.label}
               </a>
@@ -114,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
               <button
                 onClick={handleBookClick}
                 id="nav-book-appointment-btn"
-                className="inline-flex items-center gap-2 bg-[#0e4e50] hover:bg-[#0b3e40] text-white px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors duration-200 shadow-sm rounded-sm"
+                className="inline-flex items-center gap-2 bg-[#1b6ea8] hover:bg-[#155887] text-white px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors duration-200 shadow-sm rounded-sm"
               >
                 <Calendar className="w-3.5 h-3.5 opacity-75" />
                 Book Appointment
@@ -123,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
               <Link
                 href="/contact"
                 id="nav-book-appointment-btn"
-                className="inline-flex items-center gap-2 bg-[#0e4e50] hover:bg-[#0b3e40] text-white px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors duration-200 shadow-sm rounded-sm"
+                className="inline-flex items-center gap-2 bg-[#1b6ea8] hover:bg-[#155887] text-white px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors duration-200 shadow-sm rounded-sm"
               >
                 <Calendar className="w-3.5 h-3.5 opacity-75" />
                 Book Appointment
@@ -133,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-1.5 text-slate-600 hover:text-[#0e4e50] transition-colors"
+            className="md:hidden p-1.5 text-slate-600 hover:text-[#1b6ea8] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation"
             aria-expanded={mobileMenuOpen}
@@ -151,7 +159,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2.5 text-[14px] font-medium text-slate-700 hover:text-[#0e4e50] hover:bg-[#f2f8f7] rounded transition-colors"
+                  className="px-3 py-2.5 text-[14px] font-medium text-slate-700 hover:text-[#1b6ea8] hover:bg-[#f0f7fc] rounded transition-colors"
                 >
                   {link.label}
                 </a>
@@ -161,7 +169,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
               {onOpenAppointmentModal ? (
                 <button
                   onClick={() => { setMobileMenuOpen(false); handleBookClick(); }}
-                  className="w-full flex items-center justify-center gap-2 bg-[#0e4e50] text-white px-4 py-3 font-semibold text-sm rounded-sm shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 bg-[#1b6ea8] text-white px-4 py-3 font-semibold text-sm rounded-sm shadow-sm"
                 >
                   <Calendar className="w-4 h-4 opacity-75" />
                   Book Appointment
@@ -170,15 +178,15 @@ const Header: React.FC<HeaderProps> = ({ onOpenAppointmentModal }) => {
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 bg-[#0e4e50] text-white px-4 py-3 font-semibold text-sm rounded-sm shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 bg-[#1b6ea8] text-white px-4 py-3 font-semibold text-sm rounded-sm shadow-sm"
                 >
                   <Calendar className="w-4 h-4 opacity-75" />
                   Book Appointment
                 </Link>
               )}
               <div className="mt-4 text-[11px] text-slate-400 text-center space-y-1">
-                <div><a href="tel:+919289300329" className="hover:text-[#0e4e50]">+91-9289300329</a></div>
-                <div><a href="mailto:draditigarg90@gmail.com" className="hover:text-[#0e4e50]">draditigarg90@gmail.com</a></div>
+                <div><a href="tel:+919289300329" className="hover:text-[#1b6ea8]">+91-9289300329</a></div>
+                <div><a href="mailto:draditigarg90@gmail.com" className="hover:text-[#1b6ea8]">draditigarg90@gmail.com</a></div>
               </div>
             </div>
           </div>

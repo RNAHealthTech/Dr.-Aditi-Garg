@@ -17,7 +17,7 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
-import { ShivashaEmblem } from '@/components/ui/shivasha-logo';
+import { ShivashaEmblem, LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
 const HeroSection: React.FC = () => {
   return (
@@ -32,11 +32,11 @@ const HeroSection: React.FC = () => {
           {/* Left Column: Spacious, Elegant Doctor Profile */}
           <div className="lg:col-span-7 space-y-8">
             
-            {/* Status Pill */}
+            {/* Status Pill with 3 Logo Colors */}
             <ScrollReveal direction="down" delay={0.05}>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-teal-200/70 shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0e4e50]">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-xs">
+                <LogoColorDots size="w-2 h-2" />
+                <span className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#1b6ea8]">
                   ENT Specialist &amp; Head-Neck Surgeon
                 </span>
                 <span className="text-slate-300">|</span>
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
               </ScrollHeading>
 
               <ScrollReveal direction="up" delay={0.08}>
-                <p className="text-base sm:text-lg text-[#0e4e50] font-semibold flex flex-wrap items-center gap-2">
+                <p className="text-base sm:text-lg text-[#1b6ea8] font-semibold flex flex-wrap items-center gap-2">
                   <span>MBBS, DNB (ENT)</span>
                   <span className="text-slate-300">•</span>
                   <span className="text-slate-700">Associate Consultant, Dept. of ENT</span>
@@ -81,13 +81,13 @@ const HeroSection: React.FC = () => {
                   
                   {/* Location 1 */}
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2 text-[#0e4e50] font-bold text-xs uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-[#1b6ea8] font-bold text-xs uppercase tracking-wider">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>Sir Ganga Ram Hospital</span>
                     </div>
                     <p className="text-xs text-slate-500 font-medium">Old Rajinder Nagar, New Delhi</p>
                     <div className="flex items-center gap-1.5 text-xs text-slate-700 pt-1">
-                      <Clock className="w-3 h-3 text-[#0e4e50]" />
+                      <Clock className="w-3 h-3 text-[#1b6ea8]" />
                       <span>Mon–Sat | Morning &amp; Afternoon OPD</span>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4 pt-1">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 bg-[#0e4e50] hover:bg-[#093537] text-white px-8 py-4 text-sm font-bold tracking-wide rounded-full shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
+                  className="inline-flex items-center gap-2.5 bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-4 text-sm font-bold tracking-wide rounded-full shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
                 >
                   <span>Book Consultation</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -122,15 +122,15 @@ const HeroSection: React.FC = () => {
 
                 <a
                   href="tel:+919289300329"
-                  className="inline-flex items-center gap-2.5 text-slate-800 bg-white border border-slate-200 hover:border-[#0e4e50] hover:text-[#0e4e50] px-7 py-4 text-sm font-bold rounded-full shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                  className="inline-flex items-center gap-2.5 text-slate-800 bg-white border border-slate-200 hover:border-[#1b6ea8] hover:text-[#1b6ea8] px-7 py-4 text-sm font-bold rounded-full shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
                 >
-                  <Phone className="w-4 h-4 text-[#0e4e50]" />
+                  <Phone className="w-4 h-4 text-[#1b6ea8]" />
                   <span>+91-9289300329</span>
                 </a>
 
                 <Link
                   href="/timings"
-                  className="text-sm font-semibold text-slate-500 hover:text-[#0e4e50] transition-colors underline underline-offset-4 decoration-slate-300 ml-2"
+                  className="text-sm font-semibold text-slate-500 hover:text-[#1b6ea8] transition-colors underline underline-offset-4 decoration-slate-300 ml-2"
                 >
                   View Full OPD Timings
                 </Link>
@@ -186,12 +186,12 @@ const HeroSection: React.FC = () => {
                 {/* Single, Tasteful Floating Badge */}
                 <div className="absolute -bottom-4 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-lg border border-slate-100 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-xl bg-teal-50 text-[#0e4e50] flex items-center justify-center font-bold text-xs shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-teal-50 text-[#1b6ea8] flex items-center justify-center font-bold text-xs shrink-0">
                       ENT
                     </div>
                     <div>
                       <div className="text-xs font-bold text-slate-900 leading-tight">Dr. Aditi Garg</div>
-                      <div className="text-[11px] text-[#0e4e50] font-medium">Associate Consultant</div>
+                      <div className="text-[11px] text-[#1b6ea8] font-medium">Associate Consultant</div>
                     </div>
                   </div>
                   <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">
@@ -212,28 +212,28 @@ const HeroSection: React.FC = () => {
           <ScrollStagger staggerDelay={0.06} className="flex flex-wrap items-center justify-center sm:justify-between gap-4 sm:gap-6 text-xs text-slate-500">
             <ScrollStaggerItem direction="up">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#DE4937] shadow-2xs"></span>
                 <span>MBBS — Coimbatore Govt. Medical College</span>
               </div>
             </ScrollStaggerItem>
             <div className="hidden sm:block w-px h-4 bg-slate-200"></div>
             <ScrollStaggerItem direction="up">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#2787C8] shadow-2xs"></span>
                 <span>DNB – ENT, Cooper Hospital &amp; HBT Medical College, Mumbai</span>
               </div>
             </ScrollStaggerItem>
             <div className="hidden sm:block w-px h-4 bg-slate-200"></div>
             <ScrollStaggerItem direction="up">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#F1AA37] shadow-2xs"></span>
                 <span>Associate Consultant — Sir Ganga Ram Hospital, New Delhi</span>
               </div>
             </ScrollStaggerItem>
             <div className="hidden md:block w-px h-4 bg-slate-200"></div>
             <ScrollStaggerItem direction="up">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0e4e50]"></span>
+                <LogoColorDots size="w-1.5 h-1.5" />
                 <span>Director — Shivasha ENT Clinic, Mayur Vihar</span>
               </div>
             </ScrollStaggerItem>

@@ -63,7 +63,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
         {submitted ? (
           <div className="text-center py-6 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-[#dcf2ee] text-[#0e4e50] mx-auto flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-[#dcf2ee] text-[#1b6ea8] mx-auto flex items-center justify-center">
               <CheckCircle2 className="w-9 h-9" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 font-serif">
@@ -78,7 +78,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
             <div className="pt-4 flex flex-col gap-2.5">
               <a
                 href="tel:+919289300329"
-                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-[#0e4e50] hover:underline"
+                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-[#1b6ea8] hover:underline"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>For urgent inquiries, call +91-9289300329</span>
@@ -87,7 +87,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 href="https://appointment.sgrh.com"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#0e4e50] hover:underline"
+                className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#1b6ea8] hover:underline"
               >
                 <span>Or book via official Sir Ganga Ram Portal</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -97,7 +97,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   setSubmitted(false);
                   onClose();
                 }}
-                className="w-full bg-[#0e4e50] hover:bg-[#083032] text-white py-3 rounded-xl font-semibold text-sm shadow-md"
+                className="w-full bg-[#1b6ea8] hover:bg-[#155887] text-white py-3 rounded-xl font-semibold text-sm shadow-md"
               >
                 Done
               </button>
@@ -105,8 +105,8 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
           </div>
         ) : (
           <div>
-            <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider text-[#0e4e50] uppercase mb-1">
-              <span className="w-4 h-[2px] bg-[#0e4e50]"></span>
+            <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider text-[#1b6ea8] uppercase mb-1">
+              <span className="w-4 h-[2px] bg-[#1b6ea8]"></span>
               <span>Schedule Consultation</span>
             </div>
 
@@ -124,7 +124,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 onClick={() => setClinic('sgrh')}
                 className={`py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-all ${
                   clinic === 'sgrh'
-                    ? 'bg-white text-[#0e4e50] shadow-sm font-bold'
+                    ? 'bg-white text-[#1b6ea8] shadow-sm font-bold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -137,7 +137,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 onClick={() => setClinic('shivasha')}
                 className={`py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-all ${
                   clinic === 'shivasha'
-                    ? 'bg-white text-[#0e4e50] shadow-sm font-bold'
+                    ? 'bg-white text-[#1b6ea8] shadow-sm font-bold'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -147,7 +147,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
             </div>
 
             {/* Timings info pill based on clinic */}
-            <div className="bg-teal-50/70 border border-teal-100 rounded-xl p-3 mb-4 text-[11px] text-[#0e4e50]">
+            <div className="bg-teal-50/70 border border-teal-100 rounded-xl p-3 mb-4 text-[11px] text-[#1b6ea8]">
               {clinic === 'sgrh' ? (
                 <div>
                   <strong>Sir Ganga Ram Hospital:</strong> Room F-87, Rajinder Nagar • <strong>Mon, Wed, Fri (8:00 AM – 3:00 PM) • Tue, Thu, Sat (9:00 AM – 3:00 PM)</strong>
@@ -171,7 +171,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   placeholder="Full Name *"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50]"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8]"
                 />
               </div>
 
@@ -186,7 +186,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   placeholder="Mobile Number *"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50]"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8]"
                 />
               </div>
 
@@ -200,7 +200,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full pl-10 pr-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50]"
+                    className="w-full pl-10 pr-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8]"
                   />
                 </div>
 
@@ -211,7 +211,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   <select
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                    className="w-full pl-10 pr-2 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50]"
+                    className="w-full pl-10 pr-2 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8]"
                   >
                     {clinic === 'sgrh' ? (
                       <>
@@ -240,14 +240,14 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   placeholder="Primary concern (e.g. Ear discharge, Nose block, Voice hoarseness)"
                   value={formData.concern}
                   onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
-                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0e4e50]/20 focus:border-[#0e4e50]"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8]"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#0e4e50] hover:bg-[#083032] text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-md transition-all mt-2"
+                className="w-full bg-[#1b6ea8] hover:bg-[#155887] text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-md transition-all mt-2"
               >
                 {isSubmitting ? 'Confirming...' : 'Confirm Appointment Request'}
               </button>

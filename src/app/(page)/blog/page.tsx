@@ -39,15 +39,15 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="bg-[#faf9f7] min-h-screen pt-24 pb-20">
+    <div className="bg-[#f8fafc] min-h-screen pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#0e4e50] bg-[#e6f0ef] px-3 py-1.5 rounded-full inline-block mb-4">
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1b6ea8] bg-[#e6f0ef] px-3 py-1.5 rounded-full inline-block mb-4">
             Insights &amp; Updates
           </span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#0d3033] mb-6">
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#0f2942] mb-6">
             Latest From Our Blog
           </h1>
           <p className="max-w-2xl mx-auto text-slate-600 text-[15px] leading-relaxed">
@@ -70,7 +70,7 @@ export default function BlogPage() {
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-[#0e4e50] text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-sm shadow-sm">
+                  <span className="bg-white/90 backdrop-blur-sm text-[#1b6ea8] text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-sm shadow-sm">
                     {post.category}
                   </span>
                 </div>
@@ -89,7 +89,7 @@ export default function BlogPage() {
                   </span>
                 </div>
 
-                <h3 className="text-[18px] font-bold text-[#0d3033] mb-3 leading-snug group-hover:text-[#0e4e50] transition-colors">
+                <h3 className="text-[18px] font-bold text-[#0f2942] mb-3 leading-snug group-hover:text-[#1b6ea8] transition-colors">
                   {post.title}
                 </h3>
                 
@@ -99,7 +99,7 @@ export default function BlogPage() {
 
                 <Link 
                   href="#" 
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#0e4e50] group/btn mt-auto"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1b6ea8] group/btn mt-auto"
                 >
                   Read Article
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
