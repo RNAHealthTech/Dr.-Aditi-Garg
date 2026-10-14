@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MapPin, Clock, PhoneCall, Calendar, ArrowRight, ExternalLink } from 'lucide-react';
+import { ShivashaEmblem } from '@/components/ui/shivasha-logo';
 import {
   ScrollReveal,
   ScrollStagger,
@@ -109,6 +110,12 @@ const Affiliations = () => {
 
                 {/* Clinic name */}
                 <div className="mb-6">
+                  {clinic.name === 'Shivasha ENT Clinic' && (
+                    <div className="mb-3.5 inline-flex items-center gap-2.5 bg-slate-50 border border-slate-200/90 px-3 py-1.5 rounded-lg shadow-2xs">
+                      <ShivashaEmblem className="w-10 h-6 shrink-0" />
+                      <span className="text-[10.5px] font-extrabold uppercase tracking-wider text-slate-700">Official Clinic</span>
+                    </div>
+                  )}
                   <h3 className={`text-2xl sm:text-[28px] font-bold font-serif leading-tight ${clinic.primary ? 'text-white' : 'text-slate-900'}`}>
                     {clinic.name}
                   </h3>

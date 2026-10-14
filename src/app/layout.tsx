@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   keywords:
     "Dr Aditi Garg, ENT Specialist New Delhi, Sir Ganga Ram Hospital ENT, Shivasha ENT Clinic Mayur Vihar, Ear Nose Throat Surgeon, Sinus Surgery Delhi, DNB ENT",
   icons: {
-    icon: '/icon.jpg',
-    apple: '/icon.jpg',
+    icon: '/images/shivasha-emblem.svg',
+    apple: '/images/shivasha-emblem.svg',
   },
   openGraph: {
     title: "Dr. Aditi Garg | ENT Specialist & Surgeon",
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   },
 };
 
+import SchemaMarkup from "@/components/seo/schema-markup";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}>
+      <head>
+        <SchemaMarkup />
+      </head>
       <body className="font-sans antialiased bg-[#fbfdfc] text-slate-800 min-h-screen">
         {children}
       </body>

@@ -12,6 +12,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { EarLogoIcon } from '../header';
+import { ShivashaEmblem } from '@/components/ui/shivasha-logo';
 
 const Footer: React.FC = () => {
   return (
@@ -23,14 +24,14 @@ const Footer: React.FC = () => {
 
           {/* Col 1: Brand */}
           <div className="lg:col-span-4 space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 border border-teal-800 bg-teal-900/40 text-teal-400 flex items-center justify-center rounded-sm">
-                <EarLogoIcon className="w-5 h-5" />
+            <div className="flex items-center gap-3.5">
+              <div className="w-[52px] h-[28px] shrink-0 flex items-center justify-center">
+                <ShivashaEmblem className="w-full h-full aspect-[300/145] drop-shadow-sm" />
               </div>
               <div>
                 <div className="text-[17px] font-bold font-serif text-white tracking-tight">Dr. Aditi Garg</div>
-                <div className="text-[9.5px] uppercase tracking-[0.2em] font-semibold text-teal-500 mt-0.5">
-                  ENT Specialist &amp; Surgeon
+                <div className="text-[9.5px] uppercase tracking-[0.18em] font-semibold text-teal-400 mt-0.5">
+                  Shivasha ENT Clinic &bull; Surgeon
                 </div>
               </div>
             </div>
@@ -97,9 +98,12 @@ const Footer: React.FC = () => {
 
           {/* Col 3: Shivasha Clinic */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">
-              Shivasha ENT Clinic
-            </h4>
+            <div className="flex items-center gap-2">
+              <ShivashaEmblem className="w-8 h-4.5 shrink-0" />
+              <h4 className="text-[12px] font-bold uppercase tracking-[0.16em] text-white">
+                Shivasha ENT Clinic
+              </h4>
+            </div>
             <div className="space-y-3 text-[12.5px]">
               <div className="flex items-start gap-2.5 text-slate-500">
                 <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />

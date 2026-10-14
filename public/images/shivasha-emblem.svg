@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 145" fill="none" width="100%" height="100%">
+  <defs>
+    <clipPath id="emblem-outer-clip-file">
+      <rect x="0" y="0" width="300" height="145" rx="20" ry="20" />
+    </clipPath>
+  </defs>
+
+  <!-- 3-colored panels -->
+  <g clip-path="url(#emblem-outer-clip-file)">
+    <!-- Red Panel (Ear) -->
+    <path
+      d="M 0 0 
+         L 94 0 
+         C 104 35, 88 75, 96 115 
+         C 99 130, 97 140, 93 145 
+         L 0 145 Z"
+      fill="#DE4937"
+    />
+
+    <!-- Blue Panel (Nose) -->
+    <path
+      d="M 100 0 
+         C 92 35, 108 75, 100 115 
+         C 98 130, 100 140, 98 145 
+         L 190 145 
+         C 194 130, 192 105, 194 75 
+         C 195 45, 188 20, 193 0 Z"
+      fill="#2787C8"
+    />
+
+    <!-- Yellow Panel (Throat) -->
+    <path
+      d="M 198 0 
+         C 193 20, 200 45, 199 75 
+         C 197 105, 199 130, 195 145 
+         L 300 145 
+         L 300 0 Z"
+      fill="#F1AA37"
+    />
+  </g>
+
+  <!-- 1. EAR (White contour on Red panel) -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path
+      d="M 62 48
+         C 62 27, 48 20, 35 24
+         C 21 28, 15 44, 17 65
+         C 19 84, 27 97, 32 107
+         C 36 115, 46 116, 51 109
+         C 56 102, 52 91, 45 85
+         C 38 80, 35 73, 38 66"
+      stroke-width="4.2"
+    />
+    <path
+      d="M 48 36
+         C 39 36, 31 43, 30 54
+         C 29 65, 35 76, 40 79"
+      stroke-width="3.4"
+    />
+  </g>
+
+  <!-- 2. NOSE (White contour on Blue panel) -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path
+      d="M 142 21
+         C 145 41, 142 63, 130 89
+         C 121 107, 114 118, 118 124
+         C 121 127, 130 127, 140 123
+         C 154 117, 164 111, 171 105"
+      stroke-width="4.2"
+    />
+    <path
+      d="M 135 99
+         C 142 95, 158 97, 162 108
+         C 164 115, 158 121, 146 122"
+      stroke-width="3.8"
+    />
+  </g>
+
+  <!-- 3. THROAT & AIRWAY (White contour on Yellow panel) -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path
+      d="M 216 33
+         C 218 45, 224 51, 221 57
+         C 217 62, 219 69, 225 73
+         C 232 78, 232 86, 227 93
+         C 224 99, 229 106, 238 109
+         C 243 110, 248 111, 252 111"
+      stroke-width="3.6"
+    />
+    <path
+      d="M 216 59
+         C 236 59, 254 67, 266 83
+         C 278 99, 286 117, 290 131"
+      stroke-width="5.2"
+    />
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" fill="none" width="100%" height="100%">
+  <!-- Definitions -->
+  <defs>
+    <!-- Rounded emblem outer clipping mask -->
+    <clipPath id="emblem-rounded-clip">
+      <rect x="110" y="15" width="300" height="145" rx="20" ry="20" />
+    </clipPath>
+
+    <!-- Drop shadow for crispness -->
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- 3-COLORED EMBLEM CONTAINER -->
+  <g clip-path="url(#emblem-rounded-clip)" filter="url(#soft-shadow)">
+    <!-- Red Block (Left - Ear) -->
+    <path d="M 110 15 
+             L 204 15 
+             C 214 45, 198 85, 206 125 
+             C 209 140, 207 150, 203 160 
+             L 110 160 Z" 
+          fill="#DE4937" />
+
+    <!-- Blue Block (Center - Nose) -->
+    <path d="M 210 15 
+             C 202 45, 218 85, 210 125 
+             C 208 140, 210 150, 208 160 
+             L 300 160 
+             C 304 145, 302 120, 304 90 
+             C 305 60, 298 35, 303 15 Z" 
+          fill="#2787C8" />
+
+    <!-- Yellow / Amber Block (Right - Throat) -->
+    <path d="M 308 15 
+             C 303 35, 310 60, 309 90 
+             C 307 120, 309 145, 305 160 
+             L 410 160 
+             L 410 15 Z" 
+          fill="#F1AA37" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 1. EAR (White line art in Red panel) -->
+  <!-- ========================================== -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Outer Ear Helix, Lobe, and Tragus -->
+    <path d="M 172 65
+             C 172 44, 158 37, 145 41
+             C 131 45, 125 61, 127 82
+             C 129 101, 137 114, 142 124
+             C 146 132, 156 133, 161 126
+             C 166 119, 162 108, 155 102
+             C 148 97, 145 90, 148 83" 
+          stroke-width="4.2" />
+
+    <!-- Inner Antihelix and Concha -->
+    <path d="M 158 53
+             C 149 53, 141 60, 140 71
+             C 139 82, 145 93, 150 96" 
+          stroke-width="3.4" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. NOSE (White line art in Blue panel) -->
+  <!-- ========================================== -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Nasal Bridge, Dorsum, Tip and Base -->
+    <path d="M 252 38
+             C 255 58, 252 80, 240 106
+             C 231 124, 224 135, 228 141
+             C 231 144, 240 144, 250 140
+             C 264 134, 274 128, 281 122" 
+          stroke-width="4.2" />
+
+    <!-- Nostril wing / Alar curve -->
+    <path d="M 245 116
+             C 252 112, 268 114, 272 125
+             C 274 132, 268 138, 256 139" 
+          stroke-width="3.8" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. THROAT & AIRWAY (White line art in Yellow panel) -->
+  <!-- ========================================== -->
+  <g stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Facial Profile: Upper Lip, Mouth, Lower Lip, Chin, Cervical Neck -->
+    <path d="M 326 50
+             C 328 62, 334 68, 331 74
+             C 327 79, 329 86, 335 90
+             C 342 95, 342 103, 337 110
+             C 334 116, 339 123, 348 126
+             C 353 127, 358 128, 362 128" 
+          stroke-width="3.6" />
+
+    <!-- Pharyngeal Airway / Upper Palate Arch swooping down to vocal tract -->
+    <path d="M 326 76
+             C 346 76, 364 84, 376 100
+             C 388 116, 396 134, 400 148" 
+          stroke-width="5.2" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- CLINIC NAME TEXT -->
+  <!-- ========================================== -->
+  <text x="260" y="206" 
+        text-anchor="middle" 
+        fill="#1C242D" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="28.5" 
+        font-weight="800" 
+        letter-spacing="1.4">
+    SHIVASHA ENT CLINIC
+  </text>
+</svg>

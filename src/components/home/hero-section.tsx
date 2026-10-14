@@ -17,6 +17,7 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
+import { ShivashaEmblem } from '@/components/ui/shivasha-logo';
 
 const HeroSection: React.FC = () => {
   return (
@@ -94,7 +95,7 @@ const HeroSection: React.FC = () => {
                   {/* Location 2 */}
                   <div className="pt-3 sm:pt-0 sm:pl-6 space-y-1">
                     <div className="flex items-center gap-2 text-slate-800 font-bold text-xs uppercase tracking-wider">
-                      <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                      <ShivashaEmblem className="w-5 h-3 shrink-0" />
                       <span>Shivasha ENT Clinic</span>
                     </div>
                     <p className="text-xs text-slate-500 font-medium">Mayur Vihar Phase 1, New Delhi</p>
