@@ -94,7 +94,7 @@ const WhyChooseUs = () => {
               delay={0.1}
               className="mt-6 text-[14px] text-slate-500 leading-relaxed max-w-sm"
             >
-              Dr. Aditi Garg brings together medical expertise and genuine personal attention. Every patient understands their condition and feels supported throughout.
+              Dr.&nbsp;Aditi Garg brings together medical expertise and genuine personal attention. Every patient understands their condition and feels supported throughout.
             </ScrollParagraph>
 
             {/* Subtle separator visual */}

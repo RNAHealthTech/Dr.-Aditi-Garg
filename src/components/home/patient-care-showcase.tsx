@@ -121,7 +121,7 @@ const PatientCareShowcase: React.FC = () => {
               delay={0.1}
               className="mt-4 text-[14.5px] sm:text-[15px] text-slate-600 leading-relaxed max-w-xl font-normal"
             >
-              Authentic glimpses from everyday clinical practice with Dr. Aditi Garg — from patient counseling and gentle physical examinations to real-time HD video endoscopy.
+              Authentic glimpses from everyday clinical practice with Dr.&nbsp;Aditi Garg — from patient counseling and gentle physical examinations to real-time HD video endoscopy.
             </ScrollParagraph>
           </div>
 

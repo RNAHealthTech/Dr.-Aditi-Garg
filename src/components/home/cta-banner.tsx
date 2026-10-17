@@ -47,7 +47,7 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
             delay={0.1}
             className="mt-5 text-[15px] sm:text-[16px] text-teal-50/80 leading-relaxed max-w-md font-light"
           >
-            Book a personalized consultation with Dr. Aditi Garg at Sir Ganga Ram Hospital or Shivasha ENT Clinic.
+            Book a personalized consultation with Dr.&nbsp;Aditi Garg at Sir Ganga Ram Hospital or Shivasha ENT Clinic.
           </ScrollParagraph>
 
           <ScrollReveal direction="up" delay={0.15}>

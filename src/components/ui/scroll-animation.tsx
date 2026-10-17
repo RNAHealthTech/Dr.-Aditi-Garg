@@ -244,9 +244,9 @@ export const ScrollParagraph: React.FC<ScrollParagraphProps> = ({
     );
   }
 
-  // Split into sentences / natural editorial lines
+  // Split into sentences / natural editorial lines (avoiding splits on titles like Dr., Mr., initials, etc.)
   const sentences = content
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[!?]|(?<!\b(?:Dr|Drs|Mr|Mrs|Ms|Prof|Sr|Jr|vs|etc|dept|no|gen|govt|al|[A-Z]))\.)\s+/i)
     .filter((s) => s.trim().length > 0);
 
   return (

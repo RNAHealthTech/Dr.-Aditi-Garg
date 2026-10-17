@@ -92,7 +92,7 @@ const InstagramFeed = () => {
               delay={0.1}
               className="mt-3 text-[14px] text-slate-500 leading-relaxed max-w-xl"
             >
-              Real moments from everyday ENT consultations, surgical case insights, and health advice from Dr. Aditi Garg&apos;s practice.
+              Real moments from everyday ENT consultations, surgical case insights, and health advice from Dr.&nbsp;Aditi&nbsp;Garg&apos;s practice.
             </ScrollParagraph>
           </div>
 

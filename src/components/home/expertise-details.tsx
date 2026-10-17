@@ -240,7 +240,7 @@ const ExpertiseDetails: React.FC = () => {
             delay={0.1}
             className="text-[14px] text-slate-500 leading-relaxed lg:pl-8"
           >
-            Dr. Aditi Garg offers comprehensive ENT care across six specialized disciplines using state-of-the-art endoscopic and microscopic technology. Over 35 types of surgeries performed independently.
+            Dr.&nbsp;Aditi Garg offers comprehensive ENT care across six specialized disciplines using state-of-the-art endoscopic and microscopic technology. Over 35 types of surgeries performed independently.
           </ScrollParagraph>
         </div>
 
