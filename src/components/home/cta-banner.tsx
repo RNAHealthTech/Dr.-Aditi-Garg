@@ -11,12 +11,15 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 import { LogoColorDots } from '@/components/ui/shivasha-logo';
+import { useAppointmentModal } from '@/context/appointment-context';
 
 interface CtaBannerProps {
   onBookClick?: () => void;
 }
 
 const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
+  const { openAppointmentModal } = useAppointmentModal();
+  const handleBook = onBookClick || (() => openAppointmentModal());
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1d30] via-[#0f2942] to-[#1b6ea8] py-24 sm:py-28 border-t border-[#091b2c]">
       {/* Subtle clean medical ambient pattern */}
@@ -52,27 +55,15 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ onBookClick }) => {
 
           <ScrollReveal direction="up" delay={0.15}>
             <div className="mt-9 flex flex-wrap items-center gap-3.5">
-              {onBookClick ? (
-                <button
-                  onClick={onBookClick}
-                  id="cta-book-appointment-btn"
-                  className="inline-flex items-center gap-2.5 bg-white text-[#0f2942] hover:bg-teal-50 px-8 py-4 text-[14px] font-bold tracking-wide transition-all duration-300 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 group cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4 text-[#1b6ea8]" />
-                  <span>Book an Appointment</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              ) : (
-                <Link
-                  href="/contact"
-                  id="cta-book-appointment-btn"
-                  className="inline-flex items-center gap-2.5 bg-white text-[#0f2942] hover:bg-teal-50 px-8 py-4 text-[14px] font-bold tracking-wide transition-all duration-300 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 group"
-                >
-                  <Calendar className="w-4 h-4 text-[#1b6ea8]" />
-                  <span>Book an Appointment</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
+              <button
+                onClick={handleBook}
+                id="cta-book-appointment-btn"
+                className="inline-flex items-center gap-2.5 bg-white text-[#0f2942] hover:bg-teal-50 px-8 py-4 text-[14px] font-bold tracking-wide transition-all duration-300 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 group cursor-pointer"
+              >
+                <Calendar className="w-4 h-4 text-[#1b6ea8]" />
+                <span>Book an Appointment</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
               <a
                 href="tel:+919289300329"
                 className="inline-flex items-center gap-2.5 border border-white/30 hover:border-white text-white hover:bg-white/10 px-7 py-4 text-[14px] font-bold tracking-wide transition-all duration-300 rounded-full backdrop-blur-xs"

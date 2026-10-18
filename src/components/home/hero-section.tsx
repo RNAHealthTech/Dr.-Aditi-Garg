@@ -18,8 +18,10 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 import { ShivashaEmblem, LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
+import { useAppointmentModal } from '@/context/appointment-context';
 
 const HeroSection: React.FC = () => {
+  const { openAppointmentModal } = useAppointmentModal();
   return (
     <section id="home" className="relative bg-[#fafbfb] pt-12 pb-14 lg:pt-20 lg:pb-20 overflow-hidden">
       {/* Soft, minimal ambient backdrop */}
@@ -112,13 +114,14 @@ const HeroSection: React.FC = () => {
             {/* Action Buttons */}
             <ScrollReveal direction="up" delay={0.15}>
               <div className="flex flex-wrap items-center gap-4 pt-1">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2.5 bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-4 text-sm font-bold tracking-wide rounded-full shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
+                <button
+                  type="button"
+                  onClick={() => openAppointmentModal()}
+                  className="inline-flex items-center gap-2.5 bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-4 text-sm font-bold tracking-wide rounded-full shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group cursor-pointer"
                 >
                   <span>Book Consultation</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
 
                 <a
                   href="tel:+919289300329"

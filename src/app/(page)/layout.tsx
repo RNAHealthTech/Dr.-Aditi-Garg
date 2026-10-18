@@ -1,34 +1,27 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import AppointmentModal from '@/components/appointment-modal';
+import { AppointmentProvider, useAppointmentModal } from '@/context/appointment-context';
 import { ScrollProgressBar } from '@/components/ui/scroll-animation';
 
-export default function HomeLayout({ children }: { children: React.ReactNode }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedConcern, setSelectedConcern] = useState('');
-
-  const handleOpenModal = (concern: string = '') => {
-    setSelectedConcern(concern);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+function LayoutContent({ children }: { children: React.ReactNode }) {
+  const { openAppointmentModal } = useAppointmentModal();
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f8fafc] selection:bg-blue-100 selection:text-blue-900">
       <ScrollProgressBar />
-      <Header onOpenAppointmentModal={() => handleOpenModal()} />
+      <Header onOpenAppointmentModal={() => openAppointmentModal()} />
       <main className="flex-1">{children}</main>
-      <Footer />
-      <AppointmentModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        preselectedConcern={selectedConcern}
-      />
+      <Footer onOpenAppointmentModal={() => openAppointmentModal()} />
     </div>
+  );
+}
+
+export default function HomeLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <AppointmentProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </AppointmentProvider>
   );
 }

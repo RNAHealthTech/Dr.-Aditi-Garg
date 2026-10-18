@@ -10,6 +10,7 @@ import {
   ScrollParagraph,
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
+import { useAppointmentModal } from '@/context/appointment-context';
 
 const clinics = [
   {
@@ -41,6 +42,7 @@ const clinics = [
 ];
 
 const Affiliations = () => {
+  const { openAppointmentModal } = useAppointmentModal();
   return (
     <section id="clinics" className="py-20 sm:py-28 bg-white border-t border-[#e4e8e5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,19 +165,30 @@ const Affiliations = () => {
 
                 {/* CTA Button */}
                 <div className={`mt-8 pt-6 border-t ${clinic.primary ? 'border-white/10' : 'border-slate-100'}`}>
-                  <a
-                    href={clinic.link}
-                    target={clinic.link.startsWith('http') ? '_blank' : '_self'}
-                    rel="noreferrer"
-                    className={`inline-flex items-center justify-center gap-2.5 text-[13.5px] font-bold transition-all duration-200 w-full py-3.5 rounded-full ${
-                      clinic.primary
-                        ? 'bg-white text-[#0f2942] hover:bg-teal-50 shadow-md hover:shadow-lg hover:scale-[1.02]'
-                        : 'bg-[#1b6ea8] text-white hover:bg-[#155887] shadow-sm hover:shadow-md hover:scale-[1.02]'
-                    }`}
-                  >
-                    <span>{clinic.linkLabel}</span>
-                    {clinic.link.startsWith('http') ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
-                  </a>
+                  {clinic.link.startsWith('http') ? (
+                    <a
+                      href={clinic.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`inline-flex items-center justify-center gap-2.5 text-[13.5px] font-bold transition-all duration-200 w-full py-3.5 rounded-full ${
+                        clinic.primary
+                          ? 'bg-white text-[#0f2942] hover:bg-teal-50 shadow-md hover:shadow-lg hover:scale-[1.02]'
+                          : 'bg-[#1b6ea8] text-white hover:bg-[#155887] shadow-sm hover:shadow-md hover:scale-[1.02]'
+                      }`}
+                    >
+                      <span>{clinic.linkLabel}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openAppointmentModal('', 'shivasha')}
+                      className="inline-flex items-center justify-center gap-2.5 text-[13.5px] font-bold transition-all duration-200 w-full py-3.5 rounded-full bg-[#1b6ea8] text-white hover:bg-[#155887] shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer"
+                    >
+                      <span>{clinic.linkLabel}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </ScrollStaggerItem>

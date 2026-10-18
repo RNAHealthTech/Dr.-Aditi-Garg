@@ -14,7 +14,11 @@ import {
 import { EarLogoIcon } from '../header';
 import { ShivashaEmblem, LogoColorDots, LogoColorBar } from '@/components/ui/shivasha-logo';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAppointmentModal?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onOpenAppointmentModal }) => {
   return (
     <footer id="contact" className="bg-[#0a1a2c] text-slate-400 pb-10 relative">
       {/* Top 3-Color Brand Bar */}
@@ -141,13 +145,24 @@ const Footer: React.FC = () => {
               <li><a href="/contact" className="text-slate-500 hover:text-[#2787C8] transition-colors">Contact</a></li>
             </ul>
             <div className="pt-2">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-[12px] font-semibold bg-[#1b6ea8] hover:bg-[#155887] text-white px-4 py-2.5 rounded-full transition-colors shadow-sm"
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                Book Appointment
-              </a>
+              {onOpenAppointmentModal ? (
+                <button
+                  type="button"
+                  onClick={onOpenAppointmentModal}
+                  className="inline-flex items-center gap-1.5 text-[12px] font-semibold bg-[#1b6ea8] hover:bg-[#155887] text-white px-4 py-2.5 rounded-full transition-colors shadow-sm cursor-pointer"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  Book Appointment
+                </button>
+              ) : (
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-[12px] font-semibold bg-[#1b6ea8] hover:bg-[#155887] text-white px-4 py-2.5 rounded-full transition-colors shadow-sm"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  Book Appointment
+                </a>
+              )}
             </div>
           </div>
         </div>

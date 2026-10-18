@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink, Send, MessageSquare, Instagram, Calendar, AlertCircle, Loader2, CheckCircle2 } from 'lucide-react';
 import TestimonialsFaq from '@/components/home/testimonials-faq';
 import {
   ScrollReveal,
@@ -11,20 +11,62 @@ import {
   ScrollHeading,
 } from '@/components/ui/scroll-animation';
 
+import { useAppointmentModal } from '@/context/appointment-context';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdeajnbp';
+const CLINIC_PHONE = '+91-9289300329';
+
 export default function ContactPage() {
+  const { openAppointmentModal } = useAppointmentModal();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const payload = {
+      _subject: `New Contact Query: ${formData.name}`,
+      doctor: 'Dr. Aditi Garg (ENT Specialist)',
+      fullName: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      clinicHelpline: CLINIC_PHONE,
+      submissionSource: 'Contact Page Direct Message',
+    };
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setErrorMessage(null);
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        const data = await res.json().catch(() => null);
+        if (data && data.errors && data.errors.length > 0) {
+          setErrorMessage(data.errors.map((err: { message: string }) => err.message).join(', '));
+        } else {
+          setErrorMessage('Failed to send message. Please call ' + CLINIC_PHONE + ' directly.');
+        }
+      }
+    } catch {
+      setErrorMessage('Network error. Please try again or call ' + CLINIC_PHONE + '.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 1000);
+    }
   };
 
   return (
@@ -168,12 +210,28 @@ export default function ContactPage() {
                   <p className="text-slate-500 mt-2">Fill out the form below and our coordinator will get back to you promptly.</p>
                 </div>
 
+                {errorMessage && (
+                  <div className="mb-5 p-3.5 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700 flex items-start gap-2 relative z-10">
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <div>
+                      <p>{errorMessage}</p>
+                      <a
+                        href={`tel:${CLINIC_PHONE.replace(/[^0-9+]/g, '')}`}
+                        className="font-bold underline flex items-center gap-1 mt-1 text-red-800"
+                      >
+                        <Phone className="w-3 h-3" /> Call {CLINIC_PHONE} directly
+                      </a>
+                    </div>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
                       <label className="text-sm font-bold text-slate-700">Full Name</label>
                       <input
                         type="text"
+                        name="fullName"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -185,10 +243,11 @@ export default function ContactPage() {
                       <label className="text-sm font-bold text-slate-700">Mobile Number</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 99999 99999"
+                        placeholder="+91 9289300329"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1b6ea8]/20 focus:border-[#1b6ea8] transition-colors"
                       />
                     </div>
@@ -198,6 +257,7 @@ export default function ContactPage() {
                     <label className="text-sm font-bold text-slate-700">Email Address</label>
                     <input
                       type="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -210,6 +270,7 @@ export default function ContactPage() {
                     <label className="text-sm font-bold text-slate-700">Your Message / Query</label>
                     <textarea
                       rows={4}
+                      name="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -222,14 +283,20 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-900/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 min-w-[200px]"
+                      className="w-full sm:w-auto bg-[#1b6ea8] hover:bg-[#155887] text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-teal-900/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 min-w-[200px] cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
-                        <span className="flex items-center gap-2">Sending...</span>
+                        <span className="flex items-center gap-2">
+                          <Loader2 className="w-4 h-4 animate-spin" /> Sending...
+                        </span>
                       ) : submitted ? (
-                        <span className="flex items-center gap-2 text-teal-200">Message Sent <Send className="w-4 h-4" /></span>
+                        <span className="flex items-center gap-2 text-teal-200">
+                          <CheckCircle2 className="w-4 h-4" /> Message Sent!
+                        </span>
                       ) : (
-                        <span className="flex items-center gap-2">Send Message <Send className="w-4 h-4" /></span>
+                        <span className="flex items-center gap-2">
+                          Send Message <Send className="w-4 h-4" />
+                        </span>
                       )}
                     </button>
                   </div>
@@ -243,17 +310,25 @@ export default function ContactPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
                 <div>
                   <h3 className="text-white font-bold font-serif text-xl">Ready for a consultation?</h3>
-                  <p className="text-teal-100 text-sm mt-1">Book directly via official hospital portal</p>
+                  <p className="text-teal-100 text-sm mt-1">Book online or call Helpline {CLINIC_PHONE}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => openAppointmentModal()}
+                    className="bg-white hover:bg-teal-50 text-[#1b6ea8] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    Book Appointment
+                  </button>
                   <a
                     href="https://appointment.sgrh.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-white hover:bg-teal-50 text-[#1b6ea8] px-5 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-2"
+                    className="border border-white/40 hover:bg-white/10 text-white px-4 py-2.5 rounded-xl font-bold text-sm transition-colors flex items-center gap-1.5"
                   >
-                    SGRH Portal
-                    <ExternalLink className="w-4 h-4" />
+                    <span>SGRH</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
